@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SBI Rewards</title>
+    <link rel="stylesheet" href="css/helper.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/product-detail.css" />
+    <link rel="stylesheet" href="css/vendor/nouislider.css" />
+    <link rel="stylesheet" href="css/vendor/slick.css" />
+    <link rel="stylesheet" href="css/vendor/quantity.css" />
+    <link rel="stylesheet" href="https://jatinkukreja18.github.io/SBI-Theme/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor/slick.min.js"></script>
+    <script type="text/javascript" src="js/quantity.js"></script>
+</head>
+
+<body>
+    <div class="rwd-body-wrapper">
+        <div class="rwd-header">
+            <div class="rwd-top-nav">
+                <div class="rwd-nav-wrapper rwd-flex ac">
+                    <div class="top-nav-section-1 rwd-flex ac">
+                        <div class="link active">
+                            <a href="">Personal</a>
+                        </div>
+                        <div class="link">
+                            <a href="">Corporate</a>
+                        </div>
+                        <div class="link">
+                            <a href="">Who We Are</a>
+                        </div>
+
+                    </div>
+                    <div class="top-nav-section-2 rwd-flex ac">
+                        <div class="link">
+                            <a href="">Get In Touch</a>
+                        </div>
+                        <div class="link active">
+                            <a href="">Help</a>
+                        </div>
+                    </div>
+                    <div class="top-nav-section-3 rwd-flex ac">
+                        <div class="link">
+                            <a href="">Login</a>
+                        </div>
+                    </div>
+                    <div class="top-nav-section-4"></div>
+                </div>
+            </div>
+            <div class="rwd-global-nav">
+                <div class="rwd-nav-wrapper rwd-flex">
+                    <div class="rwd-global-nav-section header-sbi-logo">
+                        <div style="width: 156px;display: flex; align-items: center; height: 100%;">
+                            <img src="../assets/images/sbi_card_logo_2x.jpg" style="width: 130px;" />
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section hoverable">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            Credit Cards
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section hoverable">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            Benefits
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section hoverable">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            Pay
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section hoverable">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            Offers
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section hoverable">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            Rewards
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            <div class="apply-link">Apply</div>
+                        </div>
+                    </div>
+                    <div class="rwd-global-nav-section">
+                        <div class="rwd-global-nav-nav rwd-flex ac">
+                            <div class="search-box">
+                                <img />
+                                <input class="search-input" placeholder="Search" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="rwd-breadcrumb-nav">
+                <div class="rwd-nav-wrapper rwd-flex ac">
+                    <span><a class="prev" href="">Home</a></span>
+                    <span>&nbsp;>&nbsp;</span>
+                    <span><a class="curr" href="">Catalogue</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="rwd-product">
+            <div class="rwd-product-order">
+                <div class="sbi-wrapper">
+                    <div class="rwd-product-order-wrapper rwd-flex">
+                        <div class="rwd-product-image-container">
+                            <div class="main-image" id="main-image">
+                                <img src="../assets/images/apple-i-phone-11-red.png" />
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail selected" id="thumbnail-1" onclick="selectThumbnail(event)">
+                                    <img src="../assets/images/apple-i-phone-11-red.png" />
+                                </div>
+                                <div class="thumbnail" id="thumbnail-2" onclick="selectThumbnail(event)">
+                                    <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                </div>
+                                <div class="thumbnail" id="thumbnail-3" onclick="selectThumbnail(event)">
+                                    <img src="../assets/images/apple-i-phone-11-red.png" />
+                                </div>
+                                <div class="thumbnail" id="thumbnail-4" onclick="selectThumbnail(event)">
+                                    <img src="../assets/images/apple-i-phone-11-red.png" />
+                                </div>
+                                <div class="thumbnail" id="thumbnail-5" onclick="selectThumbnail(event)">
+                                    <img src="../assets/images/apple-i-phone-11-red.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rwd-product-order-detail">
+                            <div class="product-title">Bose Bass Module 500</div>
+                            <div class="product-pricing-info rwd-flex ac">
+                                <span class="new-price">15,000 pts</span>
+                                <span class="old-price">21,600 pts</span>
+                                <span class="discount-container">
+                                    <span>(</span><span id="discount">30%
+                                        Off</span><span>)</span></span>
+                            </div>
+                            <div class="point-desc">(<span id="pointsForPay">10,000</span> pts for point + pay)</div>
+                            <div class="payment-mode-selection rwd-flex ac">
+                                <label class="rwd-radio-container">Points Only
+                                    <input type="radio" checked="checked" name="payment"
+                                        onchange="onPaymentModeChange(event, 'Points')">
+                                    <span class="rwd-radio-checkmark"></span>
+                                </label>
+                                <label class="rwd-radio-container" style="margin-left: 20px;">Points + Pay
+                                    <input type="radio" name="payment"
+                                        onchange="onPaymentModeChange(event, 'Points+Pay')" />
+                                    <span class="rwd-radio-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="item-code-container">
+                                <span>Item Code: </span>
+                                <span id="item-code">APA01</span>
+                            </div>
+                            <div class="quantity-selection">
+                                <div class="heading">Quantity</div>
+                                <div class="rwd-quantity">
+                                    <input type="number" min="1" max="10" step="1" value="1" disabled>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button class="sbi-button primary">Add to Cart</button>
+                            </div>
+                            <div class="brief-features">
+                                <ul>
+                                    <li>USB 3.0 and USB 2.0 compatibility</li>
+                                    <li>Fast data transfers</li>
+                                    <li>Improve PC performance</li>
+                                    <li>2-year manufacturer's limited warranty</li>
+                                </ul>
+                            </div>
+                            <div class="estimated-delivery-container">
+                                <span>Estimated Delivery: </span>
+                                <span id="estimated-delivery">15</span>
+                                <span>Business Days</span>
+                            </div>
+                            <div class="pin-code-check-container">
+                                <div class="rwd-flex fe">
+                                    <div class="pin-code-input-box">
+                                        <label class="pin-code-input-label">PIN Code</label>
+                                        <input id="pinCode" onkeypress="return isNumber(event)"
+                                            oninput="checkPin(event)" />
+                                    </div>
+                                    <div class="check-button">
+                                        <button class="sbi-button primary rounded" onclick="enterPinCode()">&#8594;</button>
+                                    </div>
+                                </div>
+                                <div class="disclaimer" id="pinCodeDisclaimer">Enter Pin Code for exact delivery
+                                    date</div>
+                            </div>
+                            <div class="available-cities">
+                                <div class="heading">
+                                    <span>Available in select cities</span>
+                                    <span class="rwd-tooltip">
+                                        Only available in New Delhi, Kolkata, Chandigarh, Mumbai, Chennai, Ahmedabad and
+                                        Bangalore
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rwd-product-details">
+                <div class="sbi-wrapper">
+                    <div class="rwd-product-details-wrapper">
+                        <div class="product-description">
+                            <div class="heading">Product Description</div>
+                            <div class="content">
+                                <div class="fade-out-box">
+                                    <div class="text">Who says you need a big box for big bass? the Bose bass module 500
+                                        will take
+                                        your music, movies, and more to the next level. It's rich, thunderous bass in a
+                                        compact, 10-inch cube, making it easy to hide, and even easier to hear. Wireless
+                                        connectivity allows you to place the Bose bass module 500 just about anywhere.
+                                        Leave it next to the TV or put it under your entertainment center - the choice
+                                        is yours. ** Designed to be paired with the Bose sound bar 500 or Bose sound bar
+                                        700 to bring music, movies, and TV to life with room-rocking sound.
+                                        <div>Disclaimer - "The product images shown are for illustration purposes only
+                                            and
+                                            may not be an exact representation of the product."</div>
+                                    </div>
+
+                                </div>
+                                <div class="read-more"><a href="#" class="button">Show More</a></div>
+                            </div>
+                        </div>
+                        <div class="important-instructions">
+                            <div class="heading">Important Instructions</div>
+                            <div class="content">
+                                <ul class="rwd-flex sb">
+                                    <li>This E Gift Voucher can be used in all Big Bazaar/ Food Bazaar & FBB Stores
+                                        across India. </li>
+                                    <li>This E Gift Voucher can be used in all Big Bazaar/ Food Bazaar</li>
+                                    <li>This E Gift Voucher can be used in all Big Bazaar/ Food Bazaar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-terms-and-conditions">
+                            <div class="rwd-expansion-panel terms-conditions">
+                                <div class="rwd-product-tc-panel-head rwd-flex ac sb" onclick="expandTermsConditions()">
+                                    <div class="title">Product Specific Terms & Conditions</div>
+                                    <div class="control rwd-flex ac sb">
+                                        <div class="toggle-icon"></div>
+                                    </div>
+                                </div>
+                                <div class="rwd-product-tc-panel-body">
+                                    <div class="details">
+                                        <ul>
+                                            <li>If the Customer misplaces the E-gift voucher company shall not be
+                                                responsible to reimburse/refund.</li>
+                                            <li>E Gift Voucher is valid for a period of 12 Months from its date of
+                                                issue.</li>
+                                            <li>Validity period of this E Gift Voucher will not be extended under any
+                                                circumstances.</li>
+                                            <li>The Holder of This Voucher is deemed to be the beneficiary.</li>
+                                            <li>E gift vouchers are redeemable at stores only and NOT on Future Group's
+                                                e-commerce websites.</li>
+                                            <li>E gift vouchers cannot be redeemed for purchase of other Gift Vouchers &
+                                                profit club cards.</li>
+                                            <li>Any dispute should be referred to the Future Retail limited ( company),
+                                                and the decision of the company shall be final. Litigation, if any, is
+                                                subject to Jurisdiction of courts in Mumbai.</li>
+                                            <li>Terms and Conditions are subject to change without prior written notice.
+                                                Validity-6 Months.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program-terms-and-conditions">
+                            <a href="">Shop-and-Smile Rewards Program Terms and Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rwd-related-products">
+                <div class="sbi-wrapper">
+                    <div class="products-list-wrapper" id="related">
+                        <div class="items-title rwd-flex sb">
+                            <div class="heading">Related Products</div>
+                            <a class="view-all">
+                                View All
+                            </a>
+                        </div>
+                        <div class="items-carousel-container">
+                            <div class="items-carousel">
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500 - 1</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Bose Bass Module 500 - 2</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Apple Bass Module 500 - 3</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">Samsung Bass Module 500 - 4</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                                <div class="item-box" onclick="openProductPage()">
+                                    <div class="image-container">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-title">New Bass Module 500 - 5</div>
+                                        <div class="product-price">
+                                            <span class="new-price">15,000 pts</span>
+                                            <span class="old-price">21,600 pts</span>
+                                            <span class="discount-container">
+                                                <span>(</span><span id="discount">30%
+                                                    Off</span><span>)</span></span>
+                                        </div>
+                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button role="button" aria-label="Previous" class="carousel-prev">
+                                <div class="carousel-icon"></div>
+                            </button>
+                            <button role="button" aria-label="Next" class="carousel-next">
+                                <div class="carousel-icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/product-details.js"></script>
+</body>
+
+</html>

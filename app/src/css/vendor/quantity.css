@@ -1,0 +1,65 @@
+/** Quantity input */
+.rwd-quantity {
+    display: flex;
+    position: relative;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+  {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number]
+  {
+    -moz-appearance: textfield;
+  }
+  
+  .rwd-quantity input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #8a8a96;
+    color: #8a8a96;
+    font-weight: normal;
+    font-size: 16px;
+    width: 180px;
+    text-align: center;
+    padding-bottom: 6px;
+  }
+  
+  .rwd-quantity input:focus {
+    outline: 0;
+  }
+  
+  /* .rwd-quantity-nav {
+    float: left;
+    position: relative;
+    height: 42px;
+  } */
+  
+  .rwd-quantity-button {
+    cursor: pointer;
+    text-align: center;
+    color: #8a8a96;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+  .rwd-quantity-button.rwd-quantity-up {
+    position: absolute;
+    left: 167px;
+    top: -9px;
+    font-weight: 300;
+    font-size: 24px;
+  }
+  
+  .rwd-quantity-button.rwd-quantity-down {
+    position: absolute;
+    left: 2px;
+    top: -2px;
+  }

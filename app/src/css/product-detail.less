@@ -1,0 +1,508 @@
+.mixin-tooltip{
+    padding: 10px;
+    background-color: #f2f7fd;
+    font-size: 10px;
+    color: #8a8a96;
+    min-width: 100%;
+    top: -10px;
+    position: absolute;
+    left: calc(100% + 10px);
+    z-index: 1;
+    display: none;
+    text-align: left;
+    width: 211px;
+    &::before{
+        content: "";
+        position: absolute;
+        right: 100%;
+        height: 0px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent; 
+        border-right:5px solid #f2f7fd; 
+        top: 40%;
+    }
+}
+
+.carousel-icon-content{
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: '';
+    display: inline-block;
+    padding: 3px;
+    vertical-align: middle;
+    color: #2d2d2d;
+}
+
+.carousel-button-prev(@top, @left, @rotation){
+    position: absolute;
+    left: @left;
+    outline: none;
+    background: none;
+    padding: 0;
+    border: 0;
+    top: @top;
+    cursor: pointer;
+    .carousel-icon{
+        &::after{
+            .carousel-icon-content();
+            transform: rotate(@rotation);
+        }
+    }
+}
+.carousel-button-next(@top, @right, @rotation){
+    position: absolute;
+    right: @right;
+    outline: none;
+    background: none;
+    padding: 0;
+    border: 0;
+    top: @top;
+    cursor: pointer;
+    .carousel-icon{
+        &::after{
+            .carousel-icon-content();
+            transform: rotate(@rotation);
+        }
+    }
+}
+
+
+.rwd-body-wrapper{
+    .rwd-product{
+        position: relative;
+        top: 120px;
+        background-color: #f5f5f5;
+        .rwd-product-order{
+            border-bottom: 1px solid #eeeeee;
+            padding: 67px 0 40px 0;
+            background-color: #ffffff;
+            .rwd-product-order-wrapper{
+                padding: 0 100px 0 60px;
+                
+                .rwd-product-image-container{
+                    text-align: center;
+                    position: sticky;
+                    top: 150px;
+                    height: fit-content;
+                    .main-image{
+                        height: 318px;
+                        margin-bottom: 55px;
+                        text-align: center;
+                        img{
+                            height: 100%;
+                            transition: 0.3s;
+                        }
+                    }
+                    .thumbnail-container{
+                        display: flex;
+                        width: 320px;
+                        justify-content: space-between;
+                        align-items: center;
+                        .thumbnail{
+                            height: 44px;
+                            width: 44px;
+                            border: 1px solid #d5d5ea;
+                            cursor: pointer;
+                            padding: 5px;
+                            img{
+                                width: 100%;
+                            }
+                            &.selected{
+                                border: 1px solid #00b1f2;
+                            }
+                        }
+                    }
+                }
+                .rwd-product-order-detail{
+                    width: 380px;
+                    margin-left: 276px;
+                    .product-title{
+                        color: #2d2d2d;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    .product-pricing-info{
+                        margin-top: 2px;
+                        .new-price{
+                            color: #2d2d2d;
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
+                        .old-price{
+                            color: #a8a8a8;
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-left: 20px;
+                            text-decoration: line-through;
+                        }
+                        .discount-container{
+                            color: #ebb73a;
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-left: 20px;
+                        }
+                    }
+                    .point-desc{
+                        margin-top: 20px;
+                        color: #8a8a96;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                    .payment-mode-selection{
+                        margin-top: 40px;
+                    }
+                    .item-code-container{
+                        margin-top: 20px;
+                        padding: 10px;
+                        border: 1px dashed #ebb73a;
+                        font-size: 12px;
+                        color: #ebb73a;
+                        width: fit-content;
+                    }
+                    .quantity-selection{
+                        margin-top: 40px;
+                        .heading{
+                            color: #090909;
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .add-to-cart{
+                        margin-top: 40px;
+                        width: 100%;
+                        button{
+                            width: 100%;
+                            height: 56px;
+                            margin-bottom: 0;
+                        }
+                    }
+                    .brief-features{
+                        margin-top: 40px;
+                        ul{
+                            line-height: 1.5;
+                            color: #8a8a96;
+                            font-size: 14px;
+                        }
+                    }
+                    .estimated-delivery-container{
+                        margin-top: 40px;
+                        color: #000000;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                    .pin-code-check-container {
+                        margin-top: 20px;
+                        .pin-code-input-box{
+                            width: 180px;
+                            position: relative;
+                            height: 40px;
+                            
+                            .pin-code-input-label{
+                                position: absolute;
+                                top: 15px;
+                                font-size: 14px;
+                                color: #8a8a96;
+                                transition: 0.3s;
+    
+                                &.value-present{
+                                    top: -4px;
+                                    font-size: 12px;
+                                }
+                            }
+                            input#pinCode{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background-color: transparent;
+                                border: none;
+                                outline: none;
+                                border-bottom: 1px solid #8a8a96;
+                                font-size: 16px;
+                                color: #2d2d2d;
+                                height: 40px;
+                                width: 100%;
+                                &:focus{
+                                    outline: none; 
+                                 }
+                            }
+                            
+                        }
+                        .check-button{
+                            margin-left: 20px;
+                            button{
+                                width: 38px;
+                                height: 38px;
+                                font-size: 20px;
+                                margin-bottom: 0px;
+                            }
+                        }
+                        .disclaimer{
+                            margin-top: 10px;
+                            color: #8a8a96;
+                            font-size: 10px;
+                        }
+                    }
+                    .available-cities{
+                        width: fit-content;
+                        &:hover{
+                            .rwd-tooltip{
+                                display: block;
+                            }
+                        }
+                        .heading{
+                            position: relative;
+                            cursor: pointer;
+                            text-decoration: underline;
+                            font-size: 14px;
+                            color: #000000;
+                            margin-top: 40px;
+                        }
+                        .rwd-tooltip{
+                            .mixin-tooltip();
+                        }
+                        
+                    }
+                }
+            }
+        }
+        .rwd-product-details{
+            background-color: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+            .rwd-product-details-wrapper{
+                padding: 40px 100px 20px 100px;
+                .product-description{
+                    .heading{
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #333333;
+                    }
+                    .content{
+                        margin-top: 25px;
+                        position: relative;
+                        margin-bottom: 70px;
+                        .fade-out-box {
+                            max-height: 60px;
+                            position: relative;
+                            overflow: hidden;
+                            .text{
+                                color: #949494;
+                                font-size: 14px;
+                            }
+                            
+                          }
+                          .read-more { 
+                            position: absolute; 
+                            bottom: -35px; 
+                            left: 0;
+                            width: 100%; 
+                            text-align: center; 
+                            margin: 0; 
+                            padding: 28px 0 0px 0;
+                            /* "transparent" only works here because == rgba(0,0,0,0) */
+                            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.27), white 31%);
+                            .button{
+                                text-decoration: underline;
+                            }
+                          }
+                    }
+                }
+                .important-instructions{
+                    border-bottom: 1px solid #eeeeee;
+                    .heading{
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #333333;
+                    }
+                    .content{
+                        margin-top: 25px;
+                        li{
+                            max-width: 260px;
+                            color: #5d5d5d;
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .product-terms-and-conditions{
+                    border-bottom: 1px solid #eeeeee;
+                    &.expanded{
+                        // background-color: #f2f7fd;
+                        .rwd-expansion-panel{
+                            .rwd-product-tc-panel-head{
+                                .control{
+                                    .toggle-icon{
+                                        &::after{
+                                            transform: rotate(-135deg);
+                                        }
+                                    }
+                                }
+                            }
+                            .rwd-product-tc-panel-body{
+                                // max-height: 100em;
+                                // min-height: 100px;
+                                /* padding: 20px;
+                                padding-top: 0; */
+                            }
+                        }
+                    }
+                    .rwd-expansion-panel{
+                        .rwd-product-tc-panel-head{
+                            padding: 20px;
+                            padding-left: 0;
+                            cursor: pointer;
+                            .title{
+                                font-size: 18px;
+                                font-weight: 600;
+                                color: #333333;
+                            }
+                            .control{
+                                .select{
+                                    font-size: 14px;
+                                    color: #a8a8a8;
+                                    margin-right: 6px;
+                                }
+                                .toggle-icon{
+                                    &::after{
+                                        border-style: solid;
+                                        border-width: 0 2px 2px 0;
+                                        content: '';
+                                        display: inline-block;
+                                        padding: 3px;
+                                        vertical-align: middle;
+                                        color: #8a8a96;
+                                        transform: rotate(45deg);
+                                        transition: transform 0.3s;
+                                    }
+                                }
+                            }
+                        }
+                        .rwd-product-tc-panel-body{
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.3s;
+                            // padding: 0 20px;
+                            .details{
+                                padding: 0 0 20px 8px;
+                                ul{
+                                    margin: 0;
+                                    li{
+                                        font-size: 14px;
+                                        color: #adadad;
+                                        line-height: 1.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .program-terms-and-conditions{
+                    margin-top: 20px;
+                    a{
+                        font-size: 15.6px;
+                    }
+                }
+            }
+        }
+        .rwd-related-products{
+            padding: 40px 0 20px;
+
+            .products-list-wrapper{
+                .items-title{
+                    margin-bottom: 20px;
+                    .heading{
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: #333333;
+                    }
+                    .view-all{
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #00b1f2;
+                        align-self: flex-end;
+                    }
+                }
+                .items-carousel-container{
+                    position: relative;
+                    .items-carousel{
+                        display: flex;
+                        .slick-list{
+                            margin-right: -20px;
+                        }
+                        .item-box{
+                            background-color: #ffffff;
+                            padding: 20px;
+                            margin-right: 20px;
+                            cursor: pointer;
+                            .image-container{
+                                text-align: center;
+                                
+                                
+                                img{
+                                    max-height: 195px;
+                                    margin: 0 auto;
+                                }
+                            }
+                            .product-details{
+                                margin-top: 20px;
+                                .product-title{
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    color: #2d2d2d;
+                                }
+                                .product-price{
+                                    margin-top: 5px;
+                                    display: flex;
+                                    align-items: center;
+                                    .new-price{
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        color: #2d2d2d;
+                                    }
+                                    .old-price{
+                                        font-size: 10px;
+                                        font-weight: 600;
+                                        color: #a8a8a8;
+                                        margin-left: 5px;
+                                        text-decoration: line-through;
+                                    }
+                                    .discount-container{
+                                        font-size: 10px;
+                                        font-weight: 600;
+                                        color: #ebb73a;
+                                        margin-left: 5px;
+                                    }
+                                }
+                                .point-desc{
+                                    color: #8a8a96;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .carousel-prev{
+                        .carousel-button-prev(355px, 0px, 135deg);
+                        &.slick-disabled{
+                            .carousel-icon{
+                                &::after{
+                                    color: #adadad
+                                }
+                            }
+                        }
+                    }
+                    .carousel-next{
+                        .carousel-button-next(355px, 0px, -45deg);
+                        &.slick-disabled{
+                            .carousel-icon{
+                                &::after{
+                                    color: #adadad
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

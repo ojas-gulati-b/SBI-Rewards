@@ -1,0 +1,168 @@
+.rwd-body-wrapper{
+    background-color: #f5f5f5;
+    height: 100vh;
+    .rwd-header{
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        .rwd-top-nav{
+            height: 40px;
+            background-color: #0a242b;
+            .rwd-nav-wrapper{
+                .top-nav-section-1{
+                    height: 100%;
+                    padding-left: 157px;
+                    .link{
+                        background-color: #06191e;
+                        border-left: solid 1px #1d4049;
+                        padding: 0 15px;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        a{
+                            font-weight: 600;
+                            color: #ccc;
+                            font-size: 12px;
+                        }
+                        
+                        &.active{
+                            background: #fff;
+                            border-left: 0;
+                            a{
+                                color: #0095d9;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .top-nav-section-2{
+                    padding-left: 20px;
+                    padding-right: 100px;
+                    border-left: solid 1px #1d4049;
+                    height: 100%;
+                    .link{
+                        padding: 0 10px;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        a{
+                            font-weight: 600;
+                            color: #ffffff;
+                            font-size: 11px;
+                        }
+                    }
+                }
+                .top-nav-section-3{
+                    border-left: solid 1px #1d4049;
+                    border-right: solid 1px #1d4049;
+                    height: 100%;
+                    .link{
+                        padding: 0 34px;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        a{
+                            font-weight: 600;
+                            color: #ffffff;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .top-nav-section-4{
+                    width: 134px; //temp code remove after icons
+                    // padding: 0 15px;
+                    .link{
+                        padding: 0 34px;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        a{
+                            font-weight: 600;
+                            color: #ffffff;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .rwd-global-nav{
+            background-color: #ffffff;
+            height: 60px;
+            .rwd-nav-wrapper{
+                .rwd-global-nav-section{
+                    height: 100%;
+                    border-right: solid 1px #e5e5e5;
+                    .rwd-global-nav-nav{
+                        padding: 0 20px;
+                        height: 100%;
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #141414;
+                        cursor: pointer;
+                        .apply-link{
+                            color: #ffffff;
+                            padding: 10px 15px;
+                            background-color: #0095d9;
+                        }
+                        .search-box{
+                            border: 1px solid #cdcbcb;
+                            background-color: #fbfbfb;
+                            .search-input{
+                                width: 168px;
+                                height: 35px;
+                                color: #a0a0a0;
+                                font-size: 14px;
+                                border: none;
+                                outline: none;
+                                &:focus{
+                                    outline: none;
+                                }
+                                &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                                    font-weight: 600;
+                                }
+                                &::-moz-placeholder { /* Firefox 19+ */
+                                    font-weight: 600;
+                                }
+                                &:-ms-input-placeholder { /* IE 10+ */
+                                    font-weight: 600;
+                                }
+                                &:-moz-placeholder { /* Firefox 18- */
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                    // no hover state for SBI logo or for search box
+                    &.hoverable:hover{
+                        background-color: #0095d9;
+                        .rwd-global-nav-nav{
+                            color: #ffffff;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        .rwd-breadcrumb-nav{
+            background-color: rgba(8, 36, 43, 0.8);
+            height: 20px;
+            a{
+                font-weight: 600;
+                cursor: pointer;
+                font-size: 10px;
+                &.prev{
+                    color: #00b1f2;
+                }
+                &.curr{
+                    color: #ffffff;
+                }
+            }
+            span{
+                font-size: 10px;
+                font-weight: 600;
+                color: #00b1f2;
+            }
+            
+        }
+    }
+}
