@@ -86,16 +86,17 @@
         top: 120px;
         width: 100%;
         z-index: 10;
+
         // overflow-x: auto;
         
         .rwd-tabs{
          //padding: 0 80px;
          display: flex;
 
-        /*  @media (max-width: 767px) {
-            padding: 0px 0px 0px 15px;
-            min-width: 399px;
-        } */
+         @media (max-width: 960px) {
+            justify-content: space-between;
+            margin-left: -20px;
+        }
              .rwd-tab{
                  padding-bottom: 20px;
                  font-size: 14px;
@@ -103,6 +104,9 @@
                  font-weight: 400;
                  cursor: pointer;
                  text-align: center;
+                 @media (max-width: 960px) {
+                    width: 50%;
+                }
 
                  &:hover{
                      span{

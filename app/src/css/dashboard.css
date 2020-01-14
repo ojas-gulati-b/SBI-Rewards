@@ -21,10 +21,12 @@
 }
 .rwd-dashboard .tabs-header .rwd-tabs {
   display: flex;
-  /*  @media (max-width: 767px) {
-            padding: 0px 0px 0px 15px;
-            min-width: 399px;
-        } */
+}
+@media (max-width: 960px) {
+  .rwd-dashboard .tabs-header .rwd-tabs {
+    justify-content: space-between;
+    margin-left: -20px;
+  }
 }
 .rwd-dashboard .tabs-header .rwd-tabs .rwd-tab {
   padding-bottom: 20px;
@@ -33,6 +35,11 @@
   font-weight: 400;
   cursor: pointer;
   text-align: center;
+}
+@media (max-width: 960px) {
+  .rwd-dashboard .tabs-header .rwd-tabs .rwd-tab {
+    width: 50%;
+  }
 }
 .rwd-dashboard .tabs-header .rwd-tabs .rwd-tab.active {
   border-bottom: 2px solid #00b1f2;
