@@ -21,6 +21,20 @@ body{
 .rwd-hidden{
   display: none;
 }
+.rwd-mobile{
+  display: none;
+}
+.rwd-desktop{
+  display: block;
+}
+@media (max-width: 960px) {
+  .rwd-mobile{
+    display: block;
+  }
+  .rwd-desktop{
+    display: none;
+  }
+}
 /* Tags CSS */
 .rwd-tag{
     padding: 10px 20px;
