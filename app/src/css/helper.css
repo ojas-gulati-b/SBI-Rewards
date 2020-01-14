@@ -18,6 +18,9 @@ body{
     max-width: 960px;
     height: 100%;
 }
+.rwd-hidden{
+  display: none;
+}
 /* Tags CSS */
 .rwd-tag{
     padding: 10px 20px;
@@ -31,6 +34,29 @@ body{
     margin-right: 5px;
     margin-top: 10px;
     cursor: pointer;
+    position: relative;
+}
+.rwd-tag.cancellable{
+  padding-right: 30px;
+  cursor: auto;
+}
+.rwd-tag.cancellable.selected{
+  background-color: #ffffff;
+  color: #8a8a96;
+}
+.rwd-tag.cancellable .rwd-tag-close{
+  position: absolute;
+  background: url('../../assets/images/cross.png');
+  content: '';
+  font-size: 7px;
+  top: 15px;
+  margin-left: 10px;
+  color: #8a8a96;
+  width: 9px;
+  height: 8px;
+  background-size: 9px;
+  cursor: pointer;
+  right: 10px;
 }
 .rwd-tag.selected{
     background-color: #00b1f2;
@@ -234,4 +260,9 @@ body{
 .items-carousel-container .slick-dots li button:focus:before
 {
     opacity: 1;
+}
+
+.rwd-sticky-bottom{
+  top: auto !important;
+  bottom: 0px;
 }

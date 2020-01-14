@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 10;
   width: 100%;
+  top: 0px;
 }
 .rwd-body-wrapper .rwd-header .rwd-top-nav {
   height: 40px;

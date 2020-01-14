@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://jatinkukreja18.github.io/SBI-Theme/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="js/vendor/slick.min.js"></script>
+    <script type="text/javascript" src="js/vendor/slick1-6.js"></script>
     <script type="text/javascript" src="js/vendor/nouislider.js"></script>
-
+    <script type="text/javascript" src="js/vendor/sticky.js"></script>
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                 <div class="rwd-nav-wrapper rwd-flex">
                     <div class="rwd-global-nav-section header-sbi-logo">
                         <div style="width: 156px;display: flex; align-items: center; height: 100%;">
-                            <img src="../assets/images/sbi_card_logo_2x.jpg" style="width: 130px;"/>
+                            <img src="../assets/images/sbi_card_logo_2x.jpg" style="width: 130px;" />
                         </div>
                     </div>
                     <div class="rwd-global-nav-section hoverable">
@@ -133,75 +133,80 @@
                                         <div class="category-carousel">
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image"
+                                                        src="../assets/images/accessories.png" />
                                                 </div>
                                                 <div class="category-name">Accessories</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/apparel.png" />
                                                 </div>
                                                 <div class="category-name">Apparel</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/books.png" />
                                                 </div>
                                                 <div class="category-name">Books & Periodicals</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image"
+                                                        src="../assets/images/electronics.png" />
                                                 </div>
                                                 <div class="category-name">Electronics</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image"
+                                                        src="../assets/images/entertainment.png" />
                                                 </div>
                                                 <div class="category-name">Entertainment & Dining</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/health.png" />
                                                 </div>
                                                 <div class="category-name">Health & Fitness</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/e-voucher.png" />
                                                 </div>
                                                 <div class="category-name">E-Voucher</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/homeware.png"
+                                                        width="48" height="68" />
                                                 </div>
                                                 <div class="category-name">Homeware</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/kidszone.png" />
                                                 </div>
                                                 <div class="category-name">Kids Zone</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/lifestyle.png" />
                                                 </div>
                                                 <div class="category-name">Lifestyle</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image" src="../assets/images/travel.png" />
                                                 </div>
-                                                <div class="category-name">Homeware</div>
+                                                <div class="category-name">Travel & Holiday</div>
                                             </div>
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
-                                                    <img class="category-image" src="" />
+                                                    <img class="category-image"
+                                                        src="../assets/images/memberships.png" />
                                                 </div>
-                                                <div class="category-name">Apparel</div>
+                                                <div class="category-name">Memberships</div>
                                             </div>
                                         </div>
                                         <button role="button" aria-label="Previous" class="carousel-prev">
@@ -214,17 +219,117 @@
                                 </div>
                             </div>
                             <div class="rwd-image-carousel">
-                                <div class="sbi-wrapper">
-                                    <div class="carousel-container">
-                                        <div class="image-carousel">
-
+                                <div class="rwd-carousel-container">
+                                    <div class="image-carousel">
+                                        <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
+                                            <img src="../assets/images/category-panel-b1.png" />
+                                            <div class="image-carousel-content">
+                                                <div class="heading">Add savings to your cart</div>
+                                                <div class="subheading">Redeem points on a wide range of electronics
+                                                    from</div>
+                                                <div class="link">View all Diwali Offers
+                                                    <div class="toggle-icon"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <button role="button" aria-label="Previous" class="carousel-prev">
-                                            <div class="carousel-icon"></div>
-                                        </button>
-                                        <button role="button" aria-label="Next" class="carousel-next">
-                                            <div class="carousel-icon"></div>
-                                        </button>
+                                        <div class="rwd-image-carousel-box grouped">
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s1.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s3.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s2.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s4.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
+                                            <img src="../assets/images/category-panel-b1.png" />
+                                            <div class="image-carousel-content">
+                                                <div class="heading">Add savings to your cart</div>
+                                                <div class="subheading">Redeem points on a wide range of electronics
+                                                    from</div>
+                                                <div class="link">View all Diwali Offers
+                                                    <div class="toggle-icon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rwd-image-carousel-box grouped">
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s1.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s3.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s2.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s4.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rwd-image-carousel-box">
+                                            <img src="../assets/images/category-panel-b1.png" />
+                                        </div>
+                                        <div class="rwd-image-carousel-box grouped">
+                                            <div><img src="../assets/images/category-panel-s1.png" /></div>
+                                            <div><img src="../assets/images/category-panel-s3.png" /></div>
+                                            <div><img src="../assets/images/category-panel-s2.png" /></div>
+
+                                            <div><img src="../assets/images/category-panel-s4.png" /></div>
+                                        </div> -->
+
                                     </div>
                                 </div>
                             </div>
@@ -235,9 +340,10 @@
                                         <div class="search-panel">
                                             <div class="search-section">
                                                 <div class="search-input-wrapper">
-                                                    <img src="" />
-                                                    <input placeholder="Search" class="search-input"
-                                                        id="search-input" />
+                                                    <img src="../assets/images/search-blue.png"
+                                                        style="width: 15px; margin-bottom: -2px;" />
+                                                    <input placeholder="Search" class="search-input" id="search-input"
+                                                        onkeypress="searchProduct(event)" />
                                                 </div>
                                             </div>
                                             <div class="search-section points">
@@ -246,24 +352,30 @@
                                                         onclick="expand('points')">
                                                         <div class="title">Points</div>
                                                         <div class="control rwd-flex ac sb">
-                                                            <div class="select">Select</div>
+                                                            <div class="select value">
+                                                                <span id="lower"></span>
+                                                                <span style="margin: 0 5px;">-</span>
+                                                                <span id="upper"></span>
+                                                            </div>
                                                             <div class="toggle-icon"></div>
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="slider-wrapper">
-                                                            <div id="range-slider-points" class="rwd-range-slider">
+                                                        <div class="inner-wrapper">
+                                                            <div class="slider-wrapper">
+                                                                <div id="range-slider-points" class="rwd-range-slider">
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="slider-range-display rwd-flex sb ac">
-                                                            <div class="range lower">
-                                                                <input id="lower-range-input" />
-                                                                <span>pts</span>
-                                                            </div>
-                                                            <div class="separator"></div>
-                                                            <div class="range upper">
-                                                                <input id="upper-range-input" />
-                                                                <span>pts</span>
+                                                            <div class="slider-range-display rwd-flex sb ac">
+                                                                <div class="range lower">
+                                                                    <input id="lower-range-input" />
+                                                                    <span>pts</span>
+                                                                </div>
+                                                                <div class="separator"></div>
+                                                                <div class="range upper">
+                                                                    <input id="upper-range-input" />
+                                                                    <span>pts</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -280,7 +392,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-
+                                                        <div class="inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -295,126 +407,142 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="selection-container">
-                                                            <div class="label">All</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
+                                                        <div class="inner-wrapper">
+                                                            <div class="selection-container all">
+                                                                <div class="label">All</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input id="categ-all" name="all" type="checkbox"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="selection-container-divider"></div>
+
+                                                            <div class="selection-container">
+                                                                <div class="label">Health & Fitness</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="health"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Dining</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="dining"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Travel</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="travel"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Electronics</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="electronics"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Lifestyle</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="lifestyle"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Accessories</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="accessories"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Homeware</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="homeware"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Kids Zone</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="kidszone"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">E-Voucher</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="evoucher"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Books and Periodicals</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="books"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Apparel</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="apparel"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="selection-container">
+                                                                <div class="label">Memberships</div>
+                                                                <div class="selection-checkbox">
+                                                                    <label class="rwd-checkbox-container">
+                                                                        <input type="checkbox" name="memberships"
+                                                                            onchange="onCategorySelectSearch(event)">
+                                                                        <span class="rwd-checkbox-checkmark"></span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="selection-container-divider"></div>
-
-                                                        <div class="selection-container">
-                                                            <div class="label">Health & Fitness</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Dining</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Travel</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox" checked="checked">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Electronics</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox" checked="checked">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Lifestyle</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Accessories</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Homeware</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Kids Zone</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">E-Voucher</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox" c>
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Books and Periodicals</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Apparel</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="selection-container">
-                                                            <div class="label">Memberships</div>
-                                                            <div class="selection-checkbox">
-                                                                <label class="rwd-checkbox-container">
-                                                                    <input type="checkbox">
-                                                                    <span class="rwd-checkbox-checkmark"></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -429,7 +557,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-
+                                                        <div class="inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -444,7 +572,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-
+                                                        <div class="inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,149 +580,1128 @@
                                                 <div class="special-offers">
                                                     <div class="heading">Special Offers</div>
                                                     <div class="offers-tags-wrapper">
-                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali</div>
-                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali Offers</div>
-                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali Offers</div>
+                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali
+                                                        </div>
+                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali
+                                                            Offers</div>
+                                                        <div class="rwd-tag" onclick="selectSearchTag(event)">Diwali
+                                                            Offers</div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="rwd-items-wrapper">
-                                        <div class="products-list-wrapper" id="offers">
-                                            <div class="items-title rwd-flex sb">
-                                                <div class="heading">Offer of the month</div>
-                                                <a class="view-all">
-                                                    View All
-                                                </a>
+                                            <div class="rwd-categories-panel rwd-hidden">
+                                                    <div class="rwd-flex ">
+                                                        <div class="heading">Categories</div>
+                                                        <div class="category-pills-container">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <div id="dash-normal-results" class="">
+                                            <!-- <div class="rwd-categories-panel rwd-hidden">
+                                                <div class="rwd-flex ">
+                                                    <div class="heading">Categories</div>
+                                                    <div class="category-pills-container">
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="products-list-wrapper" id="offers">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Offer of the month</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="hotdeal">Hot Deal</div>
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Apple Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Samsung Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div class="items-carousel-container">
-                                                <div class="items-carousel">
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
+                                            <div class="products-list-wrapper" id="electronics">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Electronics</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="">
+                                                            <div class="hotdeal">Hot Deal</div>
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
                                                             </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/google-home.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Google Home</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/google-home.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Google Home</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Apple Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Samsung Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="products-list-wrapper" id="entertainment">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Entertainment & Dining</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
                                                             </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="rwd-banner">
+                                                <img src="../assets/images/category-panel-b1.png" />
+                                                <div class="banner-image-content">
+                                                    <div class="heading">Add savings to your cart</div>
+                                                    <div class="subheading">Redeem points on a wide range of electronics
+                                                        from</div>
+                                                    <div class="link">View all Diwali Offers
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="products-list-wrapper" id="offers-2">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Offer of the month</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
                                                             </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="hotdeal">Hot Deal</div>
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Apple Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Samsung Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + pay)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="products-list-wrapper" id="electronics-2">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Electronics</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="">
+                                                            <div class="hotdeal">Hot Deal</div>
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
                                                             </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/google-home.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Google Home</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Bose Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/google-home.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Google Home</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img
+                                                                    src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Apple Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/product-speaker.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">Samsung Bass Module 500</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="products-list-wrapper" id="entertainment-2">
+                                                <div class="items-title rwd-flex sb">
+                                                    <div class="heading">Entertainment & Dining</div>
+                                                    <a class="view-all">
+                                                        View All
+                                                    </a>
+                                                </div>
+                                                <div class="items-carousel-container">
+                                                    <div class="items-carousel">
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
                                                             </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/bms.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">BookMyShow e-voucher</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <img src="../assets/images/burma-burma.png" />
+                                                            </div>
+                                                            <div class="product-details">
+                                                                <div class="product-title">75% off at Burma Burma</div>
+                                                                <div class="product-price">
+                                                                    <span class="new-price">15,000 pts</span>
+                                                                    <span class="old-price">21,600 pts</span>
+                                                                    <span class="discount-container">
+                                                                        <span>(</span><span id="discount">30%
+                                                                            Off</span><span>)</span></span>
+                                                                </div>
+                                                                <div class="point-desc">(10,000 pts for point + cash)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-box last" onclick="openProductPage()">
+                                                            <div class="image-container">
+                                                                <div class="rwd-flex ac">
+                                                                    <img src="../assets/images/bakery@2x.png" />
+                                                                </div>
+                                                                <div class="view-all">View All</div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                        <div class="carousel-icon"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-container mid-page">
+                                                <div class="category-carousel">
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/accessories.png" />
                                                         </div>
+                                                        <div class="category-name">Accessories</div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Apple Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/apparel.png" />
                                                         </div>
+                                                        <div class="category-name">Apparel</div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Samsung Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/books.png" />
                                                         </div>
+                                                        <div class="category-name">Books & Periodicals</div>
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">New Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/electronics.png" />
                                                         </div>
+                                                        <div class="category-name">Electronics</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/entertainment.png" />
+                                                        </div>
+                                                        <div class="category-name">Entertainment & Dining</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/health.png" />
+                                                        </div>
+                                                        <div class="category-name">Health & Fitness</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/e-voucher.png" />
+                                                        </div>
+                                                        <div class="category-name">E-Voucher</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/homeware.png" width="48"
+                                                                height="68" />
+                                                        </div>
+                                                        <div class="category-name">Homeware</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/kidszone.png" />
+                                                        </div>
+                                                        <div class="category-name">Kids Zone</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/lifestyle.png" />
+                                                        </div>
+                                                        <div class="category-name">Lifestyle</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/travel.png" />
+                                                        </div>
+                                                        <div class="category-name">Travel & Holiday</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/memberships.png" />
+                                                        </div>
+                                                        <div class="category-name">Memberships</div>
                                                     </div>
                                                 </div>
                                                 <button role="button" aria-label="Previous" class="carousel-prev">
@@ -605,292 +1712,93 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="products-list-wrapper" id="electronics">
-                                            <div class="items-title rwd-flex sb">
-                                                <div class="heading">Electronics</div>
-                                                <a class="view-all">
-                                                    View All
-                                                </a>
-                                            </div>
-                                            <div class="items-carousel-container">
-                                                <div class="items-carousel">
-                                                    <div class="item-box" onclick="">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Apple Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Samsung Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">New Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
+                                        <div id="dash-search-results" class="rwd-hidden">
+                                           <!--  <div class="rwd-categories-panel rwd-hidden">
+                                                <div class="rwd-flex ">
+                                                    <div class="heading">Categories</div>
+                                                    <div class="category-pills-container">
                                                     </div>
                                                 </div>
-                                                <button role="button" aria-label="Previous" class="carousel-prev">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
-                                                <button role="button" aria-label="Next" class="carousel-next">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
+                                            </div> -->
+                                            <div class="rwd-search-heading-1">
+                                                <span id="rwd-number-of-results"></span>
+                                                <span> Search results for</span>
                                             </div>
-                                        </div>
-                                        <div class="products-list-wrapper" id="entertainment">
-                                            <div class="items-title rwd-flex sb">
-                                                <div class="heading">Entertainment & Dining</div>
-                                                <a class="view-all">
-                                                    View All
-                                                </a>
+                                            <div class="rwd-search-heading-2">
+                                                <span>Results for</span>
+                                                <span class="search-text"></span>
+                                                <span class="cancel-search" onclick="removeSearchResults()">
+                                                    <img src="../assets/images/cross-blue.png" style="width: 11px;" />
+                                                </span>
                                             </div>
-                                            <div class="items-carousel-container">
-                                                <div class="items-carousel">
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
+                                            <div class="rwd-search-results">
+                                                <div class="search-item-box" onclick="openProductPage()">
+                                                    <div class="image-container">
+                                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
                                                     </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
+                                                    <div class="product-details">
+                                                        <div class="product-title">Bose Bass Module 500 - 2</div>
+                                                        <div class="product-price">
+                                                            <span class="new-price">15,000 pts</span>
+                                                            <span class="old-price">21,600 pts</span>
+                                                            <span class="discount-container">
+                                                                <span>(</span><span id="discount">30%
+                                                                    Off</span><span>)</span></span>
                                                         </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Bose Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Apple Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">Samsung Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-box" onclick="openProductPage()">
-                                                        <div class="image-container"></div>
-                                                        <div class="product-details">
-                                                            <div class="product-title">New Bass Module 500</div>
-                                                            <div class="product-price">
-                                                                <span class="new-price">15,000 pts</span>
-                                                                <span class="old-price">21,600 pts</span>
-                                                                <span class="discount-container">
-                                                                    <span>(</span><span id="discount">30%
-                                                                        Off</span><span>)</span></span>
-                                                            </div>
-                                                            <div class="point-desc">(10,000 pts for point + cash)</div>
-                                                        </div>
+                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
                                                     </div>
                                                 </div>
-                                                <button role="button" aria-label="Previous" class="carousel-prev">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
-                                                <button role="button" aria-label="Next" class="carousel-next">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
+                                                <div class="search-item-box" onclick="openProductPage()">
+                                                    <div class="image-container">
+                                                        <img
+                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                    </div>
+                                                    <div class="product-details">
+                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                        <div class="product-price">
+                                                            <span class="new-price">15,000 pts</span>
+                                                            <span class="old-price">21,600 pts</span>
+                                                            <span class="discount-container">
+                                                                <span>(</span><span id="discount">30%
+                                                                    Off</span><span>)</span></span>
+                                                        </div>
+                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    </div>
+                                                </div>
+                                                <div class="search-item-box" onclick="openProductPage()">
+                                                    <div class="image-container">
+                                                        <img
+                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                    </div>
+                                                    <div class="product-details">
+                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                        <div class="product-price">
+                                                            <span class="new-price">15,000 pts</span>
+                                                            <span class="old-price">21,600 pts</span>
+                                                            <span class="discount-container">
+                                                                <span>(</span><span id="discount">30%
+                                                                    Off</span><span>)</span></span>
+                                                        </div>
+                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    </div>
+                                                </div>
+                                                <div class="search-item-box" onclick="openProductPage()">
+                                                    <div class="image-container">
+                                                        <img
+                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                    </div>
+                                                    <div class="product-details">
+                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                        <div class="product-price">
+                                                            <span class="new-price">15,000 pts</span>
+                                                            <span class="old-price">21,600 pts</span>
+                                                            <span class="discount-container">
+                                                                <span>(</span><span id="discount">30%
+                                                                    Off</span><span>)</span></span>
+                                                        </div>
+                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

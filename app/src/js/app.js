@@ -13,3 +13,7 @@ function initializeCarousel(selector, options){
     $(carousel).slick(options);
       //});
 }
+
+function openProductPage(){
+    window.open("product-details.html");
+}

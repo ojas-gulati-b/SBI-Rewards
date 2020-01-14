@@ -22,6 +22,14 @@ function enterPinCode(){
         getElement('#pinCodeDisclaimer').innerHTML = 'By Saturday, December 4 ';
 }
 
+function selectVoucherAmount(event){
+    var voucherPills = document.querySelectorAll('.voucher-amount-selection .voucher-pills-container .voucher-pill');
+    for( var i = 0; i < voucherPills.length; i++){
+        voucherPills[i].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+}
+
 // Show More component code
 var $el, $ps, $up, totalHeight;
 
@@ -95,7 +103,10 @@ function selectThumbnail(event){
     mainImage.src = thumbImage.src;
 }
 
-function init(){
+function initProduct(){
+    $('.products-list-wrapper#related .items-carousel').on('init', function (event, slick) {
+        slick.checkResponsive();
+    });
     window.addEventListener('load', function () {
         initializeCarousel('.products-list-wrapper#related .items-carousel', {
             dots: true,
@@ -108,10 +119,30 @@ function init(){
             prevArrow: $('.products-list-wrapper#related .items-carousel-container .carousel-prev'),
             nextArrow: $('.products-list-wrapper#related .items-carousel-container .carousel-next'),
             // variableWidth: true
+            responsive: [
+                {
+                    breakpoint: 1280,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        variableWidth: true,
+
+                    }
+                },
+                {
+                    breakpoint: 980,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        variableWidth: true,
+
+                    }
+                }
+            ]
         });
 
     });
     
 }
 
-init();
+initProduct();
