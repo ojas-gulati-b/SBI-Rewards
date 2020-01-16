@@ -91,6 +91,10 @@
         .rwd-tabs{
          //padding: 0 80px;
          display: flex;
+         @media (max-width: 960px) {
+            justify-content: space-between;
+            margin-left: -20px;
+        }
 
         /*  @media (max-width: 767px) {
             padding: 0px 0px 0px 15px;
@@ -103,6 +107,10 @@
                  font-weight: 400;
                  cursor: pointer;
                  text-align: center;
+                 @media (max-width: 960px) {
+                    width: 50%;
+                    border-bottom: 2px solid #f2f2fd;
+                }
 
                  &:hover{
                      span{
@@ -120,6 +128,9 @@
                  }
                  &:not(:last-child){
                      margin-right: 21px;
+                    @media (max-width: 960px) {
+                        margin-right: 0px;
+                    }
                  }
              }
         }
@@ -127,6 +138,9 @@
     .tabs-body{
         position: relative;
         top: 80px;
+        @media (max-width: 960px) {
+            top: 140px;
+        }
         .content-wrapper{
             .tab-content{
                 .content{
@@ -134,22 +148,63 @@
                     &.active{
                         display: block;
                     }
-                   /* .section{
-                       padding: 40px 25px;
-
-                        .instruction{
-                           font-size: 13px;
-                           color: #666666;
-                       }
-                    } */
                     &.rwd-tab-catalogue{
                         background-color: #f5f5f5;
+                        .rwd-filter-menu{
+                            padding: 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            background-color: #ffffff;
+                            width: 100%;
+                            top: 200px;
+                            position: fixed;
+                            z-index: 10;
+                            .filter-menu-icon{
+                                span{
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: #00b1f2;
+                                }
+                            }
+                            .rwd-search-setting-icons{
+                                display: flex;
+                                img{
+                                    width: 15px;
+                                    &:last-child{
+                                        margin-left: 20px;
+                                    }
+                                }
+                            }
+                        }
                         .rwd-category-carousel{
                             .carousel-container{
                                 margin-top: 40px;
                                 position: relative;
-                                @media (max-width: 1280px) {
+                                @media (max-width: 1280px) and (min-width: 961px){
                                     padding: 0 30px;
+                                }
+                                &.rwd-mobile{
+                                    .category-carousel{
+                                        .slick-list{
+                                            margin-right: 0 !important;
+                                            padding: 0 40px 0 0;
+                                        }
+                                        .category-wrapper{
+                                            width: 100px;
+                                            .category-image-wrapper{
+                                                width: 80px;
+                                                height: 80px;
+                                                .category-image{
+                                                    max-height: 50px;
+                                                    max-width: 50px;
+                                                }
+                                            }
+                                            .category-name{
+                                                width: 80px;
+                                            }
+                                        }
+                                    }
                                 }
                                 
                                 .category-carousel{
@@ -159,7 +214,7 @@
                                     //width: 100%;
                                     .slick-list{
                                         margin-right: -20px;
-                                        @media (max-width: 1280px) {
+                                        @media (max-width: 1280px) and (min-width: 961px){
                                             margin-right: -40px;
                                         }
                                     }
@@ -217,6 +272,38 @@
                             width: 100%;
                             height: 100%;
                             max-height: 260px;
+                            &.rwd-mobile{
+                                margin-top: 20px;
+                                height: 200px;
+                                max-height: 200px;
+                                .rwd-carousel-container{
+                                    .image-carousel{
+                                        .slick-list{
+                                            padding: 0 50px 0 0;
+                                        }
+                                        .rwd-image-carousel-box{
+                                            width: 325px;
+                                            height: 200px;
+                                            max-width: unset;
+                                            margin: 0;
+                                            &.single{
+                                                img{
+                                                    max-width: 310px;
+                                                    max-height: 200px;
+                                                }
+                                                .image-carousel-content{
+                                                    width: 39%;
+                                                    position: absolute;
+                                                    display: block;
+                                                    top: 50px;//calc((100% + 10px)/3);
+                                                    right: 25px;
+                                                    .image-carousel-content-elements(#ffffff, #00b1f2);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             .rwd-carousel-container{
                                 height: 100%;
                                 .image-carousel{

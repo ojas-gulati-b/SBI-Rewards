@@ -263,7 +263,7 @@ function init() {
             slick.checkResponsive();
         }); */
         console.log('init');
-        initializeCarousel('.rwd-category-carousel .category-carousel', {
+        initializeCarousel('.rwd-category-carousel .carousel-container.rwd-desktop .category-carousel', {
             dots: false,
             arrows: true,
             slidesToShow: 10,
@@ -304,7 +304,7 @@ function init() {
                     }
                 },
                 {
-                    breakpoint: 870,
+                    breakpoint: 859,
                     settings: {
                         slidesToShow: 6,
                         slidesToScroll: 1,
@@ -336,6 +336,49 @@ function init() {
                         //mobileFirst: true,
                     }
                 } */
+            ]
+        });
+
+        initializeCarousel('.rwd-category-carousel .carousel-container.rwd-mobile .category-carousel', {
+            dots: false,
+            arrows: true,
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            infinite: true,
+            prevArrow: $('.rwd-category-carousel .carousel-container .carousel-prev'),
+            nextArrow: $('.rwd-category-carousel .carousel-container .carousel-next'),
+            //variableWidth: true,
+            //mobileFirst: true,
+            respondTo : 'slider',
+            responsive: [
+                {
+                    breakpoint: 514,
+                    settings: {
+                        slidesToShow: 4,
+                        variableWidth: false,
+                    }
+                },
+                {
+                    breakpoint: 614,
+                    settings: {
+                        slidesToShow: 5,
+                        variableWidth: false,
+                    }
+                },
+                {
+                    breakpoint: 714,
+                    settings: {
+                        slidesToShow: 6,
+                        variableWidth: false,
+                    }
+                },
+                {
+                    breakpoint: 814,
+                    settings: {
+                        slidesToShow: 7,
+                        variableWidth: false,
+                    }
+                },
             ]
         });
 
@@ -616,7 +659,7 @@ function init() {
                 }
             ]
         });
-        initializeCarousel('.rwd-image-carousel .rwd-carousel-container .image-carousel', {
+        initializeCarousel('.rwd-image-carousel.rwd-desktop .rwd-carousel-container .image-carousel', {
             dots: false,
             centerMode: true,
             centerPadding: '150px',
@@ -628,6 +671,19 @@ function init() {
             // prevArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-prev'),
             // nextArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-next'),
             // variableWidth: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+        });
+        initializeCarousel('.rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel', {
+            dots: false,
+            //centerMode: true,
+            //centerPadding: '150px',
+            // initialSlide: 0,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            variableWidth: true,
             //autoplay: true,
             autoplaySpeed: 3000,
         });

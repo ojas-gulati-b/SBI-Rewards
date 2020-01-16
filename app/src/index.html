@@ -127,9 +127,22 @@
                 <div class="content-wrapper">
                     <div class="tab-content" id="tab-content-form">
                         <div id="catalogue" class="content rwd-tab-catalogue active">
+                            <div class="rwd-mobile">
+                                <div class="rwd-filter-menu ">
+                                    <div class="filter-menu-icon">
+                                        <span>Filters (</span>
+                                        <span id="filter-number"></span>
+                                        <span>)</span>
+                                    </div>
+                                    <div class="rwd-search-setting-icons">
+                                        <img src="../assets/images/search-blue.png" />
+                                        <img src="../assets/images/settings-blue.png" />
+                                    </div>
+                                </div>
+                            </div>
                             <div class="rwd-category-carousel">
                                 <div class="sbi-wrapper">
-                                    <div class="carousel-container">
+                                    <div class="carousel-container rwd-desktop">
                                         <div class="category-carousel">
                                             <div class="category-wrapper">
                                                 <div class="category-image-wrapper">
@@ -216,9 +229,90 @@
                                             <div class="carousel-icon"></div>
                                         </button>
                                     </div>
+                                    <div class="carousel-container rwd-mobile">
+                                        <div class="category-carousel">
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image"
+                                                        src="../assets/images/accessories.png" />
+                                                </div>
+                                                <div class="category-name">Accessories</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/apparel.png" />
+                                                </div>
+                                                <div class="category-name">Apparel</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/books.png" />
+                                                </div>
+                                                <div class="category-name">Books & Periodicals</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image"
+                                                        src="../assets/images/electronics.png" />
+                                                </div>
+                                                <div class="category-name">Electronics</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image"
+                                                        src="../assets/images/entertainment.png" />
+                                                </div>
+                                                <div class="category-name">Entertainment & Dining</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/health.png" />
+                                                </div>
+                                                <div class="category-name">Health & Fitness</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/e-voucher.png" />
+                                                </div>
+                                                <div class="category-name">E-Voucher</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/homeware.png"
+                                                        width="48" height="68" />
+                                                </div>
+                                                <div class="category-name">Homeware</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/kidszone.png" />
+                                                </div>
+                                                <div class="category-name">Kids Zone</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/lifestyle.png" />
+                                                </div>
+                                                <div class="category-name">Lifestyle</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image" src="../assets/images/travel.png" />
+                                                </div>
+                                                <div class="category-name">Travel & Holiday</div>
+                                            </div>
+                                            <div class="category-wrapper">
+                                                <div class="category-image-wrapper">
+                                                    <img class="category-image"
+                                                        src="../assets/images/memberships.png" />
+                                                </div>
+                                                <div class="category-name">Memberships</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="rwd-image-carousel">
+                            <div class="rwd-image-carousel rwd-desktop">
                                 <div class="rwd-carousel-container">
                                     <div class="image-carousel">
                                         <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
@@ -329,6 +423,121 @@
 
                                             <div><img src="../assets/images/category-panel-s4.png" /></div>
                                         </div> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rwd-image-carousel rwd-mobile sbi-wrapper">
+                                <div class="rwd-carousel-container">
+                                    <div class="image-carousel">
+                                        <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
+                                            <img src="../assets/images/category-panel-b1.png" />
+                                            <div class="image-carousel-content">
+                                                <div class="heading">Add savings to your cart</div>
+                                                <div class="subheading">Redeem points on a wide range of electronics
+                                                    from</div>
+                                                <div class="link">View all Diwali Offers
+                                                    <div class="toggle-icon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rwd-image-carousel-box grouped">
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s1.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s3.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s2.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s4.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
+                                            <img src="../assets/images/category-panel-b1.png" />
+                                            <div class="image-carousel-content">
+                                                <div class="heading">Add savings to your cart</div>
+                                                <div class="subheading">Redeem points on a wide range of electronics
+                                                    from</div>
+                                                <div class="link">View all Diwali Offers
+                                                    <div class="toggle-icon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rwd-image-carousel-box grouped">
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s1.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s3.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s2.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="i-c-grouped-wrapper">
+                                                <img src="../assets/images/category-panel-s4.png" />
+                                                <div class="image-carousel-content">
+                                                    <div class="heading">Accessories</div>
+                                                    <div class="link">View all
+                                                        <div class="toggle-icon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rwd-image-carousel-box">
+                                                <img src="../assets/images/category-panel-b1.png" />
+                                            </div>
+                                            <div class="rwd-image-carousel-box grouped">
+                                                <div><img src="../assets/images/category-panel-s1.png" /></div>
+                                                <div><img src="../assets/images/category-panel-s3.png" /></div>
+                                                <div><img src="../assets/images/category-panel-s2.png" /></div>
+    
+                                                <div><img src="../assets/images/category-panel-s4.png" /></div>
+                                            </div> -->
 
                                     </div>
                                 </div>
@@ -592,13 +801,13 @@
                                         </div>
                                     </div>
                                     <div class="rwd-items-wrapper">
-                                            <div class="rwd-categories-panel rwd-hidden">
-                                                    <div class="rwd-flex ">
-                                                        <div class="heading">Categories</div>
-                                                        <div class="category-pills-container">
-                                                        </div>
-                                                    </div>
+                                        <div class="rwd-categories-panel rwd-hidden">
+                                            <div class="rwd-flex ">
+                                                <div class="heading">Categories</div>
+                                                <div class="category-pills-container">
                                                 </div>
+                                            </div>
+                                        </div>
                                         <div id="dash-normal-results" class="">
                                             <!-- <div class="rwd-categories-panel rwd-hidden">
                                                 <div class="rwd-flex ">
@@ -1713,7 +1922,7 @@
                                             </div>
                                         </div>
                                         <div id="dash-search-results" class="rwd-hidden">
-                                           <!--  <div class="rwd-categories-panel rwd-hidden">
+                                            <!--  <div class="rwd-categories-panel rwd-hidden">
                                                 <div class="rwd-flex ">
                                                     <div class="heading">Categories</div>
                                                     <div class="category-pills-container">
