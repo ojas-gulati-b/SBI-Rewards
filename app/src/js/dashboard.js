@@ -628,7 +628,7 @@ function init() {
             // prevArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-prev'),
             // nextArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-next'),
             // variableWidth: true,
-            //autoplay: true,
+            autoplay: true,
             autoplaySpeed: 3000,
         });
 
