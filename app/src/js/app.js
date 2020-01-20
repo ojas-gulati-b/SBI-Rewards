@@ -15,5 +15,5 @@ function initializeCarousel(selector, options){
 }
 
 function openProductPage(){
-    window.open("product-details.html");
+    window.location.href = "product-details.html" ;
 }
