@@ -11,6 +11,7 @@ var maxStart = 4000;
 var checkBoxesSelected = 0;
 var searchPanelOffset = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel').offset().top;
 var numberOfSearchResults = 4;
+var carouselsShown = [];
 
 function expand(panelClass) {
     var panel = '.search-section.' + panelClass;
@@ -38,11 +39,21 @@ function searchProduct(event){
         }
        
     }
+    
 }
+function checkCancelIcon(event){
+    if(event.target.value.length > 0){
+        getElement('.rwd-search-panel-wrapper .search-panel .search-input-wrapper .remove-search-text').classList.remove('rwd-hidden');
+    } else {
+        getElement('.rwd-search-panel-wrapper .search-panel .search-input-wrapper .remove-search-text').classList.add('rwd-hidden');
+    }
+}
+
 
 function removeSearchResults(){
     getElement('#dash-normal-results').classList.remove('rwd-hidden');
     getElement('#dash-search-results').classList.add('rwd-hidden');
+    getElement('.rwd-search-panel-wrapper .search-panel .search-input-wrapper .remove-search-text').classList.add('rwd-hidden');
 }
 
 /** Range slider for Points in Search panel */
@@ -110,7 +121,7 @@ inputFieldUpper.addEventListener('keydown', function (e) {
 
 function onCategorySelectSearch(event, category) {
     var allCheckBox = document.querySelectorAll('.search-section.category .rwd-panel-body .selection-container input');
-    var headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+    
     if (event.target.name === 'all') { // If the All checkbox is selected
         for (var i = 0; i < allCheckBox.length; i++) {
             if (event.target.checked) {
@@ -133,6 +144,7 @@ function onCategorySelectSearch(event, category) {
             if (event.target.name !== 'all') {
                 addCategoryPill(event.target.name);
                 checkBoxesSelected++;
+                showSearchedCategoryCarousel(event.target.name);
             }
         }
         else {
@@ -142,15 +154,23 @@ function onCategorySelectSearch(event, category) {
             removeCategoryPill(undefined, event.target.name);
         }
     }
+    resetCategroryCheckboxSelectedCount();
+
+}
+
+function resetCategroryCheckboxSelectedCount() {
+    var headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+
     if (checkBoxesSelected === 0) {
         headerSelectionCount.classList.remove('value');
-        headerSelectionCount.innerHTML = 'Select'
+        headerSelectionCount.innerHTML = 'Select';
+        resetSearchedCategoryCarousel();
     } else {
         headerSelectionCount.classList.add('value');
         headerSelectionCount.innerHTML = '(' + checkBoxesSelected + ')';
     }
-
 }
+
 function addCategoryPill(checkboxName) {
     var allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
     if (!allPills) {
@@ -158,6 +178,7 @@ function addCategoryPill(checkboxName) {
     }
     var checkBox = '.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkboxName + '"]';
     var label = $(checkBox).parent().parent().parent().find('.label')[0].innerText;
+    // If the category is alreay not present in the category tags pane --> then add
     if (!getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + checkboxName + '-pill')) {
         var tagToInsert = '<div class="rwd-tag category-tags cancellable" id="' + checkboxName + '-pill">' + label + '<div class="rwd-tag-close" onclick="removeCategoryPill(event)"></div></div>';
         $('.rwd-items-wrapper .rwd-categories-panel .category-pills-container').append(tagToInsert);
@@ -172,10 +193,14 @@ function removeCategoryPill(event, checkBoxName) {
         assPill = checkBoxName + '-pill';
         pill = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + assPill);
         checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkBoxName + '"]');
+        removeCategoryCarousel(checkBoxName);
     } else {
         pill = event.target.parentNode;
         assCheckBoxName = pill.id.split('-')[0];
         checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + assCheckBoxName + '"]');
+        checkBoxesSelected--;
+        removeCategoryCarousel(assCheckBoxName);
+
     }
     //remove all option search bar anyways
     getElement('.search-section.category .rwd-panel-body .selection-container input#categ-all').checked = false;
@@ -185,6 +210,66 @@ function removeCategoryPill(event, checkBoxName) {
     allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
     if (!allPills) {
         getElement('.rwd-items-wrapper .rwd-categories-panel').classList.add('rwd-hidden');
+    }
+    resetCategroryCheckboxSelectedCount();
+}
+
+function onCategoryCarouselSelection(name, device) {
+    var allCheckBox = document.querySelectorAll('.search-section.category .rwd-panel-body .selection-container input');
+    var headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+    var ifCheckBoxSelected = false, carouselExists = false;
+    
+    for (var i = 0; i < carouselsShown.length; i++) {
+        if(carouselsShown[i] === name)
+            carouselExists = true;
+    }
+    if(!carouselExists) {
+        getElement('.search-section.category .rwd-panel-body .selection-container input[name=' + name + ']').checked = true;
+        checkBoxesSelected++;
+        headerSelectionCount.innerHTML = '(' + checkBoxesSelected + ')';
+        addCategoryPill(name);
+        carouselsShown.push(name);
+        showSearchedCategoryCarousel();
+    }
+    
+}
+
+function showSearchedCategoryCarousel(carousel) {
+    var allCarousels = document.querySelectorAll('.products-list-wrapper');
+    var selectedCarousel;
+
+    for (var i = 0; i < allCarousels.length; i++) {
+        allCarousels[i].classList.add('rwd-hidden');
+    }
+    /** Code to show neccessary carousel here */
+    for (var i = 0; i < carouselsShown.length; i++) {
+        selectedCarousel = getElement('.products-list-wrapper#' + carouselsShown[i]);
+        selectedCarousel.classList.remove('rwd-hidden');
+    }
+    
+    // selectedCarousel.classList.remove('rwd-hidden');
+}
+
+function removeCategoryCarousel(checkbox) {
+    for (var i = 0; i < carouselsShown.length; i++) {
+        if(carouselsShown[i] === checkbox){
+            document.querySelector('.products-list-wrapper#' + checkbox).classList.add('rwd-hidden');
+            carouselsShown.splice(i, 1)
+        }
+    }
+    
+    if(carouselsShown.length == 0){
+        var allCarousels = document.querySelectorAll('.products-list-wrapper');
+        for (var i = 0; i < allCarousels.length; i++) {
+            allCarousels[i].classList.remove('rwd-hidden');
+        }
+    }
+}
+
+function resetSearchedCategoryCarousel(){
+    var allCarousels = document.querySelectorAll('.products-list-wrapper');
+    for (var i = 0; i < allCarousels.length; i++) {
+        allCarousels[i].classList.remove('rwd-hidden');
     }
 }
 
@@ -628,7 +713,7 @@ function init() {
             // prevArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-prev'),
             // nextArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-next'),
             // variableWidth: true,
-            autoplay: true,
+            //autoplay: true,
             autoplaySpeed: 3000,
         });
 
