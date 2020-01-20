@@ -21,7 +21,7 @@
 
 <body>
     <div class="rwd-body-wrapper">
-        <div class="rwd-header">
+        <div class="rwd-header rwd-desktop">
             <div class="rwd-top-nav">
                 <div class="rwd-nav-wrapper rwd-flex ac">
                     <div class="top-nav-section-1 rwd-flex ac">
@@ -108,6 +108,7 @@
                 </div>
             </div>
         </div>
+        <div class="rwd-mobile" style="height: 120px;"></div>
 
         <div class="rwd-dashboard">
             <div class="tabs-header ">
@@ -128,15 +129,42 @@
                     <div class="tab-content" id="tab-content-form">
                         <div id="catalogue" class="content rwd-tab-catalogue active">
                             <div class="rwd-mobile">
-                                <div class="rwd-filter-menu ">
-                                    <div class="filter-menu-icon">
-                                        <span>Filters (</span>
-                                        <span id="filter-number"></span>
-                                        <span>)</span>
+                                <div class="rwd-applied-filter-menu ">
+                                    <div class="filter-panel-head">
+                                        <div class="filter-menu-icon" onclick="expandFilterPanelMobile()">
+                                            <span>Filters (</span>
+                                            <span id="filter-number">0</span>
+                                            <span>)</span>
+                                            <span class="toggle-filters-icon"></span>
+                                        </div>
+                                        <div class="rwd-search-setting-icons">
+                                            <img src="../assets/images/search-blue.png"
+                                                onclick="expandSearchMobile(true)" />
+                                            <img src="../assets/images/settings-blue.png"
+                                                onclick="expandApplyFilterMobile()" />
+                                        </div>
+                                        <div class="rwd-search-items-mobile-wrapper rwd-flex ac">
+                                            <div class="search-icon">
+                                                <img src="../assets/images/search-blue.png" />
+                                            </div>
+                                            <div class="search-input">
+                                                <input placeholder="Search" id="searchProductMobile"
+                                                    oninput="searchProduct(event, 'mobile')" />
+                                            </div>
+                                            <div class="close-search" onclick="expandSearchMobile(false)">
+                                                <img src="../assets/images/cross-blue.png" />
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="rwd-search-setting-icons">
-                                        <img src="../assets/images/search-blue.png" />
-                                        <img src="../assets/images/settings-blue.png" />
+                                    <div class="filter-panel-body">
+                                        <div class="rwd-categories-panel rwd-hidden">
+                                            <div class="rwd-flex ">
+                                                <div class="heading">Categories</div>
+                                                <div class="category-pills-container">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -544,7 +572,7 @@
                             </div>
                             <div class="rwd-main-section">
                                 <div class="sbi-wrapper rwd-flex ">
-                                    <div class="rwd-search-panel-wrapper">
+                                    <div class="rwd-search-panel-wrapper rwd-desktop">
                                         <div class="search-heading">Search By</div>
                                         <div class="search-panel">
                                             <div class="search-section">
@@ -552,7 +580,7 @@
                                                     <img src="../assets/images/search-blue.png"
                                                         style="width: 15px; margin-bottom: -2px;" />
                                                     <input placeholder="Search" class="search-input" id="search-input"
-                                                        onkeypress="searchProduct(event)" />
+                                                        onkeypress="searchProduct(event, 'desktop')" />
                                                 </div>
                                             </div>
                                             <div class="search-section points">
@@ -622,7 +650,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input id="categ-all" name="all" type="checkbox"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -635,7 +663,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="health"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -645,7 +673,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="dining"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -655,7 +683,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="travel"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -665,7 +693,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="electronics"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -675,7 +703,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="lifestyle"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -685,7 +713,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="accessories"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -695,7 +723,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="homeware"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -705,7 +733,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="kidszone"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -715,7 +743,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="evoucher"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -725,7 +753,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="books"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -735,7 +763,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="apparel"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -745,7 +773,7 @@
                                                                 <div class="selection-checkbox">
                                                                     <label class="rwd-checkbox-container">
                                                                         <input type="checkbox" name="memberships"
-                                                                            onchange="onCategorySelectSearch(event)">
+                                                                            onchange="onCategorySelectSearch(event, 'desktop')">
                                                                         <span class="rwd-checkbox-checkmark"></span>
                                                                     </label>
                                                                 </div>
@@ -979,10 +1007,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
@@ -1145,10 +1175,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
@@ -1307,10 +1339,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
@@ -1489,10 +1523,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
@@ -1655,10 +1691,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
@@ -1817,15 +1855,18 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <button role="button" aria-label="Previous"
+                                                        class="carousel-prev rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
-                                                    <button role="button" aria-label="Next" class="carousel-next">
+                                                    <button role="button" aria-label="Next"
+                                                        class="carousel-next rwd-desktop">
                                                         <div class="carousel-icon"></div>
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="carousel-container mid-page">
+                                            <!--------------------- Desktop Category carousel---------------------->
+                                            <div class="carousel-container mid-page rwd-desktop">
                                                 <div class="category-carousel">
                                                     <div class="category-wrapper">
                                                         <div class="category-image-wrapper">
@@ -1920,6 +1961,96 @@
                                                     <div class="carousel-icon"></div>
                                                 </button>
                                             </div>
+                                            <!--------------------- Mobile Category carousel---------------------->
+                                            <div class="carousel-container mid-page rwd-mobile">
+                                                <div class="category-carousel">
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/accessories.png" />
+                                                        </div>
+                                                        <div class="category-name">Accessories</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/apparel.png" />
+                                                        </div>
+                                                        <div class="category-name">Apparel</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/books.png" />
+                                                        </div>
+                                                        <div class="category-name">Books & Periodicals</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/electronics.png" />
+                                                        </div>
+                                                        <div class="category-name">Electronics</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/entertainment.png" />
+                                                        </div>
+                                                        <div class="category-name">Entertainment & Dining</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/health.png" />
+                                                        </div>
+                                                        <div class="category-name">Health & Fitness</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/e-voucher.png" />
+                                                        </div>
+                                                        <div class="category-name">E-Voucher</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/homeware.png" width="48"
+                                                                height="68" />
+                                                        </div>
+                                                        <div class="category-name">Homeware</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/kidszone.png" />
+                                                        </div>
+                                                        <div class="category-name">Kids Zone</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/lifestyle.png" />
+                                                        </div>
+                                                        <div class="category-name">Lifestyle</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/travel.png" />
+                                                        </div>
+                                                        <div class="category-name">Travel & Holiday</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/memberships.png" />
+                                                        </div>
+                                                        <div class="category-name">Memberships</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div id="dash-search-results" class="rwd-hidden">
                                             <!--  <div class="rwd-categories-panel rwd-hidden">
@@ -1929,83 +2060,129 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                            <div class="rwd-search-heading-1">
-                                                <span id="rwd-number-of-results"></span>
-                                                <span> Search results for</span>
+                                            <div class="rwd-desktop">
+                                                <div class="rwd-search-heading-1">
+                                                    <span id="rwd-number-of-results"></span>
+                                                    <span> Search results for</span>
+                                                </div>
+                                                <div class="rwd-search-heading-2">
+                                                    <span>Results for</span>
+                                                    <span class="search-text"></span>
+                                                    <span class="cancel-search" onclick="removeSearchResults()">
+                                                        <img src="../assets/images/cross-blue.png"
+                                                            style="width: 11px;" />
+                                                    </span>
+                                                </div>
+                                                <div class="rwd-search-results">
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/apple-i-phone-11-red-small.png" />
+                                                        </div>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Bose Bass Module 500 - 2</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                        </div>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                        </div>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                                        </div>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Apple Bass Module 500 - 3</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="rwd-search-heading-2">
-                                                <span>Results for</span>
-                                                <span class="search-text"></span>
-                                                <span class="cancel-search" onclick="removeSearchResults()">
-                                                    <img src="../assets/images/cross-blue.png" style="width: 11px;" />
-                                                </span>
-                                            </div>
-                                            <div class="rwd-search-results">
-                                                <div class="search-item-box" onclick="openProductPage()">
-                                                    <div class="image-container">
-                                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
-                                                    </div>
-                                                    <div class="product-details">
-                                                        <div class="product-title">Bose Bass Module 500 - 2</div>
-                                                        <div class="product-price">
-                                                            <span class="new-price">15,000 pts</span>
-                                                            <span class="old-price">21,600 pts</span>
-                                                            <span class="discount-container">
-                                                                <span>(</span><span id="discount">30%
-                                                                    Off</span><span>)</span></span>
-                                                        </div>
-                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
-                                                    </div>
+                                            <div class="rwd-mobile">
+                                                <div class="rwd-search-heading-1">
+                                                    <span> Search results for</span>
+                                                    <span class="search-text"></span>
                                                 </div>
-                                                <div class="search-item-box" onclick="openProductPage()">
-                                                    <div class="image-container">
-                                                        <img
-                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
-                                                    </div>
-                                                    <div class="product-details">
-                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
-                                                        <div class="product-price">
-                                                            <span class="new-price">15,000 pts</span>
-                                                            <span class="old-price">21,600 pts</span>
-                                                            <span class="discount-container">
-                                                                <span>(</span><span id="discount">30%
-                                                                    Off</span><span>)</span></span>
+                                                <div class="rwd-search-results">
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/apple-i-phone-11-red-small.png" />
                                                         </div>
-                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
-                                                    </div>
-                                                </div>
-                                                <div class="search-item-box" onclick="openProductPage()">
-                                                    <div class="image-container">
-                                                        <img
-                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
-                                                    </div>
-                                                    <div class="product-details">
-                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
-                                                        <div class="product-price">
-                                                            <span class="new-price">15,000 pts</span>
-                                                            <span class="old-price">21,600 pts</span>
-                                                            <span class="discount-container">
-                                                                <span>(</span><span id="discount">30%
-                                                                    Off</span><span>)</span></span>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Bose Bass Module 500 - 2</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
                                                         </div>
-                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
                                                     </div>
-                                                </div>
-                                                <div class="search-item-box" onclick="openProductPage()">
-                                                    <div class="image-container">
-                                                        <img
-                                                            src="../assets/images/iphone-11-pro-max-space-select.png" />
-                                                    </div>
-                                                    <div class="product-details">
-                                                        <div class="product-title">Apple Bass Module 500 - 3</div>
-                                                        <div class="product-price">
-                                                            <span class="new-price">15,000 pts</span>
-                                                            <span class="old-price">21,600 pts</span>
-                                                            <span class="discount-container">
-                                                                <span>(</span><span id="discount">30%
-                                                                    Off</span><span>)</span></span>
+                                                    <div class="search-item-box" onclick="openProductPage()">
+                                                        <div class="image-container">
+                                                            <img
+                                                                src="../assets/images/apple-i-phone-11-red-small.png" />
                                                         </div>
-                                                        <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        <div class="product-details">
+                                                            <div class="product-title">Bose Bass Module 500 - 2</div>
+                                                            <div class="product-price">
+                                                                <span class="new-price">15,000 pts</span>
+                                                                <span class="old-price">21,600 pts</span>
+                                                                <span class="discount-container">
+                                                                    <span>(</span><span id="discount">30%
+                                                                        Off</span><span>)</span></span>
+                                                            </div>
+                                                            <div class="point-desc">(10,000 pts for point + pay)</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2023,8 +2200,182 @@
 
             </div>
         </div>
+
+        <!-- </div> -->
     </div>
+    <div class="rwd-apply-filter-overlay rwd-mobile">
+        <div class="rwd-filter-header">
+            <img src="../assets/images/sbi-card-logo.png" />
+        </div>
+        <div class="rwd-filter-action-header">
+            <div class="rwd-flex ac sb">
+                <div class="filter-heading">Filters</div>
+                <div class="clear-all">Clear All</div>
+            </div>
+        </div>
+        <div class="rwd-filter-container-mobile">
+            <div class="filter-category-heading-wrapper">
+                <div class="filter-category points selected" onclick="selectFilterCategoryMobile('points')">
+                    <span>Points</span><span></span>
+                </div>
+                <div class="filter-category cardType" onclick="selectFilterCategoryMobile('cardType')">
+                    Card Type
+                </div>
+                <div class="filter-category category" onclick="selectFilterCategoryMobile('category')">
+                    Category
+                    <span class="select-count"></span>
+                </div>
+                <div class="filter-category brands" onclick="selectFilterCategoryMobile('brands')">
+                    Brands
+                </div>
+                <div class="filter-category sortBy" onclick="selectFilterCategoryMobile('sortBy')">
+                    Sort By
+                </div>
+                <div class="filter-category specialOffers" onclick="selectFilterCategoryMobile('specialOffers')">
+                    Special Offers
+                </div>
+            </div>
+            <div class="filter-categories-wrapper">
+                <div class="filter-category-panel points">
+                    <div class="filter-category-heading">Select a range</div>
+                    <div class="filter-category-content">
+                        <div class="mobile-filter-slider" id="range-slider-points-mobile"></div>
+                        <div class="slider-range-display rwd-flex sb ac">
+                            <div class="range lower">
+                                <input id="lower-range-input-mobile" />
+                                <span>pts</span>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="range upper">
+                                <input id="upper-range-input-mobile" />
+                                <span>pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-category-panel cardType rwd-hidden"></div>
+                <div class="filter-category-panel category rwd-hidden">
+                    <div class="selection-container all">
+                        <div class="label">All</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input id="categ-all" name="all" type="checkbox"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Dining</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="health" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Travel</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event), 'mobile'">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Electronics</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Accessories</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Lifestyle</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Homeware</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">E-Voucher</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Kids zone</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Health and Fitness</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Apparel</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <div class="label">Books and Periodicals</div>
+                        <div class="selection-checkbox">
+                            <label class="rwd-checkbox-container">
+                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <span class="rwd-checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-category-panel brands rwd-hidden"></div>
+                <div class="filter-category-panel sortBy rwd-hidden"></div>
+                <div class="filter-category-panel specialOffers rwd-hidden"></div>
+            </div>
+        </div>
+        <div class="apply-cancel-section">
+            <button class="sbi-button primary apply-filters">Apply and search</button>
+            <div class="cancel-filters" onclick="closeFilterPanelMobile()">Cancel</div>
+        </div>
     </div>
+    <div class="rwd-filter-container"></div>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/dashboard.js"></script>
 </body>

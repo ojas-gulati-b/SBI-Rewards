@@ -8,6 +8,11 @@
   width: 100%;
   top: 0px;
 }
+@media (max-width: 960px) {
+  .rwd-body-wrapper .rwd-header {
+    position: static;
+  }
+}
 .rwd-body-wrapper .rwd-header .rwd-top-nav {
   height: 40px;
   background-color: #0a242b;
