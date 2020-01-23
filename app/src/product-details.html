@@ -21,7 +21,7 @@
 
 <body>
     <div class="rwd-body-wrapper">
-        <div class="rwd-header">
+        <div class="rwd-header rwd-desktop">
             <div class="rwd-top-nav">
                 <div class="rwd-nav-wrapper rwd-flex ac">
                     <div class="top-nav-section-1 rwd-flex ac">
@@ -108,30 +108,66 @@
                 </div>
             </div>
         </div>
+        <div class="rwd-mobile" style="height: 120px;"></div>
         <div class="rwd-product">
             <div class="rwd-product-order">
-                <div class="sbi-wrapper">
+                <div class="sbi-wrapper" style="">
                     <div class="rwd-product-order-wrapper rwd-flex sb">
                         <div class="rwd-product-image-container">
-                            <div class="main-image" id="main-image">
+                            <div class="main-image rwd-desktop" id="main-image">
                                 <img src="../assets/images/apple-i-phone-11-red.png" />
                             </div>
-                            <div class="thumbnail-container">
-                                <div class="thumbnail selected" id="thumbnail-1" onclick="selectThumbnail(event)">
-                                    <img src="../assets/images/apple-i-phone-11-red.png" />
+                            <div class="rwd-desktop">
+                                <div class="thumbnail-container ">
+                                    <div class="thumbnail selected" id="thumbnail-1" onclick="selectThumbnail(event)">
+                                        <img src="../assets/images/apple-i-phone-11-red.png" />
+                                    </div>
+                                    <div class="thumbnail" id="thumbnail-2" onclick="selectThumbnail(event)">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="thumbnail" id="thumbnail-3" onclick="selectThumbnail(event)">
+                                        <img src="../assets/images/apple-i-phone-11-red.png" />
+                                    </div>
+                                    <div class="thumbnail" id="thumbnail-4" onclick="selectThumbnail(event)">
+                                        <img src="../assets/images/apple-i-phone-11-red.png" />
+                                    </div>
+                                    <div class="thumbnail" id="thumbnail-5" onclick="selectThumbnail(event)">
+                                        <img src="../assets/images/apple-i-phone-11-red.png" />
+                                    </div>
                                 </div>
-                                <div class="thumbnail" id="thumbnail-2" onclick="selectThumbnail(event)">
-                                    <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                            </div>
+                            <div class="rwd-mobile" style="position: relative;margin: 0 -20px;">
+                                <div class="rwd-product-detail-images-carousel">
+                                    <div class="product-image">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-image">
+                                        <img src="../assets/images/iphone-11-pro-max-space-select.png" />
+                                    </div>
+                                    <div class="product-image">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-image">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-image">
+                                        <img src="../assets/images/apple-i-phone-11-red-small.png" />
+                                    </div>
+                                    <div class="product-image">
+                                        <iframe width="853" height="300" src="https://www.youtube.com/embed/5bvcyIV4yzo" 
+                                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
                                 </div>
-                                <div class="thumbnail" id="thumbnail-3" onclick="selectThumbnail(event)">
-                                    <img src="../assets/images/apple-i-phone-11-red.png" />
-                                </div>
-                                <div class="thumbnail" id="thumbnail-4" onclick="selectThumbnail(event)">
-                                    <img src="../assets/images/apple-i-phone-11-red.png" />
-                                </div>
-                                <div class="thumbnail" id="thumbnail-5" onclick="selectThumbnail(event)">
-                                    <img src="../assets/images/apple-i-phone-11-red.png" />
-                                </div>
+                                <button role="button" aria-label="Previous" class="mobile-carousel-prev">
+                                    <div class="carousel-icon"></div>
+                                </button>
+                                <button role="button" aria-label="Next" class="mobile-carousel-next">
+                                    <div class="carousel-icon"></div>
+                                </button>
+                            </div>
+                            <div class="product-image-disclaimer">
+                                <span>The product images shown are for illustration purposes only and may
+                                        not be an exact representation of the product.</span>
                             </div>
                         </div>
                         <div class="rwd-product-order-detail">
@@ -280,6 +316,7 @@
                         </div>
                         <div class="program-terms-and-conditions">
                             <a href="">Shop-and-Smile Rewards Program Terms and Conditions</a>
+                            <div class="toggle-icon rwd-mobile"></div>
                         </div>
                     </div>
                 </div>
@@ -432,10 +469,10 @@
                                         </div>
                                     </div>
                             </div>
-                            <button role="button" aria-label="Previous" class="carousel-prev">
+                            <button role="button" aria-label="Previous" class="carousel-prev rwd-desktop">
                                 <div class="carousel-icon"></div>
                             </button>
-                            <button role="button" aria-label="Next" class="carousel-next">
+                            <button role="button" aria-label="Next" class="carousel-next rwd-desktop">
                                 <div class="carousel-icon"></div>
                             </button>
                         </div>

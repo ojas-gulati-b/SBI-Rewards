@@ -228,7 +228,7 @@ body{
     margin-bottom: 65px;
 }
 
-.items-carousel-container .slick-dots
+.items-carousel-container .slick-dots, .rwd-product-detail-images-carousel .slick-dots
 {
     position: absolute;
     bottom: -40px;
@@ -239,7 +239,7 @@ body{
     list-style: none;
     text-align: center;
 }
-.items-carousel-container .slick-dots li
+.items-carousel-container .slick-dots li, .rwd-product-detail-images-carousel .slick-dots li
 {
     position: relative;
     display: inline-block;
@@ -250,7 +250,7 @@ body{
 
     cursor: pointer;
 }
-.items-carousel-container .slick-dots li button
+.items-carousel-container .slick-dots li button, .rwd-product-detail-images-carousel .slick-dots li button
 {
     font-size: 0;
     line-height: 0;
@@ -265,16 +265,21 @@ body{
     outline: none;
     background: transparent;
 }
-.items-carousel-container .slick-dots li.slick-active button{
+.items-carousel-container .slick-dots li.slick-active button,
+.rwd-product-detail-images-carousel .slick-dots li.slick-active button{
     background-color: #8a8a96;
 }
 .items-carousel-container .slick-dots li button:hover,
-.items-carousel-container .slick-dots li button:focus
+.items-carousel-container .slick-dots li button:focus,
+.rwd-product-detail-images-carousel .slick-dots li button:hover,
+.rwd-product-detail-images-carousel .slick-dots li button:focus
 {
     outline: none;
 }
 .items-carousel-container .slick-dots li button:hover:before,
-.items-carousel-container .slick-dots li button:focus:before
+.items-carousel-container .slick-dots li button:focus:before,
+.rwd-product-detail-images-carousel .slick-dots li button:hover:before,
+.rwd-product-detail-images-carousel .slick-dots li button:focus:before
 {
     opacity: 1;
 }

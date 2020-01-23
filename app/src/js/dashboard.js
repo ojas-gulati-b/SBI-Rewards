@@ -12,9 +12,15 @@ var checkBoxesSelected = 0;
 var searchPanelOffset = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel').offset().top;
 var numberOfSearchResults = 4;
 var carouselsShown = [];
+var changesMade = false;
+var categoryCheckBoxSelectionMap = {};
+var pointsSliderRange = [];
+var initialLoad = true;
 
-var mobileFiltersApplied = 1;
+var mobileFiltersApplied = 0;
 var mobileSearchTextEntered = false;
+var appliedFilterExpanded = false
+var filterHeaderFixed = false
 
 function expand(panelClass) {
     var panel = '.search-section.' + panelClass;
@@ -29,17 +35,29 @@ function expand(panelClass) {
 function expandFilterPanelMobile() {
     var panel = '.rwd-applied-filter-menu';
     var panelBody = getElement(panel).querySelector('.filter-panel-body');
+    var tabBody = $('.rwd-dashboard .tabs-body');
     getElement(panel).classList.toggle('expanded');
-    if (panelBody.style.maxHeight)
+    if (panelBody.style.maxHeight) {
         panelBody.style.maxHeight = null;
-    else
+        appliedFilterExpanded = false;
+        if (filterHeaderFixed)
+            tabBody.css({ 'top': '60px' });
+    }
+    else {
         panelBody.style.maxHeight = panelBody.scrollHeight + "px";
+        //tabBody.css({ 'top': '140px' });
+        appliedFilterExpanded = true;
+        if (filterHeaderFixed)
+            tabBody.css({ 'top': '119px' });
+        /* else
+            tabBody.css({ 'top': '60px' }); */
+    }
 }
 
 function expandSearchMobile(expanded) {
     if (expanded)
         getElement('.rwd-search-items-mobile-wrapper').classList.add('expanded');
-    else{
+    else {
         getElement('.rwd-search-items-mobile-wrapper').classList.remove('expanded');
         getElement('#dash-normal-results').classList.remove('rwd-hidden');
         getElement('#dash-search-results').classList.add('rwd-hidden');
@@ -48,33 +66,39 @@ function expandSearchMobile(expanded) {
         $('#searchProductMobile').val('');
         mobileSearchTextEntered = false;
     }
-        
+
 }
 
 function selectSearchTag(event) {
     event.target.classList.toggle('selected');
 }
 
-function expandApplyFilterMobile(){
+function expandApplyFilterMobile() {
     getElement('.rwd-body-wrapper').classList.add('rwd-hidden');
     getElement('.rwd-apply-filter-overlay').classList.add('expanded');
+    setTimeout(function(){
+        getInputStatesOnFilterOpen();
+    });
+    
 }
 
-function closeFilterPanelMobile(){
+function closeFilterPanelMobile() {
     getElement('.rwd-apply-filter-overlay').classList.remove('expanded');
     getElement('.rwd-body-wrapper').classList.remove('rwd-hidden');
+    disableApplyChangesButton();
+    
 }
 
-function selectFilterCategoryMobile(category){
+function selectFilterCategoryMobile(category) {
     var categories = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category');
     var selectedCategory = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category.' + category);
     var panels = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel');
     var panel = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.' + category);
-    for( var i = 0; i<categories.length; i++){
+    for (var i = 0; i < categories.length; i++) {
         categories[i].classList.remove('selected');
     }
     selectedCategory.classList.add('selected');
-    for( var i = 0; i < panels.length; i++){
+    for (var i = 0; i < panels.length; i++) {
         panels[i].classList.add('rwd-hidden');
     }
     panel.classList.remove('rwd-hidden');
@@ -106,10 +130,10 @@ function searchProduct(event, device) {
             getElement('#dash-search-results .rwd-search-heading-1 .search-text').innerHTML = event.target.value;
         }
     }
-    
+
 }
-function checkCancelIcon(event){
-    if(event.target.value.length > 0){
+function checkCancelIcon(event) {
+    if (event.target.value.length > 0) {
         getElement('.rwd-search-panel-wrapper .search-panel .search-input-wrapper .remove-search-text').classList.remove('rwd-hidden');
     } else {
         getElement('.rwd-search-panel-wrapper .search-panel .search-input-wrapper .remove-search-text').classList.add('rwd-hidden');
@@ -211,13 +235,18 @@ pointsSliderMobile.noUiSlider.on('update', function (values, handle) {
     } else {
         inputFieldLowerMobile.value = Math.round(value);
     }
-
+    if(initialLoad){
+        initialLoad = false;
+    }else{
+        enableApplyChangesButton();
+    }
 });
 
 // update slider when user clicks outside the box after entering the value
 inputFieldLowerMobile.addEventListener('change', function () {
     // set lower value
     pointsSliderMobile.noUiSlider.set([this.value, null]);
+    enableApplyChangesButton();
 });
 
 // update the slider after user presses enter key after entering the value
@@ -227,12 +256,14 @@ inputFieldLowerMobile.addEventListener('keydown', function (e) {
         // set lower value
         pointsSliderMobile.noUiSlider.set([this.value, null]);
     }
+    enableApplyChangesButton();
 });
 
 // update slider when user clicks outside the box after entering the value
 inputFieldUpperMobile.addEventListener('change', function () {
     // set upper value
     pointsSliderMobile.noUiSlider.set([null, this.value]);
+    enableApplyChangesButton();
 });
 
 // update the slider after user presses enter key after entering the value
@@ -242,19 +273,18 @@ inputFieldUpperMobile.addEventListener('keydown', function (e) {
         // set upper value
         pointsSliderMobile.noUiSlider.set([null, this.value]);
     }
+    enableApplyChangesButton();
 });
 
 function onCategorySelectSearch(event, device) {
-    var allCheckBox, headerSelectionCount;
-    if (device == 'desktop'){
+    var allCheckBox;
+    if (device == 'desktop') {
         allCheckBox = document.querySelectorAll('.search-section.category .rwd-panel-body .selection-container input');
-        headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
     }
-    else if (device == 'mobile'){
-        allCheckBox = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper filter-category-panel.category .selection-container input');
-        headerSelectionCount = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category.category .select-count');
+    else if (device == 'mobile') {
+        allCheckBox = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input');
     }
-   
+
     if (event.target.name === 'all') { // If the All checkbox is selected
         for (var i = 0; i < allCheckBox.length; i++) {
             if (event.target.checked) {
@@ -262,114 +292,170 @@ function onCategorySelectSearch(event, device) {
 
                 if (allCheckBox[i].name !== 'all') {
                     checkBoxesSelected = allCheckBox.length - 1; // excluding 'All' checkbox
-                    addCategoryPill(allCheckBox[i].name);
+                    addCategoryPill(allCheckBox[i].name, device);
                 }
+                enableApplyChangesButton();
             } else {
                 allCheckBox[i].checked = false;
                 checkBoxesSelected = 0;
                 if (allCheckBox[i].name !== 'all')
-                    removeCategoryPill(undefined, allCheckBox[i].name);
+                    removeCategoryPill(undefined, device, allCheckBox[i].name);
             }
         }
     } else {
         // if individual checkboxes are selected
         if (event.target.checked) {
             if (event.target.name !== 'all') {
-                //addCategoryPill(event.target.name);
+                addCategoryPill(event.target.name, device);
                 checkBoxesSelected++;
                 showSearchedCategoryCarousel(event.target.name);
             }
+            enableApplyChangesButton();
         }
         else {
             getElement('.search-section.category .rwd-panel-body .selection-container input#categ-all').checked = false;
             if (event.target.name !== 'all')
                 checkBoxesSelected--;
-            removeCategoryPill(undefined, event.target.name);
+            removeCategoryPill(undefined, device, event.target.name);
         }
     }
-    resetCategroryCheckboxSelectedCount();
+    resetCategroryCheckboxSelectedCount(device);
 
 }
 
-function resetCategroryCheckboxSelectedCount() {
-    var headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+function resetCategroryCheckboxSelectedCount(device) {
+    var headerSelectionCount;
+    if (device == 'desktop') {
+        headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+    }
+    else if (device == 'mobile') {
+        headerSelectionCount = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category.category .select-count');
+    }
 
     if (checkBoxesSelected === 0) {
         headerSelectionCount.classList.remove('value');
-        if(device == 'desktop')
+        if (device == 'desktop')
             headerSelectionCount.innerHTML = 'Select';
         else
             headerSelectionCount.innerHTML = '';
         resetSearchedCategoryCarousel()
     } else {
-        if(device == 'desktop')
+        if (device == 'desktop')
             headerSelectionCount.classList.add('value');
-            
+
         headerSelectionCount.innerHTML = '(' + checkBoxesSelected + ')';
     }
 }
 
-function addCategoryPill(checkboxName) {
-    var allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
-    if (!allPills) {
-        getElement('.rwd-items-wrapper .rwd-categories-panel').classList.remove('rwd-hidden')
+function addCategoryPill(checkboxName, device) {
+    var allPills, checkBox, label, tagToInsert;
+    if (device == 'desktop') {
+        allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
+        checkBox = '.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkboxName + '"]';
+        if (!allPills) {
+            getElement('.rwd-items-wrapper .rwd-categories-panel').classList.remove('rwd-hidden')
+        }
+    } else {
+        allPills = getElement('.rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
+        checkBox = '.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input[name ="' + checkboxName + '"]';
     }
-    var checkBox = '.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkboxName + '"]';
-    var label = $(checkBox).parent().parent().parent().find('.label')[0].innerText;
-    // If the category is alreay not present in the category tags pane --> then add
-    if (!getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + checkboxName + '-pill')) {
-        var tagToInsert = '<div class="rwd-tag category-tags cancellable" id="' + checkboxName + '-pill">' + label + '<div class="rwd-tag-close" onclick="removeCategoryPill(event)"></div></div>';
-        $('.rwd-items-wrapper .rwd-categories-panel .category-pills-container').append(tagToInsert);
+    label = $(checkBox).parent().parent().parent().find('.label')[0].innerText;
+    // If the category is already not present in the category tags pane --> then add
+    if (device == 'desktop') {
+        if (!getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + checkboxName + '-pill')) {
+            tagToInsert = '<div class="rwd-tag category-tags cancellable" id="' + checkboxName + '-pill">' + label + '<div class="rwd-tag-close" onclick="removeCategoryPill(event, \'desktop\')"></div></div>';
+            $('.rwd-items-wrapper .rwd-categories-panel .category-pills-container').append(tagToInsert);
+        }
+    } else {
+        if (!getElement('.rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + checkboxName + '-pill')) {
+            tagToInsert = '<div class="rwd-tag category-tags cancellable" id="' + checkboxName + '-pill">' + label + '<div class="rwd-tag-close" onclick="removeCategoryPill(event, \'mobile\')"></div></div>';
+            $('.rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .category-pills-container').append(tagToInsert);
+            mobileFiltersApplied++;
+            ifFiltersPresentMobile();
+        }
+
     }
+
 
 }
 
-function removeCategoryPill(event, checkBoxName) {
+function removeCategoryPill(event, device, checkBoxName) {
     var pill, assCheckBoxName, checkBox, assPill, allPills;
 
     if (checkBoxName) {
         assPill = checkBoxName + '-pill';
-        pill = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + assPill);
-        checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkBoxName + '"]');
+        if (device == 'desktop') {
+            pill = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + assPill);
+            checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + checkBoxName + '"]');
+        } else {
+            pill = getElement('.rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable#' + assPill);
+            checkBox = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input[name ="' + checkBoxName + '"]');
+        }
+
         removeCategoryCarousel(checkBoxName);
     } else {
         pill = event.target.parentNode;
         assCheckBoxName = pill.id.split('-')[0];
-        checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + assCheckBoxName + '"]');
+        if (device == 'desktop') {
+            checkBox = getElement('.search-section.category .rwd-panel-body .selection-container .rwd-checkbox-container input[name ="' + assCheckBoxName + '"]');
+        } else {
+            checkBox = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input[name ="' + assCheckBoxName + '"]');
+        }
+
         checkBoxesSelected--;
         removeCategoryCarousel(assCheckBoxName);
 
     }
     //remove all option search bar anyways
-    getElement('.search-section.category .rwd-panel-body .selection-container input#categ-all').checked = false;
+    if (device == 'desktop')
+        getElement('.search-section.category .rwd-panel-body .selection-container input#categ-all').checked = false;
+    else
+        getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input#categ-all').checked = false;
 
-    pill.parentNode.removeChild(pill);
-    checkBox.checked = false;
-    allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
-    if (!allPills) {
-        getElement('.rwd-items-wrapper .rwd-categories-panel').classList.add('rwd-hidden');
+    if(pill){
+        pill.parentNode.removeChild(pill);
+        checkBox.checked = false;
+        allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
+        if (device == 'desktop' & !allPills) {
+            getElement('.rwd-items-wrapper .rwd-categories-panel').classList.add('rwd-hidden');
+        }
+        if (device == 'mobile') {
+            mobileFiltersApplied--;
+            ifFiltersPresentMobile();
+        }
+        resetCategroryCheckboxSelectedCount(device);
     }
-    resetCategroryCheckboxSelectedCount();
+       
 }
 
 function onCategoryCarouselSelection(name, device) {
     var allCheckBox = document.querySelectorAll('.search-section.category .rwd-panel-body .selection-container input');
-    var headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+    var headerSelectionCount;
     var ifCheckBoxSelected = false, carouselExists = false;
-    
+    if(device == 'desktop'){
+        headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
+    } else {
+        headerSelectionCount = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category.category .select-count');
+    }
+
     for (var i = 0; i < carouselsShown.length; i++) {
-        if(carouselsShown[i] === name)
+        if (carouselsShown[i] === name)
             carouselExists = true;
     }
-    if(!carouselExists) {
-        getElement('.search-section.category .rwd-panel-body .selection-container input[name=' + name + ']').checked = true;
+    if (!carouselExists) {
+        if(device == 'desktop'){
+            getElement('.search-section.category .rwd-panel-body .selection-container input[name=' + name + ']').checked = true;
+        } else {
+            getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input[name ="' + name + '"]').checked = true;
+        }
+        
         checkBoxesSelected++;
         headerSelectionCount.innerHTML = '(' + checkBoxesSelected + ')';
-        addCategoryPill(name);
+        addCategoryPill(name, device);
         carouselsShown.push(name);
         showSearchedCategoryCarousel();
     }
-    
+
 }
 
 function showSearchedCategoryCarousel(carousel) {
@@ -384,19 +470,19 @@ function showSearchedCategoryCarousel(carousel) {
         selectedCarousel = getElement('.products-list-wrapper#' + carouselsShown[i]);
         selectedCarousel.classList.remove('rwd-hidden');
     }
-    
+
     // selectedCarousel.classList.remove('rwd-hidden');
 }
 
 function removeCategoryCarousel(checkbox) {
     for (var i = 0; i < carouselsShown.length; i++) {
-        if(carouselsShown[i] === checkbox){
+        if (carouselsShown[i] === checkbox) {
             document.querySelector('.products-list-wrapper#' + checkbox).classList.add('rwd-hidden');
             carouselsShown.splice(i, 1)
         }
     }
-    
-    if(carouselsShown.length == 0){
+
+    if (carouselsShown.length == 0) {
         var allCarousels = document.querySelectorAll('.products-list-wrapper');
         for (var i = 0; i < allCarousels.length; i++) {
             allCarousels[i].classList.remove('rwd-hidden');
@@ -404,11 +490,98 @@ function removeCategoryCarousel(checkbox) {
     }
 }
 
-function resetSearchedCategoryCarousel(){
+function resetSearchedCategoryCarousel() {
     var allCarousels = document.querySelectorAll('.products-list-wrapper');
     for (var i = 0; i < allCarousels.length; i++) {
         allCarousels[i].classList.remove('rwd-hidden');
     }
+}
+
+function ifFiltersPresentMobile(trigger) {
+    if (mobileFiltersApplied > 0) {
+
+        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.remove('rwd-hidden');
+    } else {
+        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.add('rwd-hidden');
+        if(!trigger)
+            expandFilterPanelMobile();
+    }
+    getElement('.rwd-applied-filter-menu .filter-menu-icon #filter-number').innerHTML = mobileFiltersApplied;
+}
+
+function clearAllFiltersMobile() {
+    var allCheckBoxes = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input');
+    //Reset checkboxes
+    for (var i = 0; i < allCheckBoxes.length; i++) {
+
+        if (allCheckBoxes[i].name !== 'all' && allCheckBoxes[i].checked == true) {
+
+            checkBoxesSelected--;
+            removeCategoryPill(undefined, 'mobile', allCheckBoxes[i].name);
+        }
+        allCheckBoxes[i].checked = false;
+    }
+    //resetCategroryCheckboxSelectedCount();
+
+    // Reset slider and inputs
+    pointsSliderMobile.noUiSlider.updateOptions({
+        start: [minStart, maxStart]
+    });
+
+    enableApplyChangesButton()
+}
+
+function getInputStatesOnFilterOpen() {
+    var allCheckBoxes = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input');
+
+    for (var i = 0; i < allCheckBoxes.length; i++) {
+        categoryCheckBoxSelectionMap[allCheckBoxes[i].name] = allCheckBoxes[i].checked;
+    }
+    pointsSliderRange[0] = inputFieldLowerMobile.value;
+    pointsSliderRange[1] = inputFieldUpperMobile.value;
+}
+
+function setPreviousInputStatesOnFilter() {
+    var allCheckBoxes = document.querySelectorAll('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input');
+
+    for (var i = 0; i < allCheckBoxes.length; i++) {
+        var stateDiff = allCheckBoxes[i].checked !== categoryCheckBoxSelectionMap[allCheckBoxes[i].name];
+        allCheckBoxes[i].checked = categoryCheckBoxSelectionMap[allCheckBoxes[i].name];
+        if(allCheckBoxes[i].name !== 'all') {
+            if(!allCheckBoxes[i].checked){
+                if(stateDiff)
+                    checkBoxesSelected--;
+                removeCategoryPill(undefined, 'mobile', allCheckBoxes[i].name);
+                /* (function(name){
+                    setTimeout(function(){
+                        removeCategoryPill(undefined, 'mobile', name);
+                    }, 5000);
+                })(allCheckBoxes[i].name); */
+                
+                
+            }else {
+                if(stateDiff)
+                    checkBoxesSelected++;
+                addCategoryPill(allCheckBoxes[i].name, 'mobile');
+                resetCategroryCheckboxSelectedCount('mobile');
+            }
+        }
+    }
+    pointsSliderMobile.noUiSlider.updateOptions({
+        start: pointsSliderRange
+    });
+}
+
+function enableApplyChangesButton() {
+    changesMade = true;
+    var button = getElement('.rwd-apply-filter-overlay .apply-cancel-section .apply-filters');
+    button.removeAttribute("disabled");
+    //getInputStatesOnFilterOpen();
+}
+
+function disableApplyChangesButton() {
+    var button = getElement('.rwd-apply-filter-overlay .apply-cancel-section .apply-filters');
+    button.setAttribute("disabled", true);
 }
 
 /* function moveScroller() {
@@ -483,33 +656,33 @@ $(window).scroll(function (e) {
     var $el = $('.rwd-applied-filter-menu');
     var tabBody = $('.rwd-dashboard .tabs-body');
     var isPositionFixed = ($el.css('position') == 'fixed');
-    var offset  = $el.offset().top;
-    if($(window).width() <= 960){
+    var offset = $el.offset().top;
+    if ($(window).width() <= 960) {
         if ($(this).scrollTop() > 203) {
+            filterHeaderFixed = true;
             $el.css({ 'position': 'fixed', 'top': '0px' });
-            tabBody.css({ 'top': '60px' });
+            if (appliedFilterExpanded) {
+                tabBody.css({ 'top': '119px' });
+            }
+            else {
+                tabBody.css({ 'top': '60px' });
+            }
+
         }
-        if ($(this).scrollTop() < 203 ) {
+        if ($(this).scrollTop() < 203) {
+            filterHeaderFixed = false;
             $el.css({ 'position': 'static', 'top': '0px' });
             tabBody.css({ 'top': '0px' });
         }
     }
 });
 
-function ifFiltersPresentMobile() {
-    if (mobileFiltersApplied > 0) {
 
-        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.remove('rwd-hidden');
-    } else {
-        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.add('rwd-hidden');
-    }
-    getElement('.rwd-applied-filter-menu .filter-menu-icon #filter-number').innerHTML = mobileFiltersApplied;
-}
 
 function init() {
     window.addEventListener('load', function () {
 
-        ifFiltersPresentMobile();
+        ifFiltersPresentMobile('init');
 
 
         /* $('.rwd-category-carousel .category-carousel').on('init', function (event, slick) {
@@ -1079,7 +1252,7 @@ function init() {
         }); */
 
         searchPanelOffset = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel').offset().top;
-
+        disableApplyChangesButton(); // set apply filter button in mobile to disabled
     })
 }
 

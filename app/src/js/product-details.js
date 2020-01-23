@@ -130,15 +130,38 @@ function initProduct(){
                     }
                 },
                 {
-                    breakpoint: 980,
+                    breakpoint: 960,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         variableWidth: true,
+                        dots: false,
+                        arrows: false
 
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        variableWidth: true,
+                        dots: false,
+                        arrows: false
                     }
                 }
             ]
+        });
+
+        initializeCarousel('.rwd-product-order-wrapper .rwd-product-image-container .rwd-product-detail-images-carousel', {
+            dots: true,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+            prevArrow: $('.rwd-product-order-wrapper .rwd-product-image-container  .mobile-carousel-prev'),
+            nextArrow: $('.rwd-product-order-wrapper .rwd-product-image-container  .mobile-carousel-next'),
+            // variableWidth: true
         });
 
     });

@@ -106,6 +106,7 @@
   background-color: #ffffff;
   border: 1px solid #f2f2fd;
   position: relative;
+  overflow: hidden;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-head .filter-menu-icon {
   cursor: pointer;
@@ -141,7 +142,6 @@
   margin-left: 20px;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-head .rwd-search-items-mobile-wrapper {
-  width: 0px;
   z-index: 11;
   position: absolute;
   left: 101%;
@@ -150,10 +150,10 @@
   padding-left: 20px;
   padding-right: 20px;
   transition: left 0.3s;
+  width: 100%;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-head .rwd-search-items-mobile-wrapper.expanded {
   left: 0px;
-  width: 100%;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-head .rwd-search-items-mobile-wrapper .search-icon img {
   width: 15px;
@@ -204,6 +204,22 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s;
+  background-color: #ffffff;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel {
+  padding: 10px 15px;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-right: 10px;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .category-pills-container {
+  white-space: nowrap;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-applied-filter-menu .filter-panel-body .rwd-categories-panel .rwd-tag {
+  margin-bottom: 10px;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container {
   margin-top: 40px;
@@ -1309,7 +1325,7 @@
   height: 100vh;
   width: 100%;
   background-color: #ffffff;
-  top: -150%;
+  top: -200%;
   transition: top 0.33s;
   position: absolute;
   z-index: 50;

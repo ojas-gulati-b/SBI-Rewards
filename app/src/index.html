@@ -131,7 +131,7 @@
                             <div class="rwd-mobile">
                                 <div class="rwd-applied-filter-menu ">
                                     <div class="filter-panel-head">
-                                        <div class="filter-menu-icon" onclick="expandFilterPanelMobile()">
+                                        <div class="filter-menu-icon" onclick="mobileFiltersApplied>0 ? expandFilterPanelMobile() : ''">
                                             <span>Filters (</span>
                                             <span id="filter-number">0</span>
                                             <span>)</span>
@@ -158,8 +158,8 @@
 
                                     </div>
                                     <div class="filter-panel-body">
-                                        <div class="rwd-categories-panel rwd-hidden">
-                                            <div class="rwd-flex ">
+                                        <div class="rwd-categories-panel">
+                                            <div class="rwd-flex ac" style="overflow-x: auto;">
                                                 <div class="heading">Categories</div>
                                                 <div class="category-pills-container">
                                                 </div>
@@ -259,77 +259,77 @@
                                     </div>
                                     <div class="carousel-container rwd-mobile">
                                         <div class="category-carousel">
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/accessories.png" />
                                                 </div>
                                                 <div class="category-name">Accessories</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/apparel.png" />
                                                 </div>
                                                 <div class="category-name">Apparel</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/books.png" />
                                                 </div>
                                                 <div class="category-name">Books & Periodicals</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('electronics', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/electronics.png" />
                                                 </div>
                                                 <div class="category-name">Electronics</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/entertainment.png" />
                                                 </div>
                                                 <div class="category-name">Entertainment & Dining</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/health.png" />
                                                 </div>
                                                 <div class="category-name">Health & Fitness</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/e-voucher.png" />
                                                 </div>
                                                 <div class="category-name">E-Voucher</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/homeware.png"
                                                         width="48" height="68" />
                                                 </div>
                                                 <div class="category-name">Homeware</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/kidszone.png" />
                                                 </div>
                                                 <div class="category-name">Kids Zone</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/lifestyle.png" />
                                                 </div>
                                                 <div class="category-name">Lifestyle</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/travel.png" />
                                                 </div>
                                                 <div class="category-name">Travel & Holiday</div>
                                             </div>
-                                            <div class="category-wrapper">
+                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/memberships.png" />
@@ -2211,7 +2211,7 @@
         <div class="rwd-filter-action-header">
             <div class="rwd-flex ac sb">
                 <div class="filter-heading">Filters</div>
-                <div class="clear-all">Clear All</div>
+                <div class="clear-all" onclick="clearAllFiltersMobile()">Clear All</div>
             </div>
         </div>
         <div class="rwd-filter-container-mobile">
@@ -2270,7 +2270,7 @@
                         <div class="label">Dining</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="health" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="entertainment" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2279,7 +2279,7 @@
                         <div class="label">Travel</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event), 'mobile'">
+                                <input type="checkbox" name="travel" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2288,7 +2288,7 @@
                         <div class="label">Electronics</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="electronics" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2297,7 +2297,7 @@
                         <div class="label">Accessories</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="accessories" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2306,7 +2306,7 @@
                         <div class="label">Lifestyle</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="lifestyle" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2315,7 +2315,7 @@
                         <div class="label">Homeware</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="homeware" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2324,7 +2324,7 @@
                         <div class="label">E-Voucher</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="evoucher" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2333,7 +2333,7 @@
                         <div class="label">Kids zone</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="kidszone" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2342,7 +2342,7 @@
                         <div class="label">Health and Fitness</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="health" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2351,7 +2351,7 @@
                         <div class="label">Apparel</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="apparel" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2360,7 +2360,7 @@
                         <div class="label">Books and Periodicals</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="dining" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="books" onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2372,8 +2372,8 @@
             </div>
         </div>
         <div class="apply-cancel-section">
-            <button class="sbi-button primary apply-filters">Apply and search</button>
-            <div class="cancel-filters" onclick="closeFilterPanelMobile()">Cancel</div>
+            <button class="sbi-button primary apply-filters" onclick="enableApplyChangesButton();getInputStatesOnFilterOpen();closeFilterPanelMobile();" disabled>Apply and search</button>
+            <div class="cancel-filters" onclick="closeFilterPanelMobile();setPreviousInputStatesOnFilter();">Cancel</div>
         </div>
     </div>
     <div class="rwd-filter-container"></div>
