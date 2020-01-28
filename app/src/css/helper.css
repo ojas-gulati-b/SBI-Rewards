@@ -34,8 +34,18 @@ body{
   .rwd-desktop{
     display: none;
   }
-  .rwd-body-wrapper .sbi-wrapper{
+  .body-wrapper .sbi-wrapper{
     padding: 0 0 0 20px;
+  }
+  .body-wrapper div, .body-wrapper em, .body-wrapper li, .body-wrapper p, .body-wrapper span{
+    font-weight: 400;
+  }
+  .body-wrapper .slick-slide {
+    text-align: unset;
+  }
+  .body-wrapper .slick-slide img{
+    height: unset;
+    width: unset;
   }
 }
 /* Tags CSS */

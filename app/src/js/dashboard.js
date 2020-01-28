@@ -74,19 +74,19 @@ function selectSearchTag(event) {
 }
 
 function expandApplyFilterMobile() {
-    getElement('.rwd-body-wrapper').classList.add('rwd-hidden');
+    getElement('.body-wrapper').classList.add('rwd-hidden');
     getElement('.rwd-apply-filter-overlay').classList.add('expanded');
-    setTimeout(function(){
+    setTimeout(function () {
         getInputStatesOnFilterOpen();
     });
-    
+
 }
 
 function closeFilterPanelMobile() {
     getElement('.rwd-apply-filter-overlay').classList.remove('expanded');
-    getElement('.rwd-body-wrapper').classList.remove('rwd-hidden');
+    getElement('.body-wrapper').classList.remove('rwd-hidden');
     disableApplyChangesButton();
-    
+
 }
 
 function selectFilterCategoryMobile(category) {
@@ -149,17 +149,18 @@ function removeSearchResults() {
 
 /** Range slider for Points in Search panel DESKTOP */
 var pointsSlider = document.getElementById('range-slider-points');
-noUiSlider.create(pointsSlider, {
-    start: [minStart, maxStart],
-    connect: [false, true, false],
-    step: 1,
-    orientation: 'horizontal', // 'horizontal' or 'vertical'
-    range: {
-        'min': minPoints,
-        'max': maxPoints
-    },
+if (pointsSlider)
+    noUiSlider.create(pointsSlider, {
+        start: [minStart, maxStart],
+        connect: [false, true, false],
+        step: 1,
+        orientation: 'horizontal', // 'horizontal' or 'vertical'
+        range: {
+            'min': minPoints,
+            'max': maxPoints
+        },
 
-});
+    });
 
 var inputFieldLower = document.getElementById('lower-range-input');
 var inputFieldUpper = document.getElementById('upper-range-input');
@@ -168,113 +169,124 @@ var headerFieldLower = getElement('.search-section.points .rwd-expansion-panel .
 var headerFieldUpper = getElement('.search-section.points .rwd-expansion-panel .rwd-panel-head .control .select.value #upper');
 
 //update input field on slider update
-pointsSlider.noUiSlider.on('update', function (values, handle) {
-    const value = values[handle];
-    if (handle) { // i.e. if handle with index 1 comes up
-        inputFieldUpper.value = Math.round(value);
-        headerFieldUpper.innerHTML = Math.round(value);
-    } else {
-        inputFieldLower.value = Math.round(value);
-        headerFieldLower.innerHTML = Math.round(value);
-    }
+if (pointsSlider)
+    pointsSlider.noUiSlider.on('update', function (values, handle) {
+        const value = values[handle];
+        if (handle) { // i.e. if handle with index 1 comes up
+            inputFieldUpper.value = Math.round(value);
+            headerFieldUpper.innerHTML = Math.round(value);
+        } else {
+            inputFieldLower.value = Math.round(value);
+            headerFieldLower.innerHTML = Math.round(value);
+        }
 
-});
+    });
 
 // update slider when user clicks outside the box after entering the value
-inputFieldLower.addEventListener('change', function () {
-    // set lower value
-    pointsSlider.noUiSlider.set([this.value, null]);
-});
-
-// update the slider after user presses enter key after entering the value
-inputFieldLower.addEventListener('keydown', function (e) {
-
-    if (e.which == 13) {
+if (inputFieldLower)
+    inputFieldLower.addEventListener('change', function () {
         // set lower value
         pointsSlider.noUiSlider.set([this.value, null]);
-    }
-});
-
-// update slider when user clicks outside the box after entering the value
-inputFieldUpper.addEventListener('change', function () {
-    // set upper value
-    pointsSlider.noUiSlider.set([null, this.value]);
-});
+    });
 
 // update the slider after user presses enter key after entering the value
-inputFieldUpper.addEventListener('keydown', function (e) {
-    if (e.which == 13) {
+if (inputFieldLower)
+    inputFieldLower.addEventListener('keydown', function (e) {
+
+        if (e.which == 13) {
+            // set lower value
+            pointsSlider.noUiSlider.set([this.value, null]);
+        }
+    });
+
+// update slider when user clicks outside the box after entering the value
+if (inputFieldUpper)
+    inputFieldUpper.addEventListener('change', function () {
         // set upper value
         pointsSlider.noUiSlider.set([null, this.value]);
-    }
-});
+    });
+
+// update the slider after user presses enter key after entering the value
+if (inputFieldUpper)
+    inputFieldUpper.addEventListener('keydown', function (e) {
+        if (e.which == 13) {
+            // set upper value
+            pointsSlider.noUiSlider.set([null, this.value]);
+        }
+    });
 
 
 /** Range slider for Points in Search panel MOBILE */
 var pointsSliderMobile = document.getElementById('range-slider-points-mobile');
-noUiSlider.create(pointsSliderMobile, {
-    start: [minStart, maxStart],
-    connect: [false, true, false],
-    step: 1,
-    orientation: 'horizontal', // 'horizontal' or 'vertical'
-    range: {
-        'min': minPoints,
-        'max': maxPoints
-    },
+if (pointsSliderMobile)
+    noUiSlider.create(pointsSliderMobile, {
+        start: [minStart, maxStart],
+        connect: [false, true, false],
+        step: 1,
+        orientation: 'horizontal', // 'horizontal' or 'vertical'
+        range: {
+            'min': minPoints,
+            'max': maxPoints
+        },
 
-});
+    });
 
 var inputFieldLowerMobile = document.getElementById('lower-range-input-mobile');
 var inputFieldUpperMobile = document.getElementById('upper-range-input-mobile');
 
 //update input field on slider update
-pointsSliderMobile.noUiSlider.on('update', function (values, handle) {
-    const value = values[handle];
-    if (handle) { // i.e. if handle with index 1 comes up
-        inputFieldUpperMobile.value = Math.round(value);
-    } else {
-        inputFieldLowerMobile.value = Math.round(value);
-    }
-    if(initialLoad){
-        initialLoad = false;
-    }else{
-        enableApplyChangesButton();
-    }
-});
+if (pointsSliderMobile)
+    pointsSliderMobile.noUiSlider.on('update', function (values, handle) {
+        const value = values[handle];
+        if (handle) { // i.e. if handle with index 1 comes up
+            inputFieldUpperMobile.value = Math.round(value);
+        } else {
+            inputFieldLowerMobile.value = Math.round(value);
+        }
+        if (initialLoad) {
+            initialLoad = false;
+        } else {
+            enableApplyChangesButton();
+        }
+    });
 
 // update slider when user clicks outside the box after entering the value
-inputFieldLowerMobile.addEventListener('change', function () {
-    // set lower value
-    pointsSliderMobile.noUiSlider.set([this.value, null]);
-    enableApplyChangesButton();
-});
-
-// update the slider after user presses enter key after entering the value
-inputFieldLowerMobile.addEventListener('keydown', function (e) {
-
-    if (e.which == 13) {
+if (inputFieldLowerMobile)
+    inputFieldLowerMobile.addEventListener('change', function () {
         // set lower value
         pointsSliderMobile.noUiSlider.set([this.value, null]);
-    }
-    enableApplyChangesButton();
-});
-
-// update slider when user clicks outside the box after entering the value
-inputFieldUpperMobile.addEventListener('change', function () {
-    // set upper value
-    pointsSliderMobile.noUiSlider.set([null, this.value]);
-    enableApplyChangesButton();
-});
+        enableApplyChangesButton();
+    });
 
 // update the slider after user presses enter key after entering the value
-inputFieldUpperMobile.addEventListener('keydown', function (e) {
+if (inputFieldLowerMobile)
+    inputFieldLowerMobile.addEventListener('keydown', function (e) {
 
-    if (e.which == 13) {
+        if (e.which == 13) {
+            // set lower value
+            pointsSliderMobile.noUiSlider.set([this.value, null]);
+        }
+        enableApplyChangesButton();
+    });
+
+// update slider when user clicks outside the box after entering the value
+if (inputFieldUpperMobile)
+    inputFieldUpperMobile.addEventListener('change', function () {
         // set upper value
         pointsSliderMobile.noUiSlider.set([null, this.value]);
-    }
-    enableApplyChangesButton();
-});
+        enableApplyChangesButton();
+    });
+
+// update the slider after user presses enter key after entering the value
+if (inputFieldUpperMobile)
+    inputFieldUpperMobile.addEventListener('keydown', function (e) {
+
+        if (e.which == 13) {
+            // set upper value
+            pointsSliderMobile.noUiSlider.set([null, this.value]);
+        }
+        enableApplyChangesButton();
+    });
 
 function onCategorySelectSearch(event, device) {
     var allCheckBox;
@@ -412,7 +424,7 @@ function removeCategoryPill(event, device, checkBoxName) {
     else
         getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input#categ-all').checked = false;
 
-    if(pill){
+    if (pill) {
         pill.parentNode.removeChild(pill);
         checkBox.checked = false;
         allPills = getElement('.rwd-items-wrapper .rwd-categories-panel .category-pills-container .rwd-tag.category-tags.cancellable');
@@ -425,14 +437,14 @@ function removeCategoryPill(event, device, checkBoxName) {
         }
         resetCategroryCheckboxSelectedCount(device);
     }
-       
+
 }
 
 function onCategoryCarouselSelection(name, device) {
     var allCheckBox = document.querySelectorAll('.search-section.category .rwd-panel-body .selection-container input');
     var headerSelectionCount;
     var ifCheckBoxSelected = false, carouselExists = false;
-    if(device == 'desktop'){
+    if (device == 'desktop') {
         headerSelectionCount = getElement('.search-section.category .rwd-panel-head .control .select');
     } else {
         headerSelectionCount = getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-category-heading-wrapper .filter-category.category .select-count');
@@ -443,12 +455,12 @@ function onCategoryCarouselSelection(name, device) {
             carouselExists = true;
     }
     if (!carouselExists) {
-        if(device == 'desktop'){
+        if (device == 'desktop') {
             getElement('.search-section.category .rwd-panel-body .selection-container input[name=' + name + ']').checked = true;
         } else {
             getElement('.rwd-apply-filter-overlay .rwd-filter-container-mobile .filter-categories-wrapper .filter-category-panel.category .selection-container input[name ="' + name + '"]').checked = true;
         }
-        
+
         checkBoxesSelected++;
         headerSelectionCount.innerHTML = '(' + checkBoxesSelected + ')';
         addCategoryPill(name, device);
@@ -498,15 +510,18 @@ function resetSearchedCategoryCarousel() {
 }
 
 function ifFiltersPresentMobile(trigger) {
-    if (mobileFiltersApplied > 0) {
+    if (getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon')) {
+        if (mobileFiltersApplied > 0) {
 
-        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.remove('rwd-hidden');
-    } else {
-        getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.add('rwd-hidden');
-        if(!trigger)
-            expandFilterPanelMobile();
+            getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.remove('rwd-hidden');
+        } else {
+            getElement('.rwd-applied-filter-menu .filter-menu-icon .toggle-filters-icon').classList.add('rwd-hidden');
+            if (!trigger)
+                expandFilterPanelMobile();
+        }
+        getElement('.rwd-applied-filter-menu .filter-menu-icon #filter-number').innerHTML = mobileFiltersApplied;
     }
-    getElement('.rwd-applied-filter-menu .filter-menu-icon #filter-number').innerHTML = mobileFiltersApplied;
+
 }
 
 function clearAllFiltersMobile() {
@@ -547,9 +562,9 @@ function setPreviousInputStatesOnFilter() {
     for (var i = 0; i < allCheckBoxes.length; i++) {
         var stateDiff = allCheckBoxes[i].checked !== categoryCheckBoxSelectionMap[allCheckBoxes[i].name];
         allCheckBoxes[i].checked = categoryCheckBoxSelectionMap[allCheckBoxes[i].name];
-        if(allCheckBoxes[i].name !== 'all') {
-            if(!allCheckBoxes[i].checked){
-                if(stateDiff)
+        if (allCheckBoxes[i].name !== 'all') {
+            if (!allCheckBoxes[i].checked) {
+                if (stateDiff)
                     checkBoxesSelected--;
                 removeCategoryPill(undefined, 'mobile', allCheckBoxes[i].name);
                 /* (function(name){
@@ -557,10 +572,10 @@ function setPreviousInputStatesOnFilter() {
                         removeCategoryPill(undefined, 'mobile', name);
                     }, 5000);
                 })(allCheckBoxes[i].name); */
-                
-                
-            }else {
-                if(stateDiff)
+
+
+            } else {
+                if (stateDiff)
                     checkBoxesSelected++;
                 addCategoryPill(allCheckBoxes[i].name, 'mobile');
                 resetCategroryCheckboxSelectedCount('mobile');
@@ -630,24 +645,75 @@ $(function() {
     $(window).scroll(sticktothebottom);
     sticktothebottom();
 }); */
+
+function loadMore(id) {
+    if(getElement('.products-list-wrapper#' + id) && getElement('.products-list-wrapper#' + id).classList.contains('rwd-hidden')){
+        getElement('.products-list-wrapper#' + id).classList.remove('rwd-hidden');
+        $('.products-list-wrapper#' + id + '.items-carousel').on('init', function (event, slick) {
+            slick.checkResponsive();
+        });
+        initializeCarousel('.products-list-wrapper#' + id + ' .items-carousel', getProductCarouselOptionsObject(id));
+    }
+}
+
+var dashboard = document.querySelector('.body-wrapper');
 $(window).scroll(function () {
 
-    var bh = $(window).height();
+    /* var bh = $(window).height();
     var st = $(window).scrollTop();
     var el = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel');
     var eh = el.height();
-
+    var fh = $('.sbi-eregs-footer').height();
+    var footer = $('.sbi-eregs-footer');
     if (st >= (searchPanelOffset + eh + 30) - bh) {
         //fix the positon and leave the green bar in the viewport
         el.css({
             position: 'fixed',
             width: 280,
-            bottom: 30
+            bottom: 20
         });
     }
     else {
         // return element to normal flow
         el.removeAttr("style");
+    }
+    if(el.offset().top + el.height() >= footer.offset().top - 10){
+        el.css({
+            position:  'absolute',
+            width: 280,
+            }   
+        );
+    } */
+    var el = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel');
+    var searchHeading = $('.rwd-main-section .rwd-search-panel-wrapper .search-heading');
+    var footer = $('.sbi-eregs-footer');
+    if ($(this).scrollTop() > 480) {
+        el.css({ 'position': 'fixed', 'top': '210px', 'width': 280, 'bottom': 'unset' });
+        searchHeading.css({ 'position': 'fixed', 'top': '160px', 'width': 280, 'bottom': 'unset' });
+    }
+    if ($(this).scrollTop() < 480) {
+        el.css({ 'position': 'static', 'top': '0px' });
+        searchHeading.css({ 'position': 'static', 'top': '0px' });
+    }
+    if (el.offset().top + el.height() >= footer.offset().top - 30) {
+        el.css({
+            position: 'absolute',
+            width: 280,
+            bottom: 30,
+            top: 'unset'
+        });
+        searchHeading.css({
+            position: 'absolute',
+            width: 280,
+            bottom: 30,
+            top: 'unset'
+        });
+    }
+
+    //infinite scroll code
+    var a =$(window).scrollTop(), b = $(window).height(), c=$(document).height(), d=$('.sbi-eregs-footer').height();
+    if ($(window).scrollTop() + $(window).height() > ($(document).height() - $('.sbi-eregs-footer').height())) {
+        loadMore('entertainment-2');
     }
 
 });
@@ -658,18 +724,18 @@ $(window).scroll(function (e) {
     var isPositionFixed = ($el.css('position') == 'fixed');
     var offset = $el.offset().top;
     if ($(window).width() <= 960) {
-        if ($(this).scrollTop() > 203) {
+        if ($(this).scrollTop() > 120) {//203
             filterHeaderFixed = true;
             $el.css({ 'position': 'fixed', 'top': '0px' });
             if (appliedFilterExpanded) {
-                tabBody.css({ 'top': '119px' });
+                tabBody.css({ 'top': '139px' }); //119
             }
             else {
                 tabBody.css({ 'top': '60px' });
             }
 
         }
-        if ($(this).scrollTop() < 203) {
+        if ($(this).scrollTop() < 120) {
             filterHeaderFixed = false;
             $el.css({ 'position': 'static', 'top': '0px' });
             tabBody.css({ 'top': '0px' });
@@ -677,13 +743,46 @@ $(window).scroll(function (e) {
     }
 });
 
+function getProductCarouselOptionsObject(carouselID) {
+    return {
+        dots: true,
+        //centerMode: true,
+        // initialSlide: 1,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: false,
+        prevArrow: $('.products-list-wrapper#' + carouselID + ' .items-carousel-container .carousel-prev'),
+        nextArrow: $('.products-list-wrapper#' + carouselID + ' .items-carousel-container .carousel-next'),
+        // variableWidth: true
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    variableWidth: true,
 
+                }
+            },
+            {
+                breakpoint: 814,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    variableWidth: true,
+                    dots: false,
+                    arrows: false
+                }
+            }
+        ]
+    }
+}
 
 function init() {
     window.addEventListener('load', function () {
 
         ifFiltersPresentMobile('init');
-
 
         /* $('.rwd-category-carousel .category-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
@@ -693,10 +792,10 @@ function init() {
             dots: false,
             arrows: true,
             slidesToShow: 10,
-            slidesToScroll: 1,
+            slidesToScroll: 4,
             infinite: true,
-            prevArrow: $('.rwd-category-carousel .carousel-container .carousel-prev'),
-            nextArrow: $('.rwd-category-carousel .carousel-container .carousel-next'),
+            prevArrow: $('.rwd-category-carousel .carousel-container.rwd-desktop .carousel-prev'),
+            nextArrow: $('.rwd-category-carousel .carousel-container.rwd-desktop .carousel-next'),
             //variableWidth: true,
             //mobileFirst: true,
             respondTo: 'slider',
@@ -705,7 +804,10 @@ function init() {
                     breakpoint: 5000,
                     settings: {
                         slidesToShow: 10,
-                        slidesToScroll: 1,
+                        slidesToScroll: 4,
+                        arrows: true,
+                        prevArrow: $('.rwd-category-carousel .carousel-container.rwd-desktop .carousel-prev'),
+                        nextArrow: $('.rwd-category-carousel .carousel-container.rwd-desktop .carousel-next'),
                         //variableWidth: false,
                         //mobileFirst: true,
                     }
@@ -715,7 +817,7 @@ function init() {
                     breakpoint: 1179,
                     settings: {
                         slidesToShow: 8,
-                        slidesToScroll: 1,
+                        slidesToScroll: 4,
                         //variableWidth: false,
                         //mobileFirst: true,
                     }
@@ -724,7 +826,7 @@ function init() {
                     breakpoint: 923,
                     settings: {
                         slidesToShow: 7,
-                        slidesToScroll: 1,
+                        slidesToScroll: 4,
                         //variableWidth: false,
                         //mobileFirst: true,
                     }
@@ -733,35 +835,11 @@ function init() {
                     breakpoint: 859,
                     settings: {
                         slidesToShow: 6,
-                        slidesToScroll: 1,
+                        slidesToScroll: 4,
                         //variableWidth: false,
                         //mobileFirst: true,
                     }
                 },
-                /* {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 7,
-                        variableWidth: false,
-                        //mobileFirst: true,
-                    }
-                },
-                {
-                    breakpoint: 980,
-                    settings: {
-                        slidesToShow: 7,
-                        variableWidth: false,
-                        //mobileFirst: true,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 6,
-                        variableWidth: false,
-                        //mobileFirst: true,
-                    }
-                } */
             ]
         });
 
@@ -769,10 +847,10 @@ function init() {
             dots: false,
             arrows: false,
             slidesToShow: 7,
-            slidesToScroll: 1,
+            slidesToScroll: 4,
             infinite: true,
-            prevArrow: $('.rwd-category-carousel .carousel-container .carousel-prev'),
-            nextArrow: $('.rwd-category-carousel .carousel-container .carousel-next'),
+            prevArrow: $('.rwd-category-carousel .carousel-container.rwd-mobile .carousel-prev'),
+            nextArrow: $('.rwd-category-carousel .carousel-container.rwd-mobile .carousel-next'),
             //variableWidth: true,
             //mobileFirst: true,
             respondTo: 'slider',
@@ -815,10 +893,10 @@ function init() {
             // initialSlide: 1,
             arrows: true,
             slidesToShow: 7,
-            slidesToScroll: 1,
+            slidesToScroll: 4,
             infinite: true,
-            prevArrow: $('.carousel-container.mid-page .carousel-prev'),
-            nextArrow: $('.carousel-container.mid-page .carousel-next'),
+            prevArrow: $('.carousel-container.mid-page.rwd-desktop .carousel-prev'),
+            nextArrow: $('.carousel-container.mid-page.rwd-desktop .carousel-next'),
             variableWidth: true,
             responsive: [
                 {
@@ -855,10 +933,10 @@ function init() {
             dots: false,
             arrows: true,
             slidesToShow: 7,
-            slidesToScroll: 1,
+            slidesToScroll: 4,
             infinite: true,
-            prevArrow: $('.rwd-category-carousel .carousel-container .carousel-prev'),
-            nextArrow: $('.rwd-category-carousel .carousel-container .carousel-next'),
+            prevArrow: $('.carousel-container.mid-page.rwd-mobile .carousel-prev'),
+            nextArrow: $('.carousel-container.mid-page.rwd-mobile .carousel-next'),
             //variableWidth: true,
             //mobileFirst: true,
             respondTo: 'slider',
@@ -896,338 +974,35 @@ function init() {
         $('.products-list-wrapper#offers .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });
-        initializeCarousel('.products-list-wrapper#offers .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#offers .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#offers .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
+        initializeCarousel('.products-list-wrapper#offers .items-carousel', getProductCarouselOptionsObject('offers'));
         $('.products-list-wrapper#electronics .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });
-        initializeCarousel('.products-list-wrapper#electronics .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#electronics .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#electronics .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
+        initializeCarousel('.products-list-wrapper#electronics .items-carousel', getProductCarouselOptionsObject('electronics'));
         $('.products-list-wrapper#entertainment .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });
-        initializeCarousel('.products-list-wrapper#entertainment .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
+        initializeCarousel('.products-list-wrapper#entertainment .items-carousel', getProductCarouselOptionsObject('entertainment'));
         $('.products-list-wrapper#offers-2 .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });
-        initializeCarousel('.products-list-wrapper#offers-2 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#offers-2 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#offers-2 .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
+        initializeCarousel('.products-list-wrapper#offers-2 .items-carousel', getProductCarouselOptionsObject('offers-2'));
         $('.products-list-wrapper#electronics-2 .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });
-        initializeCarousel('.products-list-wrapper#electronics-2 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#electronics-2 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#electronics-2 .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
+        initializeCarousel('.products-list-wrapper#electronics-2 .items-carousel', getProductCarouselOptionsObject('electronics-2'));
 
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
-        $('.products-list-wrapper#entertainment-2 .items-carousel').on('init', function (event, slick) {
-            slick.checkResponsive();
-        });
-        initializeCarousel('.products-list-wrapper#entertainment-2 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#entertainment-2 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#entertainment-2 .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
-        $('.products-list-wrapper#offers-3 .items-carousel').on('init', function (event, slick) {
-            slick.checkResponsive();
-        });
-        initializeCarousel('.products-list-wrapper#offers-3 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#offers-3 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#offers-3 .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
-        $('.products-list-wrapper#electronics-3 .items-carousel').on('init', function (event, slick) {
-            slick.checkResponsive();
-        });
-        initializeCarousel('.products-list-wrapper#electronics-3 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#electronics-3 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#electronics-3 .items-carousel-container .carousel-next'),
-            // variableWidth: true
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
-        $('.products-list-wrapper#entertainment-3 .items-carousel').on('init', function (event, slick) {
-            slick.checkResponsive();
-        });
-        initializeCarousel('.products-list-wrapper#entertainment-3 .items-carousel', {
-            dots: true,
-            //centerMode: true,
-            // initialSlide: 1,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: false,
-            prevArrow: $('.products-list-wrapper#entertainment-3 .items-carousel-container .carousel-prev'),
-            nextArrow: $('.products-list-wrapper#entertainment-3 .items-carousel-container .carousel-next'),
-            variableWidth: false,
-            responsive: [
-                {
-                    breakpoint: 1280,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        variableWidth: true,
-
-                    }
-                },
-                {
-                    breakpoint: 814,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        //variableWidth: true,
-                        dots: false,
-                        arrows: false
-                    }
-                }
-            ]
-        });
         initializeCarousel('.rwd-image-carousel.rwd-desktop .rwd-carousel-container .image-carousel', {
             dots: false,
             centerMode: true,
             centerPadding: '150px',
             // initialSlide: 0,
-            arrows: false,
+            arrows: true,
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
-            // prevArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-prev'),
-            // nextArrow: $('.products-list-wrapper#entertainment .items-carousel-container .carousel-next'),
+            prevArrow: $('.rwd-image-carousel.rwd-desktop .rwd-carousel-container .carousel-prev'),
+            nextArrow: $('.rwd-image-carousel.rwd-desktop .rwd-carousel-container .carousel-next'),
             // variableWidth: true,
             //autoplay: true,
             autoplaySpeed: 3000,

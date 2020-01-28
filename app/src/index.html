@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="rwd-body-wrapper">
+    <div class="body-wrapper">
         <div class="rwd-header rwd-desktop">
             <div class="rwd-top-nav">
                 <div class="rwd-nav-wrapper rwd-flex ac">
@@ -111,7 +111,7 @@
         <div class="rwd-mobile" style="height: 120px;"></div>
 
         <div class="rwd-dashboard">
-            <div class="tabs-header ">
+            <!-- <div class="tabs-header ">
                 <div class="sbi-wrapper">
                     <div class="rwd-tabs flex">
                         <div class="rwd-tab active" onclick="switchTab(event, 'catalogue')">
@@ -123,7 +123,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="tabs-body">
                 <div class="content-wrapper">
                     <div class="tab-content" id="tab-content-form">
@@ -131,7 +131,8 @@
                             <div class="rwd-mobile">
                                 <div class="rwd-applied-filter-menu ">
                                     <div class="filter-panel-head">
-                                        <div class="filter-menu-icon" onclick="mobileFiltersApplied>0 ? expandFilterPanelMobile() : ''">
+                                        <div class="filter-menu-icon"
+                                            onclick="mobileFiltersApplied>0 ? expandFilterPanelMobile() : ''">
                                             <span>Filters (</span>
                                             <span id="filter-number">0</span>
                                             <span>)</span>
@@ -141,7 +142,8 @@
                                             <img src="../assets/images/search-blue.png"
                                                 onclick="expandSearchMobile(true)" />
                                             <img src="../assets/images/settings-blue.png"
-                                                onclick="expandApplyFilterMobile()" />
+                                                onclick="expandApplyFilterMobile()"
+                                                style="height: 11px;width: unset; margin-top: 3px;" />
                                         </div>
                                         <div class="rwd-search-items-mobile-wrapper rwd-flex ac">
                                             <div class="search-icon">
@@ -152,7 +154,7 @@
                                                     oninput="searchProduct(event, 'mobile')" />
                                             </div>
                                             <div class="close-search" onclick="expandSearchMobile(false)">
-                                                <img src="../assets/images/cross-blue.png" />
+                                                <img src="../assets/images/cross-blue-2.png" />
                                             </div>
                                         </div>
 
@@ -170,79 +172,92 @@
                             </div>
                             <div class="rwd-category-carousel">
                                 <div class="sbi-wrapper">
+                                    <!--------------------- Desktop Category carousel---------------------->
                                     <div class="carousel-container rwd-desktop">
                                         <div class="category-carousel">
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/accessories.png" />
                                                 </div>
                                                 <div class="category-name">Accessories</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/apparel.png" />
                                                 </div>
                                                 <div class="category-name">Apparel</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/books.png" />
                                                 </div>
                                                 <div class="category-name">Books & Periodicals</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('electronics', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('electronics', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/electronics.png" />
                                                 </div>
                                                 <div class="category-name">Electronics</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/entertainment.png" />
                                                 </div>
                                                 <div class="category-name">Entertainment & Dining</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/health.png" />
                                                 </div>
                                                 <div class="category-name">Health & Fitness</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/e-voucher.png" />
                                                 </div>
                                                 <div class="category-name">E-Voucher</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/homeware.png"
                                                         width="48" height="68" />
                                                 </div>
                                                 <div class="category-name">Homeware</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/kidszone.png" />
                                                 </div>
                                                 <div class="category-name">Kids Zone</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/lifestyle.png" />
                                                 </div>
                                                 <div class="category-name">Lifestyle</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/travel.png" />
                                                 </div>
                                                 <div class="category-name">Travel & Holiday</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/memberships.png" />
@@ -257,79 +272,92 @@
                                             <div class="carousel-icon"></div>
                                         </button>
                                     </div>
+                                    <!--------------------- Mobile Category carousel---------------------->
                                     <div class="carousel-container rwd-mobile">
                                         <div class="category-carousel">
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/accessories.png" />
                                                 </div>
                                                 <div class="category-name">Accessories</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/apparel.png" />
                                                 </div>
                                                 <div class="category-name">Apparel</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/books.png" />
                                                 </div>
                                                 <div class="category-name">Books & Periodicals</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('electronics', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('electronics', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/electronics.png" />
                                                 </div>
                                                 <div class="category-name">Electronics</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/entertainment.png" />
                                                 </div>
                                                 <div class="category-name">Entertainment & Dining</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/health.png" />
                                                 </div>
                                                 <div class="category-name">Health & Fitness</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/e-voucher.png" />
                                                 </div>
                                                 <div class="category-name">E-Voucher</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/homeware.png"
                                                         width="48" height="68" />
                                                 </div>
                                                 <div class="category-name">Homeware</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/kidszone.png" />
                                                 </div>
                                                 <div class="category-name">Kids Zone</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/lifestyle.png" />
                                                 </div>
                                                 <div class="category-name">Lifestyle</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image" src="../assets/images/travel.png" />
                                                 </div>
                                                 <div class="category-name">Travel & Holiday</div>
                                             </div>
-                                            <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
+                                            <div class="category-wrapper"
+                                                onclick="onCategoryCarouselSelection('entertainment', 'mobile')">
                                                 <div class="category-image-wrapper">
                                                     <img class="category-image"
                                                         src="../assets/images/memberships.png" />
@@ -453,13 +481,20 @@
                                         </div> -->
 
                                     </div>
+                                    <button role="button" aria-label="Previous" class="carousel-prev">
+                                        <div class="carousel-icon"></div>
+                                    </button>
+                                    <button role="button" aria-label="Next" class="carousel-next">
+                                        <div class="carousel-icon"></div>
+                                    </button>
                                 </div>
                             </div>
                             <div class="rwd-image-carousel rwd-mobile sbi-wrapper">
                                 <div class="rwd-carousel-container">
                                     <div class="image-carousel">
                                         <div class="rwd-image-carousel-box single" onclick="onSelectCategory()">
-                                            <img src="../assets/images/category-panel-b1.png" />
+                                            <img
+                                                src="../assets/images/bose-noise-cancelling-headphones-700-banner@2x.png" />
                                             <div class="image-carousel-content">
                                                 <div class="heading">Add savings to your cart</div>
                                                 <div class="subheading">Redeem points on a wide range of electronics
@@ -580,8 +615,12 @@
                                                     <img src="../assets/images/search-blue.png"
                                                         style="width: 15px; margin-bottom: -2px;" />
                                                     <input placeholder="Search" class="search-input" id="search-input"
-                                                        onkeypress="searchProduct(event, 'desktop')" oninput="checkCancelIcon(event)" />
-                                                    <img class="remove-search-text rwd-hidden" src="../assets/images/cross-blue.png" style="width: 12px; margin-bottom: -2px; cursor: pointer;" onclick="removeSearchResults()"/>
+                                                        onkeypress="searchProduct(event, 'desktop')"
+                                                        oninput="checkCancelIcon(event)" />
+                                                    <img class="remove-search-text rwd-hidden"
+                                                        src="../assets/images/cross-blue.png"
+                                                        style="width: 12px; margin-bottom: -2px; cursor: pointer;"
+                                                        onclick="removeSearchResults()" />
                                                 </div>
                                             </div>
                                             <div class="search-section points">
@@ -599,7 +638,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="inner-wrapper">
+                                                        <div class="rwd-desktop-filter-inner-wrapper">
                                                             <div class="slider-wrapper">
                                                                 <div id="range-slider-points" class="rwd-range-slider">
                                                                 </div>
@@ -630,7 +669,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="inner-wrapper"></div>
+                                                        <div class="rwd-desktop-filter-inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -645,7 +684,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="inner-wrapper">
+                                                        <div class="rwd-desktop-filter-inner-wrapper">
                                                             <div class="selection-container all">
                                                                 <div class="label">All</div>
                                                                 <div class="selection-checkbox">
@@ -795,7 +834,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="inner-wrapper"></div>
+                                                        <div class="rwd-desktop-filter-inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -810,7 +849,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="rwd-panel-body">
-                                                        <div class="inner-wrapper"></div>
+                                                        <div class="rwd-desktop-filter-inner-wrapper"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1702,7 +1741,208 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="products-list-wrapper" id="entertainment-2">
+
+                                            <!--------------------- Desktop Category carousel---------------------->
+                                            <div class="carousel-container mid-page rwd-desktop">
+                                                <div class="category-carousel">
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/accessories.png" />
+                                                        </div>
+                                                        <div class="category-name">Accessories</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/apparel.png" />
+                                                        </div>
+                                                        <div class="category-name">Apparel</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/books.png" />
+                                                        </div>
+                                                        <div class="category-name">Books & Periodicals</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/electronics.png" />
+                                                        </div>
+                                                        <div class="category-name">Electronics</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/entertainment.png" />
+                                                        </div>
+                                                        <div class="category-name">Entertainment & Dining</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/health.png" />
+                                                        </div>
+                                                        <div class="category-name">Health & Fitness</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/e-voucher.png" />
+                                                        </div>
+                                                        <div class="category-name">E-Voucher</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/homeware.png" width="48"
+                                                                height="68" />
+                                                        </div>
+                                                        <div class="category-name"
+                                                            onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                            Homeware</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/kidszone.png" />
+                                                        </div>
+                                                        <div class="category-name">Kids Zone</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/lifestyle.png" />
+                                                        </div>
+                                                        <div class="category-name">Lifestyle</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/travel.png" />
+                                                        </div>
+                                                        <div class="category-name">Travel & Holiday</div>
+                                                    </div>
+                                                    <div class="category-wrapper"
+                                                        onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/memberships.png" />
+                                                        </div>
+                                                        <div class="category-name">Memberships</div>
+                                                    </div>
+                                                </div>
+                                                <button role="button" aria-label="Previous" class="carousel-prev">
+                                                    <div class="carousel-icon"></div>
+                                                </button>
+                                                <button role="button" aria-label="Next" class="carousel-next">
+                                                    <div class="carousel-icon"></div>
+                                                </button>
+                                            </div>
+                                            <!--------------------- Mobile Category carousel---------------------->
+                                            <div class="carousel-container mid-page rwd-mobile">
+                                                <div class="category-carousel">
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/accessories.png" />
+                                                        </div>
+                                                        <div class="category-name">Accessories</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/apparel.png" />
+                                                        </div>
+                                                        <div class="category-name">Apparel</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/books.png" />
+                                                        </div>
+                                                        <div class="category-name">Books & Periodicals</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/electronics.png" />
+                                                        </div>
+                                                        <div class="category-name">Electronics</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/entertainment.png" />
+                                                        </div>
+                                                        <div class="category-name">Entertainment & Dining</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/health.png" />
+                                                        </div>
+                                                        <div class="category-name">Health & Fitness</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/e-voucher.png" />
+                                                        </div>
+                                                        <div class="category-name">E-Voucher</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/homeware.png" width="48"
+                                                                height="68" />
+                                                        </div>
+                                                        <div class="category-name">Homeware</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/kidszone.png" />
+                                                        </div>
+                                                        <div class="category-name">Kids Zone</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/lifestyle.png" />
+                                                        </div>
+                                                        <div class="category-name">Lifestyle</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/travel.png" />
+                                                        </div>
+                                                        <div class="category-name">Travel & Holiday</div>
+                                                    </div>
+                                                    <div class="category-wrapper">
+                                                        <div class="category-image-wrapper">
+                                                            <img class="category-image"
+                                                                src="../assets/images/memberships.png" />
+                                                        </div>
+                                                        <div class="category-name">Memberships</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="products-list-wrapper rwd-hidden" id="entertainment-2">
                                                 <div class="items-title rwd-flex sb">
                                                     <div class="heading">Entertainment & Dining</div>
                                                     <a class="view-all">
@@ -1866,192 +2106,6 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <!--------------------- Desktop Category carousel---------------------->
-                                            <div class="carousel-container mid-page rwd-desktop">
-                                                <div class="category-carousel">
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/accessories.png" />
-                                                        </div>
-                                                        <div class="category-name">Accessories</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/apparel.png" />
-                                                        </div>
-                                                        <div class="category-name">Apparel</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/books.png" />
-                                                        </div>
-                                                        <div class="category-name">Books & Periodicals</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/electronics.png" />
-                                                        </div>
-                                                        <div class="category-name">Electronics</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/entertainment.png" />
-                                                        </div>
-                                                        <div class="category-name">Entertainment & Dining</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/health.png" />
-                                                        </div>
-                                                        <div class="category-name">Health & Fitness</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/e-voucher.png" />
-                                                        </div>
-                                                        <div class="category-name">E-Voucher</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/homeware.png" width="48"
-                                                                height="68" />
-                                                        </div>
-                                                        <div class="category-name" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">Homeware</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/kidszone.png" />
-                                                        </div>
-                                                        <div class="category-name">Kids Zone</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/lifestyle.png" />
-                                                        </div>
-                                                        <div class="category-name">Lifestyle</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/travel.png" />
-                                                        </div>
-                                                        <div class="category-name">Travel & Holiday</div>
-                                                    </div>
-                                                    <div class="category-wrapper" onclick="onCategoryCarouselSelection('entertainment', 'desktop')">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/memberships.png" />
-                                                        </div>
-                                                        <div class="category-name">Memberships</div>
-                                                    </div>
-                                                </div>
-                                                <button role="button" aria-label="Previous" class="carousel-prev">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
-                                                <button role="button" aria-label="Next" class="carousel-next">
-                                                    <div class="carousel-icon"></div>
-                                                </button>
-                                            </div>
-                                            <!--------------------- Mobile Category carousel---------------------->
-                                            <div class="carousel-container mid-page rwd-mobile">
-                                                <div class="category-carousel">
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/accessories.png" />
-                                                        </div>
-                                                        <div class="category-name">Accessories</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/apparel.png" />
-                                                        </div>
-                                                        <div class="category-name">Apparel</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/books.png" />
-                                                        </div>
-                                                        <div class="category-name">Books & Periodicals</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/electronics.png" />
-                                                        </div>
-                                                        <div class="category-name">Electronics</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/entertainment.png" />
-                                                        </div>
-                                                        <div class="category-name">Entertainment & Dining</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/health.png" />
-                                                        </div>
-                                                        <div class="category-name">Health & Fitness</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/e-voucher.png" />
-                                                        </div>
-                                                        <div class="category-name">E-Voucher</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/homeware.png" width="48"
-                                                                height="68" />
-                                                        </div>
-                                                        <div class="category-name">Homeware</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/kidszone.png" />
-                                                        </div>
-                                                        <div class="category-name">Kids Zone</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/lifestyle.png" />
-                                                        </div>
-                                                        <div class="category-name">Lifestyle</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/travel.png" />
-                                                        </div>
-                                                        <div class="category-name">Travel & Holiday</div>
-                                                    </div>
-                                                    <div class="category-wrapper">
-                                                        <div class="category-image-wrapper">
-                                                            <img class="category-image"
-                                                                src="../assets/images/memberships.png" />
-                                                        </div>
-                                                        <div class="category-name">Memberships</div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div id="dash-search-results" class="rwd-hidden">
                                             <!--  <div class="rwd-categories-panel rwd-hidden">
@@ -2201,6 +2255,57 @@
 
             </div>
         </div>
+        <footer class="sbi-eregs-footer">
+                <div class="space-top-20 sbi-input-text text-center strength paddedblocks display rwd-mobile" id="allow-us-mob">Allow us to help you <img class="chevron-foot show" src="../assets/images/chevron-down.svg"/></div>
+                <div class="space-top-20 sbi-input-text text-center strength paddedblocks rwd-desktop display">Allow us to help you </div>
+                <div class="desktopinlinefooterblock" id="first-time-hide">
+                    <section>
+                    <h6 class="sbi-input-text heading">First Time User</h6>
+                    <div class="space-top-10 sbi-input-text heading">Access your online SBI Card account, anywhere, anytime. Register yourself at SBICard.com in 3 simple steps.</div>
+                    <div class="space-top-20 sbi-input-text underline"> Register now</div>
+                    </section>
+                    <section class="space-top-40 mob-only">
+                        <h6 class="sbi-input-text heading">Security Tips</h6>
+                        <div class="space-top-10 sbi-input-text heading">Watch the demo to know more about how to book different products and services on SBICard.com. </div>
+                        <div class="space-top-20 sbi-input-text underline">Know More</div>
+                    </section>
+                    <section class="space-top-40 mob-only">
+                            <h6 class="sbi-input-text heading">View Demo</h6>
+                            <div class="space-top-10 sbi-input-text heading">Your credit card is important. Ensure safe usage of your SBI Card at every step.</div>
+                            <div class="space-top-20 sbi-input-text underline"> Watch Video</div>
+                    </section>
+                </div>
+    
+    
+                <div class="sbi-input-text text-center borderblocks"> If you suspect fraudulent activity in your account call our <b>24-hour</b> help line on <b>39 02 02 02</b> (prefix local STD code),<b>1860 180 1290</b> immediately.</div>
+                <div class="text-center sbi-input-text headingsuper desktopinlinefooterblock">
+                    <section class="full-width-mob">
+                        <div class="text-center mob-only hdng">Get the SBI Card app today</div>
+                        <div class="text-center sbi-input-text space-top-10 small mob-only s-hdng">Select your download preference</div>
+                    </section>
+                    <section class="inlineblocks text-center mob-only space-top-40">
+                        <img class="" src="../assets/images/playstore-icon.svg"/>
+                        <div class="inlineblockinternal">
+                        <div class="sbi-input-text small text-left desk-only">Get it on</div>
+                        <div class="sbi-input-text text-center strength">Google Play</div>
+                        </div>
+                    </section>
+                    <section class="inlineblocks text-center mob-only space-top-40">
+                        <img class="" src="../assets/images/apple-icon.svg"/> 
+                        <div class="inlineblockinternal">
+                        <div class="sbi-input-text small text-left desk-only">Get it on</div>
+                            <div class="sbi-input-text text-center strength">App Store</div>
+                        </div>
+                        </section>
+                        <section class="inlineblocks text-center mob-only space-top-40">
+                            <img class="" src="../assets/images/smartphone-icon.svg"/>   
+                            <div class="inlineblockinternal">
+                            <div class="sbi-input-text small text-left desk-only">Get it on</div>
+                            <div class="sbi-input-text text-center strength">Your Phone</div>
+                            </div>
+                        </section>
+                </div>
+            </footer>
 
         <!-- </div> -->
     </div>
@@ -2270,7 +2375,8 @@
                         <div class="label">Dining</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="entertainment" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="entertainment"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2288,7 +2394,8 @@
                         <div class="label">Electronics</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="electronics" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="electronics"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2297,7 +2404,8 @@
                         <div class="label">Accessories</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="accessories" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="accessories"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2306,7 +2414,8 @@
                         <div class="label">Lifestyle</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="lifestyle" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="lifestyle"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2315,7 +2424,8 @@
                         <div class="label">Homeware</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="homeware" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="homeware"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2324,7 +2434,8 @@
                         <div class="label">E-Voucher</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="evoucher" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="evoucher"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2333,7 +2444,8 @@
                         <div class="label">Kids zone</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="kidszone" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="kidszone"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2351,7 +2463,8 @@
                         <div class="label">Apparel</div>
                         <div class="selection-checkbox">
                             <label class="rwd-checkbox-container">
-                                <input type="checkbox" name="apparel" onchange="onCategorySelectSearch(event, 'mobile')">
+                                <input type="checkbox" name="apparel"
+                                    onchange="onCategorySelectSearch(event, 'mobile')">
                                 <span class="rwd-checkbox-checkmark"></span>
                             </label>
                         </div>
@@ -2372,8 +2485,11 @@
             </div>
         </div>
         <div class="apply-cancel-section">
-            <button class="sbi-button primary apply-filters" onclick="enableApplyChangesButton();getInputStatesOnFilterOpen();closeFilterPanelMobile();" disabled>Apply and search</button>
-            <div class="cancel-filters" onclick="closeFilterPanelMobile();setPreviousInputStatesOnFilter();">Cancel</div>
+            <button class="sbi-button primary apply-filters"
+                onclick="enableApplyChangesButton();getInputStatesOnFilterOpen();closeFilterPanelMobile();"
+                disabled>Apply and search</button>
+            <div class="cancel-filters" onclick="closeFilterPanelMobile();setPreviousInputStatesOnFilter();">Cancel
+            </div>
         </div>
     </div>
     <div class="rwd-filter-container"></div>
