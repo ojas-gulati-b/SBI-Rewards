@@ -171,7 +171,7 @@ var headerFieldUpper = getElement('.search-section.points .rwd-expansion-panel .
 //update input field on slider update
 if (pointsSlider)
     pointsSlider.noUiSlider.on('update', function (values, handle) {
-        const value = values[handle];
+        var value = values[handle];
         if (handle) { // i.e. if handle with index 1 comes up
             inputFieldUpper.value = Math.round(value);
             headerFieldUpper.innerHTML = Math.round(value);
@@ -237,7 +237,7 @@ var inputFieldUpperMobile = document.getElementById('upper-range-input-mobile');
 //update input field on slider update
 if (pointsSliderMobile)
     pointsSliderMobile.noUiSlider.on('update', function (values, handle) {
-        const value = values[handle];
+        var value = values[handle];
         if (handle) { // i.e. if handle with index 1 comes up
             inputFieldUpperMobile.value = Math.round(value);
         } else {
