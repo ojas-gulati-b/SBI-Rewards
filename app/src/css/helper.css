@@ -27,6 +27,18 @@ body{
 .rwd-desktop{
   display: block;
 }
+
+.body-wrapper div, .body-wrapper em, .body-wrapper li, .body-wrapper p, .body-wrapper span{
+  font-weight: 400;
+}
+.body-wrapper .slick-slide {
+  text-align: unset;
+}
+.body-wrapper .slick-slide img{
+  height: unset;
+  width: unset;
+}
+
 @media (max-width: 960px) {
   .rwd-mobile{
     display: block;
@@ -37,16 +49,7 @@ body{
   .body-wrapper .sbi-wrapper{
     padding: 0 0 0 20px;
   }
-  .body-wrapper div, .body-wrapper em, .body-wrapper li, .body-wrapper p, .body-wrapper span{
-    font-weight: 400;
-  }
-  .body-wrapper .slick-slide {
-    text-align: unset;
-  }
-  .body-wrapper .slick-slide img{
-    height: unset;
-    width: unset;
-  }
+  
 }
 /* Tags CSS */
 .rwd-tag{
