@@ -687,13 +687,16 @@ $(window).scroll(function () {
     var el = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel');
     var searchHeading = $('.rwd-main-section .rwd-search-panel-wrapper .search-heading');
     var footer = $('.sbi-eregs-footer');
-    if ($(this).scrollTop() > 480) {
+    var wrapper = $('.rwd-main-section .rwd-search-panel-wrapper');
+    if ($(this).scrollTop() > 547) {
         el.css({ 'position': 'fixed', 'top': '200px', 'width': 280, 'bottom': 'unset' });
         searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': 280, 'bottom': 'unset' });
+        wrapper.css({ 'margin-right': '149px' });
     }
-    if ($(this).scrollTop() < 480) {
+    if ($(this).scrollTop() < 547) {
         el.css({ 'position': 'static', 'top': '0px' });
         searchHeading.css({ 'position': 'static', 'top': '0px' });
+        wrapper.removeAttr("style");
     }
     if (el.offset().top + el.height() >= footer.offset().top - 30) {
         el.css({
@@ -735,7 +738,7 @@ $(window).scroll(function (e) {
             }
 
         }
-        if ($(this).scrollTop() < 120) {
+        if ($(this).scrollTop() < 187) {
             filterHeaderFixed = false;
             $el.css({ 'position': 'static', 'top': '0px' });
             tabBody.css({ 'top': '0px' });
