@@ -688,26 +688,33 @@ $(window).scroll(function () {
     var searchHeading = $('.rwd-main-section .rwd-search-panel-wrapper .search-heading');
     var footer = $('.sbi-eregs-footer');
     var wrapper = $('.rwd-main-section .rwd-search-panel-wrapper');
+    var searchPanelWidth = 280;
     if ($(this).scrollTop() > 547) {
-        el.css({ 'position': 'fixed', 'top': '200px', 'width': 280, 'bottom': 'unset' });
-        searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': 280, 'bottom': 'unset' });
-        wrapper.css({ 'margin-right': '149px' });
+        if ($(window).width() >= 1240 && $(window).width() <= 1280) {
+            searchPanelWidth = 240
+        }
+        el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+        searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'unset' });
+        //wrapper.css({ 'margin-right': '149px' });
     }
     if ($(this).scrollTop() < 547) {
-        el.css({ 'position': 'static', 'top': '0px' });
-        searchHeading.css({ 'position': 'static', 'top': '0px' });
-        wrapper.removeAttr("style");
+        if ($(window).width() >= 1240 && $(window).width() <= 1280) {
+            searchPanelWidth = 240
+        }
+        el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+        searchHeading.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+        //wrapper.removeAttr("style");
     }
     if (el.offset().top + el.height() >= footer.offset().top - 30) {
         el.css({
             position: 'absolute',
-            width: 280,
+            width: searchPanelWidth,
             bottom: 30,
             top: 'auto'
         });
         searchHeading.css({
             position: 'absolute',
-            width: 280,
+            width: searchPanelWidth,
             bottom: 515,
             top: 'auto'
         });
