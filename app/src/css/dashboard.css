@@ -403,6 +403,8 @@
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped {
   display: grid !important;
   grid-template-columns: 50% 50%;
+  display: -ms-grid !important;
+  -ms-grid-columns: 50% 50%;
   height: 200px;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped .i-c-grouped-wrapper {
@@ -470,6 +472,8 @@
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped {
   display: grid !important;
   grid-template-columns: 50% 50%;
+  display: -ms-grid !important;
+  -ms-grid-columns: 50% 50%;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped .i-c-grouped-wrapper {
   position: relative;

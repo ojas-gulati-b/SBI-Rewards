@@ -688,8 +688,8 @@ $(window).scroll(function () {
     var searchHeading = $('.rwd-main-section .rwd-search-panel-wrapper .search-heading');
     var footer = $('.sbi-eregs-footer');
     if ($(this).scrollTop() > 480) {
-        el.css({ 'position': 'fixed', 'top': '210px', 'width': 280, 'bottom': 'unset' });
-        searchHeading.css({ 'position': 'fixed', 'top': '160px', 'width': 280, 'bottom': 'unset' });
+        el.css({ 'position': 'fixed', 'top': '200px', 'width': 280, 'bottom': 'unset' });
+        searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': 280, 'bottom': 'unset' });
     }
     if ($(this).scrollTop() < 480) {
         el.css({ 'position': 'static', 'top': '0px' });
@@ -700,13 +700,13 @@ $(window).scroll(function () {
             position: 'absolute',
             width: 280,
             bottom: 30,
-            top: 'unset'
+            top: 'auto'
         });
         searchHeading.css({
             position: 'absolute',
             width: 280,
-            bottom: 30,
-            top: 'unset'
+            bottom: 515,
+            top: 'auto'
         });
     }
 
