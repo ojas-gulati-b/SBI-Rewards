@@ -82,6 +82,19 @@
     @media (max-width: 960px) {
         top: 0;
     }
+    .rwd-rewards-heading{
+        background-color: #f2f7fd;
+        color: #2d2d2d;
+        height: 67px;
+        font-size: 18px;
+        font-weight: 600;
+        .sbi-wrapper{
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     .tabs-header{
         background-color: #ffffff;
         padding-top: 40px;
@@ -314,7 +327,7 @@
                             .carousel-container{
                                 margin-top: 30px;
                                 position: relative;
-                                @media (max-width: 1280px) and (min-width: 961px){
+                                @media (max-width: 1281px) and (min-width: 961px){
                                     padding: 0 30px;
                                 }
                                 &.rwd-mobile{
@@ -347,7 +360,7 @@
                                     //width: 100%;
                                     .slick-list{
                                         margin-right: -20px;
-                                        @media (max-width: 1280px) and (min-width: 961px){
+                                        @media (max-width: 1281px) and (min-width: 961px){
                                             margin-right: -40px;
                                         }
                                     }
@@ -388,13 +401,13 @@
                                 }
                                 .carousel-prev{
                                     .carousel-button-prev(38px, -43px, 135deg);
-                                    @media (max-width: 1280px) {
+                                    @media (max-width: 1281px) {
                                         left: -20px;
                                     }
                                 }
                                 .carousel-next{
                                     .carousel-button-next(38px, -43px, -45deg);
-                                    @media (max-width: 1280px) {
+                                    @media (max-width: 1281px) {
                                         right: -20px;
                                     }
                                 }
@@ -412,7 +425,7 @@
                                 .rwd-carousel-container{
                                     .image-carousel{
                                         .slick-list{
-                                            padding: 0 50px 0 0;
+                                            //padding: 0 50px 0 0;
                                         }
                                         .rwd-image-carousel-box{
                                             width: 325px;
@@ -421,7 +434,7 @@
                                             margin: 0;
                                             &.single{
                                                 img{
-                                                    max-width: 310px;
+                                                    width: 310px;
                                                     max-height: 200px;
                                                 }
                                                 .image-carousel-content{
@@ -495,7 +508,7 @@
                                                     margin-bottom: 20px;
                                                     -ms-grid-row: 1; 
                                                     
-                                                    @media (max-width: 1280px) and (min-width: 961px) {
+                                                    @media (max-width: 1281px) and (min-width: 961px) {
                                                         margin-bottom: 20px;
                                                     }
                                                     .image-carousel-content{
@@ -629,7 +642,7 @@
                                 margin-right: 20px;
                                 height: fit-content;
                                 
-                                @media (max-width: 1280px) {
+                                @media (max-width: 1281px) {
                                     margin-right: @panel-margin;
                                 }
                                 .search-heading{
@@ -812,7 +825,7 @@
                             .rwd-items-wrapper{
                                 padding-bottom: 30px;// padding-bottom: 110px;
                                 width: calc(100% - 300px);
-                                @media (max-width: 1280px) and (min-width: 961px) {
+                                @media (max-width: 1281px) and (min-width: 961px) {
                                     width: 100%;
                                     max-width: calc(560px + @panel-margin);
                                     //margin-left: calc((100vw - 840px)/2);
@@ -845,11 +858,13 @@
                                                         width: 75px !important;
                                                         padding: 0;
                                                         background: transparent;
+                                                        box-shadow: none;
                                                         .image-container{
                                                             background-color: #ffffff;
                                                             width: 75px;
                                                             height: 75px !important;
                                                             border-radius: 50%;
+                                                            box-shadow: 0 0 5px 0 rgba(213, 213, 234, 0.5);
                                                             div.rwd-flex{
                                                                 height: 100%;
                                                             }
@@ -930,7 +945,7 @@
                                                 margin-top: 20px;
                                                 box-shadow: 0 0 5px 0 rgba(213, 213, 234, 0.5);
                                                 border-radius: 4px;
-                                                @media (max-width: 1280px) and (min-width: 961px) {
+                                                @media (max-width: 1281px) and (min-width: 961px) {
                                                     margin-right: @panel-margin;
                                                     min-width: 280px;
                                                 }
@@ -938,7 +953,7 @@
                                                 &.last{
                                                     display: flex;
                                                     align-items: center;
-                                                    @media (max-width: 1280px) and (min-width: 961px) {
+                                                    @media (max-width: 1281px) and (min-width: 961px) {
                                                         margin-right: 0 !important;
                                                         
                                                     }
@@ -1218,7 +1233,7 @@
                                             &:nth-child(3n+3){
                                                 margin-right: -4px;
                                             }
-                                            @media (max-width: 1280px) {
+                                            @media (max-width: 1281px) {
                                                 &:nth-child(3n+3){
                                                     margin-right: 20px
                                                 }

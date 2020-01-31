@@ -724,7 +724,7 @@ $(window).scroll(function (e) {
     var isPositionFixed = ($el.css('position') == 'fixed');
     var offset = $el.offset().top;
     if ($(window).width() <= 960) {
-        if ($(this).scrollTop() > 120) {//203
+        if ($(this).scrollTop() > 187) {//203
             filterHeaderFixed = true;
             $el.css({ 'position': 'fixed', 'top': '0px' });
             if (appliedFilterExpanded) {
@@ -757,7 +757,7 @@ function getProductCarouselOptionsObject(carouselID) {
         // variableWidth: true
         responsive: [
             {
-                breakpoint: 1280,
+                breakpoint: 1281,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -766,7 +766,7 @@ function getProductCarouselOptionsObject(carouselID) {
                 }
             },
             {
-                breakpoint: 814,
+                breakpoint: 960,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -1011,14 +1011,13 @@ function init() {
             dots: false,
             //centerMode: true,
             //centerPadding: '150px',
-            // initialSlide: 0,
+            initialSlide: 0,
             arrows: false,
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
             variableWidth: true,
             //autoplay: true,
-            autoplaySpeed: 3000,
         });
 
         // Make search panel sticky

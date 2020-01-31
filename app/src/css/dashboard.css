@@ -16,6 +16,19 @@
     top: 0;
   }
 }
+.rwd-dashboard .rwd-rewards-heading {
+  background-color: #f2f7fd;
+  color: #2d2d2d;
+  height: 67px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.rwd-dashboard .rwd-rewards-heading .sbi-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .rwd-dashboard .tabs-header {
   background-color: #ffffff;
   padding-top: 40px;
@@ -228,7 +241,7 @@
   margin-top: 30px;
   position: relative;
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container {
     padding: 0 30px;
   }
@@ -259,7 +272,7 @@
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .category-carousel .slick-list {
   margin-right: -20px;
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .category-carousel .slick-list {
     margin-right: -40px;
   }
@@ -310,7 +323,7 @@
   color: #2d2d2d;
   transform: rotate(135deg);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1281px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .carousel-prev {
     left: -20px;
   }
@@ -335,7 +348,7 @@
   color: #2d2d2d;
   transform: rotate(-45deg);
 }
-@media (max-width: 1280px) {
+@media (max-width: 1281px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .carousel-next {
     right: -20px;
   }
@@ -351,9 +364,6 @@
   height: 200px;
   max-height: 200px;
 }
-.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .slick-list {
-  padding: 0 50px 0 0;
-}
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .rwd-image-carousel-box {
   width: 325px;
   height: 200px;
@@ -361,7 +371,7 @@
   margin: 0;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .rwd-image-carousel-box.single img {
-  max-width: 310px;
+  width: 310px;
   max-height: 200px;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel.rwd-mobile .rwd-carousel-container .image-carousel .rwd-image-carousel-box.single .image-carousel-content {
@@ -483,7 +493,7 @@
   margin-bottom: 20px;
   -ms-grid-row: 1;
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped .i-c-grouped-wrapper:nth-child(1),
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box.grouped .i-c-grouped-wrapper:nth-child(2) {
     margin-bottom: 20px;
@@ -709,7 +719,7 @@
   margin-right: 20px;
   height: fit-content;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1281px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-search-panel-wrapper {
     margin-right: calc((100vw - 900px)/2);
   }
@@ -877,7 +887,7 @@
   padding-bottom: 30px;
   width: calc(100% - 300px);
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper {
     width: 100%;
     max-width: calc(560px + calc((100vw - 900px)/2));
@@ -909,12 +919,14 @@
     width: 75px !important;
     padding: 0;
     background: transparent;
+    box-shadow: none;
   }
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel .item-box.last .image-container {
     background-color: #ffffff;
     width: 75px;
     height: 75px !important;
     border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgba(213, 213, 234, 0.5);
   }
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel .item-box.last .image-container div.rwd-flex {
     height: 100%;
@@ -980,7 +992,7 @@
   box-shadow: 0 0 5px 0 rgba(213, 213, 234, 0.5);
   border-radius: 4px;
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel .item-box {
     margin-right: calc((100vw - 900px)/2);
     min-width: 280px;
@@ -990,7 +1002,7 @@
   display: flex;
   align-items: center;
 }
-@media (max-width: 1280px) and (min-width: 961px) {
+@media (max-width: 1281px) and (min-width: 961px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel .item-box.last {
     margin-right: 0 !important;
   }
@@ -1366,7 +1378,7 @@
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper #dash-search-results .rwd-search-results .search-item-box:nth-child(3n+3) {
   margin-right: -4px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1281px) {
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper #dash-search-results .rwd-search-results .search-item-box:nth-child(3n+3) {
     margin-right: 20px;
   }
