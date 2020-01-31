@@ -32,11 +32,11 @@ body{
   font-weight: 400;
 }
 .body-wrapper .slick-slide {
-  text-align: unset;
+  text-align: left;
 }
 .body-wrapper .slick-slide img{
-  height: unset;
-  width: unset;
+  height: auto;
+  width: auto;
 }
 
 @media (max-width: 960px) {
