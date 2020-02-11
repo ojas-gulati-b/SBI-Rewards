@@ -690,39 +690,42 @@ $(window).scroll(function () {
     var wrapper = $('.rwd-main-section .rwd-search-panel-wrapper');
     var searchPanelWidth = 280;
     var panelHeight = $('.search-heading').height() +  $('.search-panel').height() + 20;
-    if($(window).height() - $('.rwd-header').height() <= panelHeight){
+    if($(window).width() > 767){
 
-       var stickyValue =  panelHeight + $('.rwd-main-section').offset().top - ($(window).height() - 45);
-    }else{
-        var stickyValue =  $('.rwd-main-section').offset().top - $('.rwd-header').height() - 35 ;
-    }
-       console.log(stickyValue);
+        if($(window).height() - $('.rwd-header').height() <= panelHeight){
     
-    if ($(this).scrollTop() > (stickyValue)) {
-        if ($(window).width() >= 1240 && $(window).width() <= 1280) {
-            searchPanelWidth = 240
-        }
-        if($(window).height() - $('.rwd-header').height() <= panelHeight){
-            el.css({ 'position': 'fixed', 'bottom': '30px', 'width': searchPanelWidth, 'top': 'unset' });
+           var stickyValue =  panelHeight + $('.rwd-main-section').offset().top - ($(window).height() - 45);
         }else{
-            el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+            var stickyValue =  $('.rwd-main-section').offset().top - $('.rwd-header').height() - 35 ;
         }
+           console.log(stickyValue);
         
-        searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'unset' });
-        //wrapper.css({ 'margin-right': '149px' });
-    }
-    if ($(this).scrollTop() < (stickyValue)) {
-        if ($(window).width() >= 1240 && $(window).width() <= 1280) {
-            searchPanelWidth = 240
+        if ($(this).scrollTop() > (stickyValue)) {
+            if ($(window).width() >= 1240 && $(window).width() <= 1280) {
+                searchPanelWidth = 240
+            }
+            if($(window).height() - $('.rwd-header').height() <= panelHeight){
+                el.css({ 'position': 'fixed', 'bottom': '30px', 'width': searchPanelWidth, 'top': 'unset' });
+            }else{
+                el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+            }
+            
+            searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'unset' });
+            //wrapper.css({ 'margin-right': '149px' });
         }
-        if($(window).height() - $('.rwd-header').height() <= panelHeight){
-            el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth , 'bottom': 'unset'});
+        if ($(this).scrollTop() < (stickyValue)) {
+            if ($(window).width() >= 1240 && $(window).width() <= 1280) {
+                searchPanelWidth = 240
+            }
+            if($(window).height() - $('.rwd-header').height() <= panelHeight){
+                el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth , 'bottom': 'unset'});
+            }
+            else{
+                el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+            }
+            searchHeading.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+            //wrapper.removeAttr("style");
         }
-        else{
-            el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
-        }
-        searchHeading.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
-        //wrapper.removeAttr("style");
     }
     if (el.offset().top + el.height() >= footer.offset().top - 30) {
         el.css({
@@ -876,7 +879,7 @@ function init() {
             dots: false,
             arrows: false,
             slidesToShow: 7,
-            slidesToScroll: 4,
+            slidesToScroll: 3,
             infinite: true,
             prevArrow: $('.rwd-category-carousel .carousel-container.rwd-mobile .carousel-prev'),
             nextArrow: $('.rwd-category-carousel .carousel-container.rwd-mobile .carousel-next'),
@@ -887,7 +890,7 @@ function init() {
                 {
                     breakpoint: 514,
                     settings: {
-                        slidesToShow: 4,
+                        slidesToShow: 3,
                         variableWidth: false,
                     }
                 },
@@ -962,7 +965,7 @@ function init() {
             dots: false,
             arrows: true,
             slidesToShow: 7,
-            slidesToScroll: 4,
+            slidesToScroll: 3,
             infinite: true,
             prevArrow: $('.carousel-container.mid-page.rwd-mobile .carousel-prev'),
             nextArrow: $('.carousel-container.mid-page.rwd-mobile .carousel-next'),
@@ -973,7 +976,7 @@ function init() {
                 {
                     breakpoint: 514,
                     settings: {
-                        slidesToShow: 4,
+                        slidesToShow: 3,
                         variableWidth: false,
                     }
                 },
