@@ -204,10 +204,11 @@
     margin-top: 20px;
   }
 }
-.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .product-title {
+.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail h1.product-title {
   color: #2d2d2d;
   font-size: 20px;
   font-weight: 600;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .product-pricing-info {
   margin-top: 2px;
@@ -217,10 +218,11 @@
     margin-top: 10px;
   }
 }
-.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .product-pricing-info .new-price {
+.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .product-pricing-info h2.new-price {
   color: #2d2d2d;
   font-size: 20px;
   font-weight: 600;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .product-pricing-info .old-price {
   color: #a8a8a8;
@@ -260,7 +262,7 @@
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .voucher-amount-selection {
   margin-top: 40px;
 }
-.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .voucher-amount-selection .heading {
+.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .voucher-amount-selection h2.heading {
   color: #090909;
   font-size: 16px;
   font-weight: 600;
@@ -310,8 +312,12 @@
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .estimated-delivery-container {
   margin-top: 40px;
   color: #000000;
+}
+.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .estimated-delivery-container h3 {
   font-size: 14px;
   font-weight: 600;
+  margin: 0;
+  display: inline;
 }
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-order-detail .pin-code-check-container {
   margin-top: 20px;
@@ -434,13 +440,14 @@
     padding: 0 20px;
   }
 }
-.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-description .heading {
+.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-description h2.heading {
   font-size: 18px;
   font-weight: 600;
   color: #333333;
+  margin: 0;
 }
 @media (max-width: 960px) {
-  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-description .heading {
+  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-description h2.heading {
     font-size: 16px;
   }
 }
@@ -495,15 +502,16 @@
     border-bottom: none;
   }
 }
-.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .important-instructions .heading,
-.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .steps-to-use .heading {
+.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .important-instructions h2.heading,
+.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .steps-to-use h2.heading {
   font-size: 18px;
   font-weight: 600;
   color: #333333;
+  margin: 0;
 }
 @media (max-width: 960px) {
-  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .important-instructions .heading,
-  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .steps-to-use .heading {
+  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .important-instructions h2.heading,
+  .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .steps-to-use h2.heading {
     font-size: 16px;
   }
 }
@@ -576,10 +584,11 @@
     padding-right: 0px;
   }
 }
-.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-terms-and-conditions .rwd-expansion-panel .rwd-product-tc-panel-head .title {
+.body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-terms-and-conditions .rwd-expansion-panel .rwd-product-tc-panel-head h2.title {
   font-size: 18px;
   font-weight: 600;
   color: #333333;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-product-details .rwd-product-details-wrapper .product-terms-and-conditions .rwd-expansion-panel .rwd-product-tc-panel-head .control .select {
   font-size: 14px;
@@ -704,10 +713,11 @@
     margin-right: calc((100vw - 60px - 560px)/3);
   }
 }
-.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-title .heading {
+.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-title h2.heading {
   font-size: 20px;
   font-weight: 600;
   color: #333333;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-title .view-all {
   font-size: 14px;
@@ -785,20 +795,22 @@
   position: absolute;
   bottom: 20px;
 }
-.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details .product-title {
+.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details h3.product-title {
   font-size: 14px;
   font-weight: 600;
   color: #2d2d2d;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details .product-price {
   margin-top: 5px;
   display: flex;
   align-items: center;
 }
-.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details .product-price .new-price {
+.body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details .product-price h4.new-price {
   font-size: 18px;
   font-weight: 600;
   color: #2d2d2d;
+  margin: 0;
 }
 .body-wrapper .rwd-product .rwd-related-products .products-list-wrapper .items-carousel-container .items-carousel .item-box .product-details .product-price .old-price {
   font-size: 10px;

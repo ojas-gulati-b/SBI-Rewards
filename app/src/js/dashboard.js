@@ -689,19 +689,38 @@ $(window).scroll(function () {
     var footer = $('.sbi-eregs-footer');
     var wrapper = $('.rwd-main-section .rwd-search-panel-wrapper');
     var searchPanelWidth = 280;
-    if ($(this).scrollTop() > 547) {
+    var panelHeight = $('.search-heading').height() +  $('.search-panel').height() + 20;
+    if($(window).height() - $('.rwd-header').height() <= panelHeight){
+
+       var stickyValue =  panelHeight + $('.rwd-main-section').offset().top - ($(window).height() - 45);
+    }else{
+        var stickyValue =  $('.rwd-main-section').offset().top - $('.rwd-header').height() - 35 ;
+    }
+       console.log(stickyValue);
+    
+    if ($(this).scrollTop() > (stickyValue)) {
         if ($(window).width() >= 1240 && $(window).width() <= 1280) {
             searchPanelWidth = 240
         }
-        el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+        if($(window).height() - $('.rwd-header').height() <= panelHeight){
+            el.css({ 'position': 'fixed', 'bottom': '30px', 'width': searchPanelWidth, 'top': 'unset' });
+        }else{
+            el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+        }
+        
         searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'unset' });
         //wrapper.css({ 'margin-right': '149px' });
     }
-    if ($(this).scrollTop() < 547) {
+    if ($(this).scrollTop() < (stickyValue)) {
         if ($(window).width() >= 1240 && $(window).width() <= 1280) {
             searchPanelWidth = 240
         }
-        el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+        if($(window).height() - $('.rwd-header').height() <= panelHeight){
+            el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth , 'bottom': 'unset'});
+        }
+        else{
+            el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
+        }
         searchHeading.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
         //wrapper.removeAttr("style");
     }
