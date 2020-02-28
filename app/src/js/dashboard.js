@@ -744,7 +744,7 @@ $(window).scroll(function () {
 
     //infinite scroll code
     // var a =$(window).scrollTop(), b = $(window).height(), c=$(document).height(), d=$('.sbi-eregs-footer').height();
-    if ($(window).scrollTop() + $(window).height() > ($(document).height() - $('.rwd-rewards.footer').height())) {
+    if ($(window).scrollTop() + $(window).height() > ($(document).height() - $('.rwd-rewards.footer').height() - $('.rwd-rewards.legal-links').height())) {
         loadMore('entertainment-2');
     }
 
