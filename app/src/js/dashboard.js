@@ -705,12 +705,12 @@ $(window).scroll(function () {
                 searchPanelWidth = 240
             }
             if($(window).height() - $('.rwd-header').height() <= panelHeight){
-                el.css({ 'position': 'fixed', 'bottom': '30px', 'width': searchPanelWidth, 'top': 'unset' });
+                el.css({ 'position': 'fixed', 'bottom': '30px', 'width': searchPanelWidth, 'top': 'auto' });
             }else{
-                el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'unset' });
+                el.css({ 'position': 'fixed', 'top': '200px', 'width': searchPanelWidth, 'bottom': 'auto' });
             }
             
-            searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'unset' });
+            searchHeading.css({ 'position': 'fixed', 'top': '150px', 'width': searchPanelWidth, 'bottom': 'auto' });
             //wrapper.css({ 'margin-right': '149px' });
         }
         if ($(this).scrollTop() < (stickyValue)) {
@@ -718,7 +718,7 @@ $(window).scroll(function () {
                 searchPanelWidth = 240
             }
             if($(window).height() - $('.rwd-header').height() <= panelHeight){
-                el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth , 'bottom': 'unset'});
+                el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth , 'bottom': 'auto'});
             }
             else{
                 el.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
