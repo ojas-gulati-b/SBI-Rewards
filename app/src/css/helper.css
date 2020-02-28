@@ -474,3 +474,15 @@ body{
   min-height: 600px;
 }
 
+/* new footer css */
+.rwd-rewards.footer, .rwd-rewards.legal-links{
+  position: relative;
+  top: 130px;
+}
+
+@media (max-width: 960px) {
+  .rwd-rewards.footer, .rwd-rewards.legal-links {
+    top: 60px;
+  }
+}
+

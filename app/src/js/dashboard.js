@@ -686,7 +686,7 @@ $(window).scroll(function () {
     } */
     var el = $('.rwd-main-section .rwd-search-panel-wrapper .search-panel');
     var searchHeading = $('.rwd-main-section .rwd-search-panel-wrapper .search-heading');
-    var footer = $('.sbi-eregs-footer');
+    var footer = $('.rwd-rewards.footer');
     var wrapper = $('.rwd-main-section .rwd-search-panel-wrapper');
     var searchPanelWidth = 280;
     var panelHeight = $('.search-heading').height() +  $('.search-panel').height() + 20;
@@ -743,8 +743,8 @@ $(window).scroll(function () {
     }
 
     //infinite scroll code
-    var a =$(window).scrollTop(), b = $(window).height(), c=$(document).height(), d=$('.sbi-eregs-footer').height();
-    if ($(window).scrollTop() + $(window).height() > ($(document).height() - $('.sbi-eregs-footer').height())) {
+    // var a =$(window).scrollTop(), b = $(window).height(), c=$(document).height(), d=$('.sbi-eregs-footer').height();
+    if ($(window).scrollTop() + $(window).height() > ($(document).height() - $('.rwd-rewards.footer').height())) {
         loadMore('entertainment-2');
     }
 
@@ -1007,6 +1007,7 @@ function init() {
             slick.checkResponsive();
         });
         initializeCarousel('.products-list-wrapper#offers .items-carousel', getProductCarouselOptionsObject('offers'));
+
         $('.products-list-wrapper#electronics .items-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         });

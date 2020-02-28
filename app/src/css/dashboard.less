@@ -508,7 +508,6 @@
                                             //height: calc((100% - 10px)/2);
                                             .i-c-grouped-wrapper{
                                                 position: relative;
-                                                
                                                
                                                 &:nth-child(1), &:nth-child(2){
                                                     margin-bottom: 20px;
@@ -930,12 +929,22 @@
                                             font-weight: 600;
                                             color: #00b1f2;
                                             align-self: flex-end;
+                                            // margin-right: 20px;
+                                            /* @media (max-width: 1281px) and (min-width: 961px){
+                                                margin-right: 0px;
+                                            } */
                                         }
                                     }
                                     .items-carousel-container{
                                         position: relative;
                                         .items-carousel{
                                             // display: flex;
+                                            margin-left: -10px;
+                                            margin-right: -10px;
+                                            @media (max-width: 1281px) {
+                                                margin-left: 0px;
+                                                margin-right: 0px;
+                                            }
 
                                             .slick-list{
                                                 //margin-right: -20px;
@@ -944,7 +953,9 @@
                                                 background-color: #ffffff;
                                                 padding: 20px;
                                                 width: 280px;
-                                                margin-right: 20px;
+                                                // margin-right: 20px;
+                                                margin-left: 10px;
+                                                margin-right: 10px;
                                                 cursor: pointer;
                                                 min-height: 343px;
                                                 position: relative;
@@ -953,6 +964,7 @@
                                                 box-shadow: 0 0 5px 0 rgba(213, 213, 234, 0.5);
                                                 border-radius: 4px;
                                                 @media (max-width: 1281px) and (min-width: 961px) {
+                                                    margin-left: 0px;
                                                     margin-right: @panel-margin;
                                                     min-width: 280px;
                                                 }
@@ -1054,6 +1066,9 @@
                                         }
                                         .carousel-next{
                                             .carousel-button-next(375px, 0px, -45deg);
+                                            /* @media (max-width: 1281px) and (min-width: 961px){
+                                                right: 0px
+                                            } */
                                             &.slick-disabled{
                                                 .carousel-icon{
                                                     &::after{
@@ -1273,19 +1288,21 @@
                                                 margin-top: 20px;
                                                 position: absolute;
                                                 bottom: 20px;
-                                                .product-title{
+                                                h3.product-title{
                                                     font-size: 14px;
                                                     font-weight: 600;
                                                     color: #2d2d2d;
+                                                    margin: 0;
                                                 }
                                                 .product-price{
                                                     margin-top: 5px;
                                                     display: flex;
                                                     align-items: center;
-                                                    .new-price{
+                                                    h4.new-price{
                                                         font-size: 18px;
                                                         font-weight: 600;
                                                         color: #2d2d2d;
+                                                        margin: 0;
                                                     }
                                                     .old-price{
                                                         font-size: 10px;
