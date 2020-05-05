@@ -691,6 +691,7 @@ $(window).scroll(function () {
     var searchPanelWidth = 280;
     var panelHeight = $('.search-heading').height() +  $('.search-panel').height() + 20;
     if($(window).width() > 767){
+        if($('.rwd-items-wrapper').height() > panelHeight + 100){
 
         if($(window).height() - $('.rwd-header').height() <= panelHeight){
     
@@ -714,6 +715,7 @@ $(window).scroll(function () {
             //wrapper.css({ 'margin-right': '149px' });
         }
         if ($(this).scrollTop() < (stickyValue)) {
+            var st = $(this).scrollTop();
             if ($(window).width() >= 1240 && $(window).width() <= 1280) {
                 searchPanelWidth = 240
             }
@@ -726,20 +728,38 @@ $(window).scroll(function () {
             searchHeading.css({ 'position': 'static', 'top': '0px', 'width': searchPanelWidth });
             //wrapper.removeAttr("style");
         }
-    }
-    if (el.offset().top + el.height() >= footer.offset().top - 30) {
+
+        if (el.offset().top + el.height() >= footer.offset().top - 30) {
+            el.css({
+                position: 'absolute',
+                width: searchPanelWidth,
+                bottom: 30,
+                top: 'auto'
+            });
+            searchHeading.css({
+                position: 'absolute',
+                width: searchPanelWidth,
+                bottom: 515,
+                top: 'auto'
+            });
+        }
+    
+    } else {
         el.css({
-            position: 'absolute',
+            position: 'relative',
             width: searchPanelWidth,
-            bottom: 30,
-            top: 'auto'
+            bottom: 'auto',
+            top: 'auto',
+            marginBottom: '30px'
         });
         searchHeading.css({
-            position: 'absolute',
+            position: 'relative',
             width: searchPanelWidth,
-            bottom: 515,
+            bottom: 'auto',
             top: 'auto'
         });
+    }
+   
     }
 
     //infinite scroll code

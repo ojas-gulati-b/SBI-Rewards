@@ -93,7 +93,7 @@
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-image-container .thumbnail-container {
   display: flex;
   width: 320px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-image-container .thumbnail-container .thumbnail {
@@ -102,6 +102,9 @@
   border: 1px solid #d5d5ea;
   cursor: pointer;
   padding: 5px;
+}
+.body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-image-container .thumbnail-container .thumbnail:not(:last-child) {
+  margin-right: 25px;
 }
 .body-wrapper .rwd-product .rwd-product-order .rwd-product-order-wrapper .rwd-product-image-container .thumbnail-container .thumbnail img {
   width: 100%;

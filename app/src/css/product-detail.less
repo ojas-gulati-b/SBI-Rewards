@@ -119,7 +119,7 @@
                     .thumbnail-container{
                         display: flex;
                         width: 320px;
-                        justify-content: space-between;
+                        justify-content: center;
                         align-items: center;
                         .thumbnail{
                             height: 44px;
@@ -127,6 +127,9 @@
                             border: 1px solid #d5d5ea;
                             cursor: pointer;
                             padding: 5px;
+                            &:not(:last-child){
+                                margin-right: 25px;
+                            }
                             img{
                                 width: 100%;
                             }
