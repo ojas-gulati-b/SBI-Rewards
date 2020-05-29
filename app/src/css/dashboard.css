@@ -274,6 +274,10 @@
   /* display: flex;
                                     align-items: center;
                                     justify-content: center; */
+  visibility: hidden;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .category-carousel.slick-initialized {
+  visibility: visible;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-category-carousel .carousel-container .category-carousel .slick-list {
   margin-right: -20px;
@@ -441,6 +445,10 @@
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel {
   height: 100%;
+  visibility: hidden;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel.slick-initialized {
+  visibility: visible;
 }
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box {
   max-width: 560px;
@@ -909,6 +917,12 @@
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-title {
     padding-right: 20px;
   }
+  .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel {
+    visibility: hidden;
+  }
+  .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel.slick-initialized {
+    visibility: visible;
+  }
   .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-main-section .rwd-items-wrapper .products-list-wrapper .items-carousel-container .items-carousel .slick-list {
     margin-right: 0 !important;
     padding: 0 10% 0 0;
@@ -954,8 +968,8 @@
   min-height: 69px;
   position: sticky;
   width: 100%;
-  top: 120px;
-  z-index: 10;
+  top: 130px;
+  z-index: 5;
   background-color: #f5f5f5;
   padding-bottom: 15px;
   margin-top: -20px;

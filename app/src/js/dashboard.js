@@ -699,7 +699,7 @@ $(window).scroll(function () {
         }else{
             var stickyValue =  $('.rwd-main-section').offset().top - $('.rwd-header').height() - 35 ;
         }
-           console.log(stickyValue);
+           // console.log(stickyValue);
         
         if ($(this).scrollTop() > (stickyValue)) {
             if ($(window).width() >= 1240 && $(window).width() <= 1280) {
@@ -839,7 +839,7 @@ function init() {
         /* $('.rwd-category-carousel .category-carousel').on('init', function (event, slick) {
             slick.checkResponsive();
         }); */
-        console.log('init');
+        // console.log('init');
         initializeCarousel('.rwd-category-carousel .carousel-container.rwd-desktop .category-carousel', {
             dots: false,
             arrows: true,
