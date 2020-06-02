@@ -25,6 +25,13 @@ var filterHeaderFixed = false
 function expand(panelClass) {
     var panel = '.search-section.' + panelClass;
     var panelBody = getElement(panel).querySelector('.rwd-panel-body');
+    var allPanels = document.querySelectorAll('.search-section');
+    for(var i = 0; i < allPanels.length; i++){
+        allPanels[i].classList.remove('expanded');
+        var body = allPanels[i].querySelector('.rwd-panel-body');
+        if (body && body.style.maxHeight)
+        body.style.maxHeight = null;
+    }
     getElement(panel).classList.toggle('expanded');
     if (panelBody.style.maxHeight)
         panelBody.style.maxHeight = null;

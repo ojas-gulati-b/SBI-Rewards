@@ -157,6 +157,10 @@
                         width: 100%;
                         //margin: 0 -20px;
                         //padding-top: 47px;
+                        visibility: hidden;
+                        &.slick-initialized{
+                            visibility: visible;
+                        }
                         .product-image{
                             display: flex;
                             justify-content: space-around;
@@ -743,7 +747,11 @@
                 .items-carousel-container{
                     position: relative;
                     .items-carousel{
-                        //display: flex;
+                        display: flex;
+                        visibility: hidden;
+                        &.slick-initialized{
+                            visibility: visible;
+                        }
                         .slick-list{
                             margin-right: -20px;
                         }
@@ -795,6 +803,7 @@
                                 color: #ffffff;
                                 font-size: 10px;
                                 padding: 2px 20px;
+                                -webkit-text-stroke: white !important;
                             }
 
                             .image-container{
