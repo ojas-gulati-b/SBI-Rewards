@@ -498,6 +498,20 @@
                                         cursor: pointer;
                                         margin-right: 20px;
                                         height: 250px;
+
+                                        .image-carousel-overlay{
+                                            position: absolute;
+                                            height: 100%;
+                                            width: 100%;
+                                            top: 0;
+                                            background-color: rgb(0, 0, 0);
+                                            opacity: 0;
+                                            transition: 0.2s;
+                                            &:hover{
+                                                opacity: 0.3;
+                                            }
+                                        }
+
                                         &.single{
                                             // margin-right: 10px;
                                             img{
@@ -511,6 +525,7 @@
                                                 right: 40px;
                                                 .image-carousel-content-elements(#ffffff, #00b1f2);
                                             }
+                                            
                                         }
                                         &.grouped{
                                             display: grid !important;

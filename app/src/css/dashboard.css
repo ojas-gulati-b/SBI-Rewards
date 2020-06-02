@@ -462,6 +462,18 @@
   margin-right: 20px;
   height: 250px;
 }
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box .image-carousel-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: #000000;
+  opacity: 0;
+  transition: 0.2s;
+}
+.rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box .image-carousel-overlay:hover {
+  opacity: 0.3;
+}
 .rwd-dashboard .tabs-body .content-wrapper .tab-content .content.rwd-tab-catalogue .rwd-image-carousel .rwd-carousel-container .image-carousel .rwd-image-carousel-box.single .image-carousel-content {
   position: absolute;
   display: block;

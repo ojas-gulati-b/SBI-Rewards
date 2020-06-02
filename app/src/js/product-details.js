@@ -95,12 +95,19 @@ function selectThumbnail(event){
     if(selectedThumbnail.tagName === 'IMG') // if inner image is selected then set thumbnail to the outer div
         selectedThumbnail = selectedThumbnail.parentElement
     var thumbImage = selectedThumbnail.querySelector('img');
-    var mainImage = getElement('.main-image img');
+    var mainImageContainer = getElement('.main-image');
+    if(selectedThumbnail.getAttribute('data-type') === "video") {
+        elementToAppend = "<iframe width='320' height='318' src='"+ selectedThumbnail.getAttribute('data-url') + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+        mainImageContainer.innerHTML=elementToAppend;
+    }
+    else if(selectedThumbnail.getAttribute('data-type') === "image") {
+        elementToAppend = "<img src='" + thumbImage.src + "' title='" + thumbImage.title + "' alt='" + thumbImage.alt + "' />"
+        mainImageContainer.innerHTML=elementToAppend;
+    }
     for( var i = 0; i < thumbnailDivs.length; i++){
         thumbnailDivs[i].classList.remove('selected');
     }
     selectedThumbnail.classList.add('selected');
-    mainImage.src = thumbImage.src;
 }
 
 function initProduct(){
