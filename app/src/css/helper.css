@@ -238,7 +238,7 @@ body{
   /** Carousel Dots */
 .items-carousel-container .slick-dotted.slick-slider
 {
-    margin-bottom: 65px;
+    margin-bottom: 60px;
 }
 
 .items-carousel-container .slick-dots, .rwd-product-detail-images-carousel .slick-dots
